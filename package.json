@@ -1,20 +1,19 @@
 {
   "name": "postman-to-k6",
-  "description": "Convert a Postman collection to Load Impact k6 user scenario",
+  "description": "Convert a Postman collection to k6 script",
   "version": "0.0.1",
   "author": {
-    "email": "borjacampina@gmail.com",
     "name": "Borja Campina"
   },
   "license": "MIT",
   "keywords": [
-    "loadimpact",
+    "k6",
     "loadtest",
     "postman"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/borjacampina/postman-to-k6.git"
+    "url": "git+https://github.com/loadimpact/postman-to-k6.git"
   },
   "engines": {
     "node": ">= 0.10.0"
