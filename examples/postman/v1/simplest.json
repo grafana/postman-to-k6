@@ -1,0 +1,27 @@
+{
+    "id": "c3ac3ec4-8f23-2f3a-5215-aa33d781ca21",
+    "name": "simplest",
+    "description": "",
+    "order": [
+        "5a795cee-c9a7-9cbc-32cd-9125337d6d7b"
+    ],
+    "folders": [],
+    "requests": [
+        {
+            "id": "5a795cee-c9a7-9cbc-32cd-9125337d6d7b",
+            "headers": "Content-Type: text/plain\n",
+            "url": "echo.getpostman.com/post",
+            "preRequestScript": null,
+            "pathVariables": {},
+            "method": "POST",
+            "data": "something",
+            "dataMode": "raw",
+            "tests": "tests[\"Body matches string\"] = responseBody.has(\"OMG\");\ntests[\"Status code is 200\"] = responseCode.code === 200;",
+            "currentHelper": "normal",
+            "helperAttributes": {},
+            "name": "echo.getpostman.com/post",
+            "description": "",
+            "responses": []
+        }
+    ]
+}

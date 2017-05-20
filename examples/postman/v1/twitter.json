@@ -1,0 +1,631 @@
+{
+	"id": "d362bd3b-ab81-2b7d-0ce5-345df1826043",
+	"name": "Twitter",
+	"description": null,
+	"order": [
+		"6b5b2943-2a53-ed04-fb5c-6abc89efbc0f",
+		"d38ed833-121d-f1f1-e089-336d249c712e",
+		"4eca2c68-9a5d-ce2d-0fcd-10cfd74b08d9",
+		"f13be3d5-65e3-1838-d418-b8f9cb575c45",
+		"20e49f79-a50a-d22b-3de1-56803c068660",
+		"6984a510-69e7-d8ab-f89c-b6a3506f1bf1",
+		"c44004bb-6058-771d-36f7-48e78c61ebbc",
+		"7b295272-bade-1612-9b25-cdf87b3e214e",
+		"61ca7678-d277-19b9-dd65-c6799ae6a96e",
+		"0e73a930-d699-3a49-3c68-74b9ce1c5824"
+	],
+	"folders": [
+		{
+			"owner": "405",
+			"lastUpdatedBy": "405",
+			"lastRevision": 376753,
+			"collection": "d362bd3b-ab81-2b7d-0ce5-345df1826043",
+			"id": "1ddbc689-cd14-cd36-299f-94c762f5ac34",
+			"name": "User Specific",
+			"description": "These requests are specific to the user whos auth tokens you have",
+			"order": [
+				"0b7e73e5-6d8f-4d54-503c-f70e12160d6c",
+				"d38d842e-99f7-d67f-0eed-72d9b35985d6",
+				"f3fce152-805b-4717-f932-d30aaedaf7bb",
+				"4be851e9-fd00-cc88-580a-c891ec867cc1"
+			],
+			"createdAt": "2015-06-17T09:16:29.000Z",
+			"updatedAt": "2015-06-17T14:02:32.000Z",
+			"write": true
+		},
+		{
+			"owner": "405",
+			"lastUpdatedBy": "4",
+			"lastRevision": 425381,
+			"collection": "d362bd3b-ab81-2b7d-0ce5-345df1826043",
+			"id": "ea82665a-d730-b2c8-bd23-083952876245",
+			"name": "Search Demo",
+			"description": "",
+			"order": [
+				"fc43e63c-9b2e-811b-064b-59bfcbcdb8c6"
+			],
+			"createdAt": "2015-06-22T05:40:33.000Z",
+			"updatedAt": "2015-06-22T06:41:02.000Z",
+			"write": true
+		},
+		{
+			"owner": "405",
+			"lastUpdatedBy": "4",
+			"lastRevision": 424946,
+			"collection": "d362bd3b-ab81-2b7d-0ce5-345df1826043",
+			"id": "adde93f5-c11b-844e-62a4-5ede9287fa1b",
+			"name": "Demo",
+			"description": "",
+			"order": [
+				"0e307ab2-6863-0e4b-c2f2-f3ea002da471",
+				"17a7132f-1eb4-6e9f-0ac4-56a7e8b866e6"
+			],
+			"createdAt": "2015-06-22T05:27:33.000Z",
+			"updatedAt": "2015-06-22T05:27:41.000Z",
+			"write": true
+		},
+		{
+			"owner": "405",
+			"lastUpdatedBy": "405",
+			"lastRevision": 377374,
+			"collection": "d362bd3b-ab81-2b7d-0ce5-345df1826043",
+			"id": "9ba1f304-ae88-714b-603e-6dcfe36c5e9d",
+			"name": "Collections",
+			"description": "",
+			"order": [
+				"e5ca3774-cb10-b021-ec0b-9f2e3ab49d23"
+			],
+			"createdAt": "2015-06-17T10:47:49.000Z",
+			"updatedAt": "2015-06-17T10:58:22.000Z",
+			"write": true
+		}
+	],
+	"timestamp": 0,
+	"owner": "405",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"folder": "1ddbc689-cd14-cd36-299f-94c762f5ac34",
+			"id": "0b7e73e5-6d8f-4d54-503c-f70e12160d6c",
+			"name": "Mentions",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434532628\",oauth_nonce=\"HOW7JN\",oauth_version=\"1.0\",oauth_signature=\"h2vIYOZCPOiKVHKuIfQaR1gNUoY%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/statuses/home_timeline.json",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": "adde93f5-c11b-844e-62a4-5ede9287fa1b",
+			"id": "0e307ab2-6863-0e4b-c2f2-f3ea002da471",
+			"name": "User timeline",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "status",
+					"value": "Testing out Twitter integration with Postman",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_consumer_key",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_token",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_signature_method",
+					"value": "HMAC-SHA1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_timestamp",
+					"value": "1434949067",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_nonce",
+					"value": "MdCov1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_version",
+					"value": "1.0",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_signature",
+					"value": "GiV7s2egM8nnpXDJ/AuX9cWySIU=",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"kbXFSaNTcUeJxsWLOP0U85zaV\",oauth_token=\"88952001-03JcHuetTAKmLCUZe5E2xUFmCWMmNP5NiTocwHSds\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434949696\",oauth_nonce=\"y1XISF\",oauth_version=\"1.0\",oauth_signature=\"RZAl4XXTs4woVqphafctrV4Ml90%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=sobtiankit",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": null,
+			"id": "0e73a930-d699-3a49-3c68-74b9ce1c5824",
+			"name": "Tweet",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "status",
+					"value": "Testing out Twitter integration with Postman",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_consumer_key",
+					"value": "kbXFSaNTcUeJxsWLOP0U85zaV",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_token",
+					"value": "88952001-03JcHuetTAKmLCUZe5E2xUFmCWMmNP5NiTocwHSds",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_signature_method",
+					"value": "HMAC-SHA1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_timestamp",
+					"value": "1434949918",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_nonce",
+					"value": "2ub25R",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_version",
+					"value": "1.0",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_signature",
+					"value": "zByjWTEA27EVEBjPhbx5/E2j9Ec=",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434535146\",oauth_nonce=\"Zkiw6x\",oauth_version=\"1.0\",oauth_signature=\"ixKCkiKKz1hNETa%2FfTbZ0MOr%2Fzk%3D\"\n",
+			"method": "POST",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/statuses/update.json?status=Testing out Twitter integration with Postman",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": "adde93f5-c11b-844e-62a4-5ede9287fa1b",
+			"id": "17a7132f-1eb4-6e9f-0ac4-56a7e8b866e6",
+			"name": "Search",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434545469\",oauth_nonce=\"1JwkaG\",oauth_version=\"1.0\",oauth_signature=\"DJYTt9fhAoq2mkpVFeLmTbBXxiU%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/search/tweets.json?q=test",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": null,
+			"id": "20e49f79-a50a-d22b-3de1-56803c068660",
+			"name": "User timeline",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "status",
+					"value": "Testing out Twitter integration with Postman",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_consumer_key",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_token",
+					"value": "",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_signature_method",
+					"value": "HMAC-SHA1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_timestamp",
+					"value": "1434949067",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_nonce",
+					"value": "MdCov1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_version",
+					"value": "1.0",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_signature",
+					"value": "GiV7s2egM8nnpXDJ/AuX9cWySIU=",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"kbXFSaNTcUeJxsWLOP0U85zaV\",oauth_token=\"88952001-03JcHuetTAKmLCUZe5E2xUFmCWMmNP5NiTocwHSds\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434949696\",oauth_nonce=\"y1XISF\",oauth_version=\"1.0\",oauth_signature=\"RZAl4XXTs4woVqphafctrV4Ml90%3D\"\n}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=sobtiankit",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": "1ddbc689-cd14-cd36-299f-94c762f5ac34",
+			"id": "4be851e9-fd00-cc88-580a-c891ec867cc1",
+			"name": "Destroy tweet",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434535754\",oauth_nonce=\"G5615d\",oauth_version=\"1.0\",oauth_signature=\"kFy%2F9DPv8ifnGDlE3tvupHsgwwo%3D\"\n}",
+			"method": "POST",
+			"pathVariables": {
+				"id": "611110830424264704"
+			},
+			"url": "https://api.twitter.com/1.1/statuses/destroy/:id.json",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": null,
+			"id": "4eca2c68-9a5d-ce2d-0fcd-10cfd74b08d9",
+			"name": "User  user_id",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434548343\",oauth_nonce=\"6c4JlR\",oauth_version=\"1.0\",oauth_signature=\"KuqrmkEXjxlq61BKyCxp1CZl3ZE%3D\"\n}",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/users/show.json?user_id={{user_id}}",
+			"preRequestScript": "// postman.setGlobalVariable(\"user_id\", \"2392623769\");",
+			"tests": "var data = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"screen_name\",data.screen_name);\n\n",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": null,
+			"id": "61ca7678-d277-19b9-dd65-c6799ae6a96e",
+			"name": "Lists a user is on",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434537868\",oauth_nonce=\"6cneRx\",oauth_version=\"1.0\",oauth_signature=\"uMKD8GcUlH%2FOdD8wgktQ7QtzxLI%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/lists/memberships.json?screen_name=runscope&count=200",
+			"preRequestScript": "",
+			"tests": "var data = JSON.parse(responseBody);\ntests[\"number of lists = \"+data.lists.length ] = true;\nfor (i=0;i<data.lists.length;i++)\n{\n\n    tests[i+\" - \"+data.lists[i].name] = true;\n}",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": null,
+			"id": "6984a510-69e7-d8ab-f89c-b6a3506f1bf1",
+			"name": "User timeline user_id",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434547422\",oauth_nonce=\"mds39W\",oauth_version=\"1.0\",oauth_signature=\"PeQxPx612DHCczeua0QNjTQiLnE%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/statuses/user_timeline.json?user_id={{user_id}}",
+			"preRequestScript": "// postman.setGlobalVariable(\"user_id\", \"2392623769\");",
+			"tests": "",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": null,
+			"id": "6b5b2943-2a53-ed04-fb5c-6abc89efbc0f",
+			"name": "Show single tweet",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434548725\",oauth_nonce=\"sUA1oL\",oauth_version=\"1.0\",oauth_signature=\"5lxJzS3BDjqKnGxoei8Z1uFfN3E%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/statuses/show.json?id={{tweet_id}}",
+			"preRequestScript": "",
+			"tests": "// The user id of the person who tweeted is saved to environment\nvar data = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"user_id\", data.user.id);\npostman.setEnvironmentVariable(\"screen_name\", data.user.screen_name);",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": null,
+			"id": "7b295272-bade-1612-9b25-cdf87b3e214e",
+			"name": "Get all lists",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434537105\",oauth_nonce=\"XhWfC0\",oauth_version=\"1.0\",oauth_signature=\"bbjOODsNlcHWBueZl5wCBo1gpJU%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/lists/list.json?screen_name=alexjv89",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": null,
+			"id": "c44004bb-6058-771d-36f7-48e78c61ebbc",
+			"name": "Retweets of a tweet",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434552022\",oauth_nonce=\"NszkJ4\",oauth_version=\"1.0\",oauth_signature=\"B%2Fxc0lcZUoI9DSLWCJaH1X%2B4WS8%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/statuses/retweets/{{tweet_id}}.json",
+			"preRequestScript": "",
+			"tests": "var data = JSON.parse(responseBody);\nif (data.length>=10)\n tests[\"more than 10 retweets\"] = true;",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": "1ddbc689-cd14-cd36-299f-94c762f5ac34",
+			"id": "d38d842e-99f7-d67f-0eed-72d9b35985d6",
+			"name": "Home timeline",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434532760\",oauth_nonce=\"KvM3wI\",oauth_version=\"1.0\",oauth_signature=\"SmN9%2B5LEWnyOhosiWAW3x3qJw%2B8%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/statuses/home_timeline.json",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": null,
+			"id": "d38ed833-121d-f1f1-e089-336d249c712e",
+			"name": "Retweeters",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434548509\",oauth_nonce=\"bmVUQC\",oauth_version=\"1.0\",oauth_signature=\"bKLNJ48dnY3AcftJ3rd3ON8lJNo%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/statuses/retweeters/ids.json?id={{tweet_id}}&count=100&stringify_ids=true",
+			"preRequestScript": "",
+			"tests": "var data = JSON.parse(responseBody);\npostman.setEnvironmentVariable(\"user_id\",data.ids[0]);\n",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": "9ba1f304-ae88-714b-603e-6dcfe36c5e9d",
+			"id": "e5ca3774-cb10-b021-ec0b-9f2e3ab49d23",
+			"name": "All collections",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434538133\",oauth_nonce=\"viiK6c\",oauth_version=\"1.0\",oauth_signature=\"8W2%2BW4sS9W%2Fcnxz%2BjWtruxBXwck%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/collections/list.json?screen_name=postmanclient",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": null,
+			"id": "f13be3d5-65e3-1838-d418-b8f9cb575c45",
+			"name": "Search",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "status",
+					"value": "Testing out Twitter integration with Postman",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_consumer_key",
+					"value": "kbXFSaNTcUeJxsWLOP0U85zaV",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_token",
+					"value": "88952001-03JcHuetTAKmLCUZe5E2xUFmCWMmNP5NiTocwHSds",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_signature_method",
+					"value": "HMAC-SHA1",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_timestamp",
+					"value": "1434949918",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_nonce",
+					"value": "2ub25R",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_version",
+					"value": "1.0",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "oauth_signature",
+					"value": "zByjWTEA27EVEBjPhbx5/E2j9Ec=",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"kbXFSaNTcUeJxsWLOP0U85zaV\",oauth_token=\"88952001-03JcHuetTAKmLCUZe5E2xUFmCWMmNP5NiTocwHSds\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434951307\",oauth_nonce=\"Dw9WpC\",oauth_version=\"1.0\",oauth_signature=\"cHYNdwI1NSt34sN2DzOM%2BiEG%2FOE%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/search/tweets.json?q=postman&count={{count}}&since_id={{since_id}}",
+			"preRequestScript": "",
+			"tests": "if(tests[\"Status code is 200\"] = responseCode.code === 200) {\n    var search = JSON.parse(responseBody);\n    postman.setEnvironmentVariable(\"since_id\", search.search_metadata.max_id_str);\n}\n\n\n// postman.setEnvironmentVariable(\"len\", instances.length);\n// postman.setEnvironmentVariable(\"instances\", responseBody);\n// postman.setEnvironmentVariable(\"c\", 0);\n\n// postman.setNextRequest(\"Create User\");\n\n\n",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043",
+			"responses": []
+		},
+		{
+			"folder": "1ddbc689-cd14-cd36-299f-94c762f5ac34",
+			"id": "f3fce152-805b-4717-f932-d30aaedaf7bb",
+			"name": "Retweets of me",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "https://api.twitter.com/1.1/statuses/retweets_of_me.json",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"d2ZxSW0dTPkGuMM9sAIBxWZLw\",oauth_token=\"160113786-lJUEMPzvQ61utoGADZfPKOSsbkKtR6czzuDblvC0\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434532864\",oauth_nonce=\"OMFqnF\",oauth_version=\"1.0\",oauth_signature=\"SPkX49kQlAhOh0gcJw1l3caM7Ww%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/statuses/retweets_of_me.json",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		},
+		{
+			"folder": "ea82665a-d730-b2c8-bd23-083952876245",
+			"id": "fc43e63c-9b2e-811b-064b-59bfcbcdb8c6",
+			"name": "Search",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": null,
+			"description": "",
+			"headers": "Authorization: OAuth oauth_consumer_key=\"kbXFSaNTcUeJxsWLOP0U85zaV\",oauth_token=\"88952001-03JcHuetTAKmLCUZe5E2xUFmCWMmNP5NiTocwHSds\",oauth_signature_method=\"HMAC-SHA1\",oauth_timestamp=\"1434951307\",oauth_nonce=\"Dw9WpC\",oauth_version=\"1.0\",oauth_signature=\"cHYNdwI1NSt34sN2DzOM%2BiEG%2FOE%3D\"\n",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://api.twitter.com/1.1/search/tweets.json?q=postman&count={{count}}&since_id={{since_id}}",
+			"preRequestScript": "",
+			"tests": "if(tests[\"Status code is 200\"] = responseCode.code === 200) {\n    var search = JSON.parse(responseBody);\n    postman.setEnvironmentVariable(\"since_id\", search.search_metadata.max_id_str);\n}\n\n\n// postman.setEnvironmentVariable(\"len\", instances.length);\n// postman.setEnvironmentVariable(\"instances\", responseBody);\n// postman.setEnvironmentVariable(\"c\", 0);\n\n// postman.setNextRequest(\"Create User\");\n\n\n",
+			"version": 2,
+			"currentHelper": "oAuth1",
+			"collectionId": "d362bd3b-ab81-2b7d-0ce5-345df1826043"
+		}
+	]
+}

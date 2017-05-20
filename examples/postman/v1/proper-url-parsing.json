@@ -1,0 +1,35 @@
+{
+	"id": "7ea31a30-8377-0e56-d11f-5943e6527bca",
+	"name": "proper-url-parsing",
+	"description": "",
+	"order": [
+		"2c03f359-f259-bb30-d14c-ea278056e95f"
+	],
+	"folders": [],
+	"timestamp": 1448955280503,
+	"owner": "61671",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "2c03f359-f259-bb30-d14c-ea278056e95f",
+			"headers": "",
+			"url": "https://ani{{yo}}ket:{{asd}}@{{hellohost}}:2002/crazyvar/{{yo}}/:awesome?a=b&c=d#/awesomeshit",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "GET",
+			"collectionId": "7ea31a30-8377-0e56-d11f-5943e6527bca",
+			"data": [],
+			"dataMode": "params",
+			"name": "request with hostname as variable",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1448955336367,
+			"version": 2,
+			"responses": [],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}

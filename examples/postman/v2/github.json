@@ -1,0 +1,405 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Github",
+        "_postman_id": "b6241b6a-fbf3-e3b7-4f96-0154e3056843",
+        "description": "",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+        {
+            "_postman_id": "2d202c6f-aba4-9187-c502-5c55c623e201",
+            "name": "Repositories",
+            "description": "API endpoints related to repositories",
+            "item": [
+                {
+                    "id": "472842e4-a83b-2e01-e449-cb7cbda2011e",
+                    "name": "List Contributors",
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": "postman.setEnvironmentVariable(\"username\", \"a85\");\npostman.setEnvironmentVariable(\"repository\", \"Newman\")"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "url": {
+                            "raw": "{{url}}/repos/{{username}}/{{repository}}/contributors",
+                            "auth": {},
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "repos",
+                                "{{username}}",
+                                "{{repository}}",
+                                "contributors"
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": "List contributors to the specified repository, sorted by the number of commits per contributor in descending order."
+                    },
+                    "response": []
+                },
+                {
+                    "id": "b7ba6dfd-0b17-b362-2939-9f9d10fb389c",
+                    "name": "Get",
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": "postman.setEnvironmentVariable(\"username\", \"a85\");\npostman.setEnvironmentVariable(\"repository\", \"Newman\")"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "url": {
+                            "raw": "{{url}}/repos/{{username}}/{{repository}}",
+                            "auth": {},
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "repos",
+                                "{{username}}",
+                                "{{repository}}"
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "description": "Get the specified repository for the user\n\nThe parent and source objects are present when the repository is a fork. parent is the repository this repository was forked from, source is the ultimate source for the network."
+                    },
+                    "response": []
+                },
+                {
+                    "id": "217ab386-391b-5249-7c95-9e667162504c",
+                    "name": "Get Branch",
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": "postman.setEnvironmentVariable(\"username\", \"a85\");\npostman.setEnvironmentVariable(\"repository\", \"Newman\");\npostman.setEnvironmentVariable(\"branch\", \"master\");"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "url": {
+                            "raw": "{{url}}/repos/{{username}}/{{repository}}/branches/{{branch}}",
+                            "auth": {},
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "repos",
+                                "{{username}}",
+                                "{{repository}}",
+                                "branches",
+                                "{{branch}}"
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": "Get the specified branch for the repository"
+                    },
+                    "response": []
+                },
+                {
+                    "id": "44d12a20-e950-a30e-eb5b-97f1aaf07f4d",
+                    "name": "List Tags",
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": "postman.setEnvironmentVariable(\"username\", \"a85\");\npostman.setEnvironmentVariable(\"repository\", \"Newman\")"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "url": {
+                            "raw": "{{url}}/repos/{{username}}/{{repository}}/tags",
+                            "auth": {},
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "repos",
+                                "{{username}}",
+                                "{{repository}}",
+                                "tags"
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": "List tags for the specified repository"
+                    },
+                    "response": []
+                },
+                {
+                    "id": "b573df99-5a90-7ee8-8728-718a70f9fd01",
+                    "name": "List Languages",
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": "postman.setEnvironmentVariable(\"username\", \"a85\");\npostman.setEnvironmentVariable(\"repository\", \"Newman\")"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "url": {
+                            "raw": "{{url}}/repos/{{username}}/{{repository}}/languages",
+                            "auth": {},
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "repos",
+                                "{{username}}",
+                                "{{repository}}",
+                                "languages"
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": "List languages for the specified repository. The value on the right of a language is the number of bytes of code written in that language."
+                    },
+                    "response": []
+                },
+                {
+                    "id": "5188d734-0d6f-1c10-15cf-b442a1165598",
+                    "name": "List Branches",
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": "postman.setEnvironmentVariable(\"username\", \"a85\");\npostman.setEnvironmentVariable(\"repository\", \"Newman\")"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "url": {
+                            "raw": "{{url}}/repos/{{username}}/{{repository}}/branches",
+                            "auth": {},
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "repos",
+                                "{{username}}",
+                                "{{repository}}",
+                                "branches"
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": "List all branches for the specified repository"
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "ffb11abb-4526-c4da-1fe1-b2248487d9d2",
+            "name": "Users",
+            "description": "Many of the resources on the users API provide a shortcut for getting information about the currently authenticated user. If a request URL does not include a :username parameter then the response will be for the logged in user (and you must pass authentication information with your request).",
+            "item": [
+                {
+                    "id": "3206ae7a-002c-7552-321e-7014118de0ad",
+                    "name": "Get Authenticated User",
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": "postman.setEnvironmentVariable(\"username\", \"a85\");"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "url": {
+                            "raw": "{{url}}/user",
+                            "auth": {},
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "user"
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "token {{token}}",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": "Get the authenticated user.\n\nNote: The returned email is the user’s publicly visible email address (or null if the user has not specified a public email address in their profile)."
+                    },
+                    "response": []
+                },
+                {
+                    "id": "f06559de-e225-0c13-1741-d9ff591a35a2",
+                    "name": "List User Emails",
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": "postman.setEnvironmentVariable(\"username\", \"a85\");"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "url": {
+                            "raw": "{{url}}/user/emails",
+                            "auth": {},
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "user",
+                                "emails"
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "token {{token}}",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "description": "List all email addresses for the authenticated user\n\nThis endpoint is accessible with the user:email scope."
+                    },
+                    "response": []
+                },
+                {
+                    "id": "44a08025-e427-6781-3e7e-bc9a3dc6869c",
+                    "name": "List Followers",
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": "postman.setEnvironmentVariable(\"username\", \"a85\");"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "url": {
+                            "raw": "{{url}}/users/{{username}}/followers",
+                            "auth": {},
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "users",
+                                "{{username}}",
+                                "followers"
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": "List a user's followers"
+                    },
+                    "response": []
+                },
+                {
+                    "id": "952cf65b-bf12-a882-1c88-b684cbf843db",
+                    "name": "List Authenticated Users Followers",
+                    "event": [
+                        {
+                            "listen": "prerequest",
+                            "script": {
+                                "type": "text/javascript",
+                                "exec": "postman.setEnvironmentVariable(\"username\", \"a85\");"
+                            }
+                        }
+                    ],
+                    "request": {
+                        "url": {
+                            "raw": "{{url}}/user/followers",
+                            "auth": {},
+                            "host": [
+                                "{{url}}"
+                            ],
+                            "path": [
+                                "user",
+                                "followers"
+                            ],
+                            "variable": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "token {{token}}",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": "List the authenticated user's followers"
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ]
+}
