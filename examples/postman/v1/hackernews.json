@@ -1,0 +1,419 @@
+{
+	"id": "361708ee-7343-43e0-f803-e10fb4d5d675",
+	"name": "HackerNews API",
+	"description": "HackerNews API collection for Postman. I added more documentation.",
+	"order": [],
+	"folders": [
+		{
+			"id": "d335cdcb-81ce-8a6f-6140-bfd9fb564b13",
+			"name": "Items",
+			"description": "",
+			"owner": "5",
+			"lastUpdatedBy": "5",
+			"lastRevision": 62968,
+			"collection": "361708ee-7343-43e0-f803-e10fb4d5d675",
+			"order": [
+				"c568c8e6-2030-ba34-02ad-32786837cbe9",
+				"d83e4757-6542-bfe6-9c61-5d42cf9c081c",
+				"66544147-896f-ee42-bb53-41e1917c965a",
+				"4c9f352b-27a8-ad7b-e3a9-5267098177db"
+			],
+			"createdAt": "2015-05-12T06:44:41.000Z",
+			"updatedAt": "2015-05-12T06:44:52.000Z",
+			"write": false,
+			"collection_name": "HackerNews API",
+			"collection_owner": "5",
+			"collection_id": "361708ee-7343-43e0-f803-e10fb4d5d675"
+		},
+		{
+			"id": "78768c31-d727-7ddd-37ba-d692dadbe5ce",
+			"name": "Live data",
+			"description": "The coolest part of Firebase is its support for change notifications. While you can subscribe to individual items and profiles, you'll need to use the following to observe front page ranking, new items, and new profiles.",
+			"owner": "5",
+			"lastUpdatedBy": "5",
+			"lastRevision": 374418,
+			"collection": "361708ee-7343-43e0-f803-e10fb4d5d675",
+			"order": [
+				"cb4678ed-c57a-caf1-f360-0ff542b16084",
+				"4095d8d4-0655-35aa-7d2e-3f64e3cbae97",
+				"da0510e8-fcb2-2228-4f9d-bf034b555377"
+			],
+			"createdAt": "2015-05-12T06:44:42.000Z",
+			"updatedAt": "2015-06-17T00:49:22.000Z",
+			"write": false,
+			"collection_name": "HackerNews API",
+			"collection_owner": "5",
+			"collection_id": "361708ee-7343-43e0-f803-e10fb4d5d675"
+		},
+		{
+			"id": "9a53a100-2c07-cc8b-19f1-e4593bf4a31f",
+			"name": "Users",
+			"description": "Users are identified by case-sensitive ids, and live under https://hacker-news.firebaseio.com/v0/user/.\n",
+			"owner": "5",
+			"lastUpdatedBy": "5",
+			"lastRevision": 62970,
+			"collection": "361708ee-7343-43e0-f803-e10fb4d5d675",
+			"order": [
+				"e7f09e8e-b679-df0e-992e-0a9f49f5fbcb"
+			],
+			"createdAt": "2015-05-12T06:44:42.000Z",
+			"updatedAt": "2015-05-12T06:44:53.000Z",
+			"write": false,
+			"collection_name": "HackerNews API",
+			"collection_owner": "5",
+			"collection_id": "361708ee-7343-43e0-f803-e10fb4d5d675"
+		}
+	],
+	"timestamp": 0,
+	"owner": "5",
+	"remoteLink": "http://beta.getpostman.com/collections/093d718a055757a2dc46",
+	"public": false,
+	"requests": [
+		{
+			"id": "4095d8d4-0655-35aa-7d2e-3f64e3cbae97",
+			"name": "Item and profile changes",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://hacker-news.firebaseio.com/v0/updates.json?print=pretty",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"folder": "78768c31-d727-7ddd-37ba-d692dadbe5ce",
+			"collectionId": "361708ee-7343-43e0-f803-e10fb4d5d675"
+		},
+		{
+			"id": "4c9f352b-27a8-ad7b-e3a9-5267098177db",
+			"name": "Poll option",
+			"dataMode": "params",
+			"data": [
+				{
+					"key": "question",
+					"value": "unknown",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "answer",
+					"value": "42",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "",
+			"method": "COPY",
+			"pathVariables": {},
+			"url": "https://hacker-news.firebaseio.com/v0/item/160705.json?print=pretty",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": "normal",
+			"helperAttributes": "{}",
+			"folder": "d335cdcb-81ce-8a6f-6140-bfd9fb564b13",
+			"collectionId": "361708ee-7343-43e0-f803-e10fb4d5d675"
+		},
+		{
+			"id": "66544147-896f-ee42-bb53-41e1917c965a",
+			"name": "Poll",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "but",
+					"value": "this",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "is",
+					"value": "going",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "to",
+					"value": "be",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "urle",
+					"value": "encodeded asda asd",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://hacker-news.firebaseio.com/v0/item/126809.json?print=pretty",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"folder": "d335cdcb-81ce-8a6f-6140-bfd9fb564b13",
+			"collectionId": "361708ee-7343-43e0-f803-e10fb4d5d675"
+		},
+		{
+			"id": "c568c8e6-2030-ba34-02ad-32786837cbe9",
+			"name": "Story",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "but",
+					"value": "this",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "is",
+					"value": "going",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "to",
+					"value": "be",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "urle",
+					"value": "encodeded asda asd",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"folder": "d335cdcb-81ce-8a6f-6140-bfd9fb564b13",
+			"collectionId": "361708ee-7343-43e0-f803-e10fb4d5d675",
+			"responses": [
+				{
+					"owner": "5",
+					"lastUpdatedBy": "5",
+					"lastRevision": 93689,
+					"request": {
+						"name": "Story",
+						"description": "",
+						"url": "https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty",
+						"pathVariables": {},
+						"headers": "",
+						"dataMode": "params",
+						"method": "GET",
+						"tests": "",
+						"isFromCollection": true,
+						"write": true,
+						"version": 2,
+						"id": "c568c8e6-2030-ba34-02ad-32786837cbe9",
+						"collectionId": "361708ee-7343-43e0-f803-e10fb4d5d675",
+						"currentHelper": "normal",
+						"helperAttributes": {}
+					},
+					"id": "94d3ce76-23a5-a7b3-0ab8-1933c8ddc3e4",
+					"name": "200 OK",
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"time": "211",
+					"headers": [
+						{
+							"name": "Cache-Control",
+							"key": "Cache-Control",
+							"value": "no-cache",
+							"description": ""
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "456",
+							"description": ""
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8",
+							"description": ""
+						},
+						{
+							"name": "Strict-Transport-Security",
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31556926; includeSubDomains; preload",
+							"description": ""
+						}
+					],
+					"cookies": [],
+					"mime": "",
+					"text": "{\n  \"by\" : \"dhouston\",\n  \"descendants\" : 71,\n  \"id\" : 8863,\n  \"kids\" : [ 8952, 9224, 8917, 8884, 8887, 8943, 8869, 8958, 9005, 9671, 8940, 9067, 8908, 9055, 8865, 8881, 8872, 8873, 8955, 10403, 8903, 8928, 9125, 8998, 8901, 8902, 8907, 8894, 8878, 8870, 8980, 8934, 8876 ],\n  \"score\" : 111,\n  \"time\" : 1175714200,\n  \"title\" : \"My YC app: Dropbox - Throw away your USB drive\",\n  \"type\" : \"story\",\n  \"url\" : \"http://www.getdropbox.com/u/2/screencast.html\"\n}\n",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": "-1",
+					"version": null,
+					"requestObject": "{\"name\":\"Story\",\"description\":\"\",\"url\":\"https://hacker-news.firebaseio.com/v0/item/8863.json?print=pretty\",\"pathVariables\":{},\"headers\":\"\",\"dataMode\":\"params\",\"method\":\"GET\",\"tests\":\"\",\"isFromCollection\":true,\"write\":true,\"version\":2,\"id\":\"c568c8e6-2030-ba34-02ad-32786837cbe9\",\"collectionId\":\"361708ee-7343-43e0-f803-e10fb4d5d675\",\"currentHelper\":\"normal\",\"helperAttributes\":{}}",
+					"createdAt": "2015-05-20T21:25:17.000Z",
+					"updatedAt": "2015-05-20T21:25:17.000Z",
+					"write": false
+				}
+			]
+		},
+		{
+			"id": "cb4678ed-c57a-caf1-f360-0ff542b16084",
+			"name": "Max Item ID",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://hacker-news.firebaseio.com/v0/maxitem.json?print=pretty",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"folder": "78768c31-d727-7ddd-37ba-d692dadbe5ce",
+			"collectionId": "361708ee-7343-43e0-f803-e10fb4d5d675"
+		},
+		{
+			"id": "d83e4757-6542-bfe6-9c61-5d42cf9c081c",
+			"name": "Comment",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "but",
+					"value": "this",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "is",
+					"value": "going",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "to",
+					"value": "be",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "urle",
+					"value": "encodeded asda asd",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://hacker-news.firebaseio.com/v0/item/2921983.json?print=pretty",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"folder": "d335cdcb-81ce-8a6f-6140-bfd9fb564b13",
+			"collectionId": "361708ee-7343-43e0-f803-e10fb4d5d675"
+		},
+		{
+			"id": "da0510e8-fcb2-2228-4f9d-bf034b555377",
+			"name": "Current top 100 stories",
+			"dataMode": "params",
+			"data": [],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://hacker-news.firebaseio.com/v0/topstories.json?print=pretty",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"folder": "78768c31-d727-7ddd-37ba-d692dadbe5ce",
+			"collectionId": "361708ee-7343-43e0-f803-e10fb4d5d675"
+		},
+		{
+			"id": "e7f09e8e-b679-df0e-992e-0a9f49f5fbcb",
+			"name": "User",
+			"dataMode": "urlencoded",
+			"data": [
+				{
+					"key": "but",
+					"value": "this",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "is",
+					"value": "going",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "to",
+					"value": "be",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "urle",
+					"value": "encodeded asda asd",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"rawModeData": null,
+			"descriptionFormat": "html",
+			"description": "",
+			"headers": "",
+			"method": "GET",
+			"pathVariables": {},
+			"url": "https://hacker-news.firebaseio.com/v0/user/jl.json?print=pretty",
+			"preRequestScript": "",
+			"tests": "",
+			"version": 2,
+			"currentHelper": null,
+			"helperAttributes": null,
+			"folder": "9a53a100-2c07-cc8b-19f1-e4593bf4a31f",
+			"collectionId": "361708ee-7343-43e0-f803-e10fb4d5d675"
+		}
+	]
+}

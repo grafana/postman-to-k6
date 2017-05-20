@@ -1,0 +1,152 @@
+{
+	"id": "551c1361-2b81-68c7-677e-ec2efdd8322e",
+	"name": "urlencodeddata",
+	"description": "",
+	"order": [
+		"b7fe1cf7-22bb-93f2-f058-3b4cdbf965b7"
+	],
+	"folders": [],
+	"timestamp": 1455197245454,
+	"owner": "61671",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "b7fe1cf7-22bb-93f2-f058-3b4cdbf965b7",
+			"headers": "",
+			"url": "http://httpbin.org/post",
+			"pathVariables": {},
+			"preRequestScript": "",
+			"method": "POST",
+			"collectionId": "551c1361-2b81-68c7-677e-ec2efdd8322e",
+			"data": [
+				{
+					"key": "akshay",
+					"value": "bald",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "yakshay",
+					"value": "ybald",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"name": "http://httpbin.org/post",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1455197245454,
+			"version": 2,
+			"responses": [
+				{
+					"status": "",
+					"responseCode": {
+						"code": 200,
+						"name": "OK",
+						"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+					},
+					"time": 925,
+					"headers": [
+						{
+							"name": "Access-Control-Allow-Credentials",
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true",
+							"description": "Indicates whether or not the response to the request can be exposed when the credentials flag is true. When used as part of a response to a preflight request, this indicates whether or not the actual request can be made using credentials."
+						},
+						{
+							"name": "Access-Control-Allow-Origin",
+							"key": "Access-Control-Allow-Origin",
+							"value": "chrome-extension://aicmkgpgakddgnaphhhpliifpcfhicfo",
+							"description": "Specifies a URI that may access the resource. For requests without credentials, the server may specify '*' as a wildcard, thereby allowing any origin to access the resource."
+						},
+						{
+							"name": "Connection",
+							"key": "Connection",
+							"value": "keep-alive",
+							"description": "Options that are desired for the connection"
+						},
+						{
+							"name": "Content-Length",
+							"key": "Content-Length",
+							"value": "768",
+							"description": "The length of the response body in octets (8-bit bytes)"
+						},
+						{
+							"name": "Content-Type",
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "The mime type of this content"
+						},
+						{
+							"name": "Date",
+							"key": "Date",
+							"value": "Thu, 11 Feb 2016 13:27:33 GMT",
+							"description": "The date and time that the message was sent"
+						},
+						{
+							"name": "Server",
+							"key": "Server",
+							"value": "nginx",
+							"description": "A name for the server"
+						}
+					],
+					"mime": "",
+					"text": "{\n  \"args\": {}, \n  \"data\": \"\", \n  \"files\": {}, \n  \"form\": {\n    \"akshay\": \"bald\", \n    \"yakshay\": \"ybald\"\n  }, \n  \"headers\": {\n    \"Accept\": \"*/*\", \n    \"Accept-Encoding\": \"gzip\", \n    \"Accept-Language\": \"en-US,en;q=0.8\", \n    \"Cache-Control\": \"no-cache\", \n    \"Content-Length\": \"25\", \n    \"Content-Type\": \"application/x-www-form-urlencoded\", \n    \"Cookie\": \"_ga=GA1.2.113558537.1435817423\", \n    \"Host\": \"httpbin.org\", \n    \"Origin\": \"chrome-extension://aicmkgpgakddgnaphhhpliifpcfhicfo\", \n    \"Postman-Token\": \"e8826f9c-70fa-0957-fe12-265257861623\", \n    \"User-Agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36\"\n  }, \n  \"json\": null, \n  \"origin\": \"106.51.38.69\", \n  \"url\": \"http://httpbin.org/post\"\n}\n",
+					"language": "javascript",
+					"rawDataType": "text",
+					"state": {
+						"size": "normal"
+					},
+					"previewType": "html",
+					"searchResultScrolledTo": -1,
+					"forceNoPretty": false,
+					"write": true,
+					"empty": false,
+					"failed": false,
+					"isSample": true,
+					"scrollToResult": true,
+					"runTests": true,
+					"id": "727942c4-f951-6531-b0d3-0e178887c3e7",
+					"name": "samplerespose",
+					"request": {
+						"url": "http://httpbin.org/post",
+						"headers": [
+							{
+								"key": "Cache-Control",
+								"name": "Cache-Control",
+								"value": "no-cache"
+							},
+							{
+								"key": "Postman-Token",
+								"name": "Postman-Token",
+								"value": "e8826f9c-70fa-0957-fe12-265257861623"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							}
+						],
+						"data": [
+							{
+								"key": "akshay",
+								"value": "bald"
+							},
+							{
+								"key": "yakshay",
+								"value": "ybald"
+							}
+						],
+						"method": "POST",
+						"dataMode": "urlencoded"
+					}
+				}
+			],
+			"tests": "",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}

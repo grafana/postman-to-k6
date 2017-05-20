@@ -1,0 +1,285 @@
+{
+    "variables": [],
+    "info": {
+        "name": "httpbin",
+        "_postman_id": "65d8dc8f-fb76-8d61-8adc-f96d2109ec7d",
+        "description": "Requests to HTTP Bin",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+        {
+            "_postman_id": "8d45b2ca-35a9-75ce-0147-16eb1b54bc66",
+            "name": "All POST JSON ",
+            "description": "",
+            "item": [
+                {
+                    "id": "d4cc78b7-232d-8c8c-b5d5-8630faa63c3e",
+                    "name": "POST with URL params and JSON",
+                    "request": {
+                        "url": "http://httpbin.org/post?random=yeah",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application/json",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"gimme\": \"somejson!\"\n}"
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "id": "1b99c251-ac65-e6db-4387-2d85ffbaca71",
+            "name": "POST with URL params and form-data",
+            "request": {
+                "url": "http://httpbin.org/post?random=yo",
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": [
+                        {
+                            "key": "postdata",
+                            "value": "isawesome",
+                            "type": "text",
+                            "enabled": true
+                        }
+                    ]
+                }
+            },
+            "response": [
+                {
+                    "name": "One and only response",
+                    "originalRequest": {
+                        "url": {
+                            "raw": "httpbin.org/post?random=yo",
+                            "auth": {},
+                            "host": [
+                                "httpbin",
+                                "org"
+                            ],
+                            "path": [
+                                "post"
+                            ],
+                            "query": [
+                                {
+                                    "key": "random",
+                                    "value": "yo"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "postdata",
+                                    "value": "isawesome",
+                                    "type": "text",
+                                    "enabled": true
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [
+                        {
+                            "name": "Access-Control-Allow-Credentials",
+                            "key": "Access-Control-Allow-Credentials",
+                            "value": "true",
+                            "description": ""
+                        },
+                        {
+                            "name": "Access-Control-Allow-Origin",
+                            "key": "Access-Control-Allow-Origin",
+                            "value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+                            "description": ""
+                        },
+                        {
+                            "name": "Connection",
+                            "key": "Connection",
+                            "value": "keep-alive",
+                            "description": ""
+                        },
+                        {
+                            "name": "Content-Length",
+                            "key": "Content-Length",
+                            "value": "793",
+                            "description": ""
+                        },
+                        {
+                            "name": "Content-Type",
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "description": ""
+                        },
+                        {
+                            "name": "Date",
+                            "key": "Date",
+                            "value": "Thu, 02 Jul 2015 06:13:00 GMT",
+                            "description": ""
+                        },
+                        {
+                            "name": "Server",
+                            "key": "Server",
+                            "value": "nginx",
+                            "description": ""
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": "798",
+                    "body": "{\n  \"args\": {\n    \"random\": \"yo\"\n  }, \n  \"data\": \"\", \n  \"files\": {}, \n  \"form\": {\n    \"postdata\": \"isawesome\"\n  }, \n  \"headers\": {\n    \"Accept\": \"*/*\", \n    \"Accept-Encoding\": \"gzip\", \n    \"Accept-Language\": \"en-US,en;q=0.8\", \n    \"Cache-Control\": \"no-cache\", \n    \"Content-Length\": \"148\", \n    \"Content-Type\": \"multipart/form-data; boundary=----WebKitFormBoundarySavBBrYQiE7rIBgb\", \n    \"Csp\": \"active\", \n    \"Host\": \"httpbin.org\", \n    \"Origin\": \"chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop\", \n    \"Postman-Token\": \"0cfb3923-229c-96c0-5005-e99ff2559ecb\", \n    \"User-Agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36\"\n  }, \n  \"json\": null, \n  \"origin\": \"106.51.133.191\", \n  \"url\": \"http://httpbin.org/post?random=yo\"\n}\n"
+                },
+                {
+                    "name": "TheResponse",
+                    "originalRequest": {
+                        "url": {
+                            "raw": "httpbin.org/post?random=yo",
+                            "auth": {},
+                            "host": [
+                                "httpbin",
+                                "org"
+                            ],
+                            "path": [
+                                "post"
+                            ],
+                            "query": [
+                                {
+                                    "key": "random",
+                                    "value": "yo"
+                                }
+                            ],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "postdata",
+                                    "value": "isawesome",
+                                    "type": "text",
+                                    "enabled": true
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "status": "OK",
+                    "code": 200,
+                    "header": [
+                        {
+                            "name": "Access-Control-Allow-Credentials",
+                            "key": "Access-Control-Allow-Credentials",
+                            "value": "true",
+                            "description": ""
+                        },
+                        {
+                            "name": "Access-Control-Allow-Origin",
+                            "key": "Access-Control-Allow-Origin",
+                            "value": "chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop",
+                            "description": ""
+                        },
+                        {
+                            "name": "Connection",
+                            "key": "Connection",
+                            "value": "keep-alive",
+                            "description": ""
+                        },
+                        {
+                            "name": "Content-Length",
+                            "key": "Content-Length",
+                            "value": "793",
+                            "description": ""
+                        },
+                        {
+                            "name": "Content-Type",
+                            "key": "Content-Type",
+                            "value": "application/json",
+                            "description": ""
+                        },
+                        {
+                            "name": "Date",
+                            "key": "Date",
+                            "value": "Thu, 02 Jul 2015 06:13:45 GMT",
+                            "description": ""
+                        },
+                        {
+                            "name": "Server",
+                            "key": "Server",
+                            "value": "nginx",
+                            "description": ""
+                        }
+                    ],
+                    "cookie": [],
+                    "responseTime": "1515",
+                    "body": "{\n  \"args\": {\n    \"random\": \"yo\"\n  }, \n  \"data\": \"\", \n  \"files\": {}, \n  \"form\": {\n    \"postdata\": \"isawesome\"\n  }, \n  \"headers\": {\n    \"Accept\": \"*/*\", \n    \"Accept-Encoding\": \"gzip\", \n    \"Accept-Language\": \"en-US,en;q=0.8\", \n    \"Cache-Control\": \"no-cache\", \n    \"Content-Length\": \"148\", \n    \"Content-Type\": \"multipart/form-data; boundary=----WebKitFormBoundarysYJaeeEucF4dtuta\", \n    \"Csp\": \"active\", \n    \"Host\": \"httpbin.org\", \n    \"Origin\": \"chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop\", \n    \"Postman-Token\": \"f1fc1998-d1e3-4894-e156-6aeb70f877fa\", \n    \"User-Agent\": \"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/43.0.2357.130 Safari/537.36\"\n  }, \n  \"json\": null, \n  \"origin\": \"106.51.133.191\", \n  \"url\": \"http://httpbin.org/post?random=yo\"\n}\n"
+                }
+            ]
+        },
+        {
+            "id": "4f69f0e3-a962-d661-d247-ff7ce9217877",
+            "name": "POST with URL params and urlencoded",
+            "request": {
+                "url": "http://httpbin.org/post?random=yeah",
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "urlencoded",
+                    "urlencoded": [
+                        {
+                            "key": "somekey",
+                            "value": "somevalue",
+                            "type": "text",
+                            "enabled": true
+                        }
+                    ]
+                }
+            },
+            "response": []
+        },
+        {
+            "id": "8dfc10ad-9f66-666a-2966-ca011dd12d61",
+            "name": "PathVariables",
+            "request": {
+                "url": {
+                    "raw": "httpbin.org/status/:code",
+                    "auth": {},
+                    "host": [
+                        "httpbin",
+                        "org"
+                    ],
+                    "path": [
+                        "status",
+                        ":code"
+                    ],
+                    "variable": [
+                        {
+                            "value": "201",
+                            "id": "code"
+                        }
+                    ]
+                },
+                "method": "GET",
+                "header": [],
+                "body": {
+                    "mode": "formdata",
+                    "formdata": []
+                },
+                "description": ""
+            },
+            "response": []
+        }
+    ]
+}

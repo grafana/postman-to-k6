@@ -1,0 +1,2201 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Box Content API",
+        "_postman_id": "48e1ee04-a604-2549-9422-43270e936399",
+        "description": "I am trying to update this.",
+        "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+    },
+    "item": [
+        {
+            "_postman_id": "5da6ad20-2b42-5386-30c4-c9df037e23cd",
+            "name": "Collaborations",
+            "description": "",
+            "item": [
+                {
+                    "id": "48160ea8-5d75-b871-7aa8-2ef2e635e0f5",
+                    "name": "Get Pending Collaborations",
+                    "request": {
+                        "url": "https://api.box.com/2.0/collaborations?status=pending",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "254d9ad5-a783-90d4-de20-d1eae1f088f6",
+                    "name": "Retrieve a Collaboration",
+                    "request": {
+                        "url": "https://api.box.com/2.0/collaborations/28503997",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "aedaaa57-1556-fb66-42d7-b3302739962f",
+                    "name": "Retrieve all Collaborations",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/300065354/collaborations",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "9c62da18-4ba2-0472-7a4d-736abbe590a9",
+                    "name": "Add a Collaboration",
+                    "request": {
+                        "url": {
+                            "raw": "https://api.box.com/2.0/collaborations/",
+                            "protocol": "https",
+                            "auth": {},
+                            "host": [
+                                "api",
+                                "box",
+                                "com"
+                            ],
+                            "path": [
+                                "2.0",
+                                "collaborations",
+                                ""
+                            ],
+                            "variable": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"item\": { \"id\": \"300065354\", \"type\": \"folder\"}, \"accessible_by\": { \"id\": \"129395212\"}, \"role\": \"editor\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "5e5a9389-748e-c27f-bcdd-14106898dcbf",
+                    "name": "Edit a Collaboration",
+                    "request": {
+                        "url": "https://api.box.com/2.0/collaborations/28503997",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"role\": \"viewer\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "1308a085-3ab5-c837-7461-d3e268f15432",
+                    "name": "Remove a Collaboration",
+                    "request": {
+                        "url": "https://api.box.com/2.0/collaborations/28504189",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "10ae52bc-41e4-7bb7-680b-f0985563fc77",
+            "name": "Comments",
+            "description": "",
+            "item": [
+                {
+                    "id": "14856b65-eb3e-dc4d-d8dc-d6a982249c6e",
+                    "name": "Get Information About a Comment",
+                    "request": {
+                        "url": "https://api.box.com/2.0/comments/12772127",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "2a14fba4-20df-4c49-969d-49c8c8061666",
+                    "name": "Add a Comment to a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/comments",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\n\t\"item\":\n\n\t{\"type\": \"file\", \"id\": \"6526455273\"}, \n    \n\t\"message\": \"This looks great!\"\n\n}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "f0308ee7-a048-a8b0-913e-7e76fe748e26",
+                    "name": "Add an '@' Comment to a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/comments",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n\n\t\"item\":\n\n\t{\"type\": \"file\", \"id\": \"6526455273\"}, \n    \n\t\"tagged_message\": \"Tagged mention for @[192642898:Rory]\"\n\n}\n\n"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "cf90ab34-87ab-f5c5-04c8-44eecfae5e2e",
+                    "name": "Add an Reply Comment to a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/comments/15322686/comments",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"tagged_message\": \"Tagged mention for @[192642898:Rory]\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "f84aad7d-6850-892c-5fb2-9eb8021c51cd",
+                    "name": "Change a Comment's Message",
+                    "request": {
+                        "url": "https://api.box.com/2.0/comments/12772103",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"message\": \"Change comment via the API\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "0b8439b1-7960-61cb-bfd9-106b0931e19f",
+                    "name": "Delete a Comment",
+                    "request": {
+                        "url": "https://api.box.com/2.0/comments/12772103",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "5a8844f1-40cd-065f-22a1-dfce981d846a",
+            "name": "Events",
+            "description": "",
+            "item": [
+                {
+                    "id": "2cbf2ad1-e374-0649-ce3f-e6cd5d1dd66f",
+                    "name": "Get Events for a User",
+                    "request": {
+                        "url": "https://api.box.com/2.0//events?limit=100",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "d44548a4-b5f3-911a-e396-d33b570e7ffb",
+                    "name": "Get a Specific Event in an Enterprise",
+                    "request": {
+                        "url": "https://api.box.com/2.0/events?stream_type=admin_logs&event_type=GROUP_ADD_USER",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "885120c7-33a7-c8ba-cf30-257a375505e7",
+                    "name": "Get Events in an Enterprise",
+                    "request": {
+                        "url": "https://api.box.com/2.0/events?stream_type=admin_logs",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "a7afd5f3-2089-3557-3c59-77e9740bc2ea",
+            "name": "Files",
+            "description": "",
+            "item": [
+                {
+                    "id": "c9d0928a-670a-a7cf-d6e2-8e9aa421a609",
+                    "name": "Download a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/5639341636/content",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "280661f7-7c98-0363-e66e-b966f0ad352f",
+                    "name": "Get Information about a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/3677287625",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "911d43a0-5956-d401-0c51-3f4a2b3fdbad",
+                    "name": "View the Comments on a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/3871754690/comments",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "Zelda",
+                                    "value": "",
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "9cc61563-6203-f9d1-3639-7c90bc254199",
+                    "name": "Get a Thumbnail for a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/5639341636/thumbnail.png?min_height=256&min_width=256&max_height=256&max_width=256",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "d35f338a-fc8e-1acd-72f6-3778848d0dc3",
+                    "name": "Get a Trashed File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/5949697285/trash",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "bb7d69a8-776b-5eee-c9a4-6779868a4e62",
+                    "name": "View Versions of a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/3871754690/versions",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "Zelda",
+                                    "value": "",
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "adf119b4-156b-311b-0c5e-e755247136f5",
+                    "name": "View the Tasks on a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/3871754690/tasks",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "f6f68f22-989a-1e6b-e130-4b11ce0386a0",
+                    "name": "Copy a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/3869227054/copy",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"parent\": {\"id\" : 0}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "7b784391-dd3d-4daa-dea6-ce6891aa940f",
+                    "name": "Restore a Trashed File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/5949697285",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "ec989137-4485-3321-2e8d-e4b587f5dd61",
+                    "name": "Upload a File",
+                    "request": {
+                        "url": "https://upload.box.com/api/2.0/files/content",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "filename",
+                                    "value": "",
+                                    "type": "file"
+                                },
+                                {
+                                    "key": "folder_id",
+                                    "value": "0",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "c3987af0-09a2-4b99-7d71-134bf806255c",
+                    "name": "Upload a New Version of a File",
+                    "request": {
+                        "url": "https://upload.box.com/api/2.0/files/7802124308/content",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            },
+                            {
+                                "key": "If-Match",
+                                "value": "b3f76e2998597a51ec076076493d905fbf09a76b",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "Zelda",
+                                    "value": "",
+                                    "type": "file"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "b9d74102-3b97-9931-80bc-724235896df1",
+                    "name": "Move a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/3869227054",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"parent\": {\"id\" : 1139054013}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "fa81dadb-0c24-55c1-8122-f3cddb6307a7",
+                    "name": "Create a Shared Link for a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/6526455273",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"shared_link\": {\"access\": \"Open\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "81bb9212-24de-b907-c0cd-862244311d71",
+                    "name": "Disable a Shared Link",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/6526455273",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"shared_link\": null}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "aed00d4b-e379-bc2d-401b-d3ba5d10fba5",
+                    "name": "Update a File's Information",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/3677287625",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"description\":\"File Description 2\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "c8456af2-faee-504e-03af-5243e0d2dc89",
+                    "name": "Delete a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/3862718192",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            },
+                            {
+                                "key": "If-Match",
+                                "value": "b0d845836633e96992c25fbdca151407938b485c",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "f015a7d9-d8b9-179c-d1f0-f774fe6c6302",
+                    "name": "Permanently Delete a Trashed File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/5949691601/trash",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "c36f0bc8-cc0d-0b86-559b-b30a705f2c78",
+            "name": "Folders",
+            "description": "",
+            "item": [
+                {
+                    "id": "f96c8cc9-a72e-eb8c-5ef8-7e447c674fdc",
+                    "name": "Get Information about a Folder",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/103404330",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "51ad29ec-9710-bbd9-faac-ca54b77173b9",
+                    "name": "Retrieve a Folder's Items",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/103404330/items",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "29df2ddf-700a-77d4-3c6f-5391b7faa934",
+                    "name": "View a Folder's Collaborations",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/1139054013/collaborations",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "ac221978-367c-da8c-0415-665f0dff232a",
+                    "name": "Get a Trashed Folder",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/628210759/trash",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "c74cd5ef-5339-35be-3e36-9b71ce2be7e1",
+                    "name": "Get the Items in the Trash",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/trash/items",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "4a35eda5-46e8-5031-6245-dc4a834da310",
+                    "name": "Copy a Folder",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/103404330/copy",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"parent\": {\"id\" : 0}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "37e6a08a-9808-2692-102f-94f71de08990",
+                    "name": "Create a Folder",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"New Folder\", \"parent\": {\"id\": \"0\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "83cbd806-6c1e-5d9f-0555-ca5437521659",
+                    "name": "Restore a Trashed Folder",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/628210759",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"New Folder\", \"parent\": {\"id\": \"0\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "08b659e6-1fa9-08f4-66d6-efe55a60880b",
+                    "name": "Move a Folder",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/1076466685",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"parent\": {\"id\" : 682258214}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "89f6b21c-b7ba-d976-8119-d1d493d0b9df",
+                    "name": "Update Information about a Folder",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/473153600",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"New Folder Name!\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "8a90ffbb-be6a-5377-8458-a7b7f86aad8c",
+                    "name": "Turn on 'Email File to Folder'",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/653992945",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"folder_upload_email\": {\"access\": \"open\"}}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "2f47d246-63b7-6677-c7eb-737912109222",
+                    "name": "Disabled a Shared Link",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/103404330",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"shared_link\": null}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "8da27cd8-355a-1a60-8990-733d81a53b47",
+                    "name": "Delete a Folder",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/441526399?recursive=true",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "86c45c33-11ec-db39-7225-5c77de41e4f8",
+                    "name": "Permanently Delete a Folder",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/628210759/trash",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "3b74c445-ae07-74b2-c1b0-ac40e41fd82c",
+            "name": "Groups",
+            "description": "",
+            "item": [
+                {
+                    "id": "1f5ea222-53c8-1227-04d9-e699a542413d",
+                    "name": "Get a Group Membership",
+                    "request": {
+                        "url": "https://api.box.com/2.0/group_memberships/1025175",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "14476041-b688-ed9e-8979-c78212c42124",
+                    "name": "Get a Group's Collaborations",
+                    "request": {
+                        "url": "https://api.box.com/2.0/groups/104687/collaborations",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "ef48038c-86c9-e716-5c7a-0a87e7577d26",
+                    "name": "Get a Group's Memberships",
+                    "request": {
+                        "url": "https://api.box.com/2.0/groups/104687/memberships",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "1fc62ef2-1a6a-7542-f49e-9b301d1b20bd",
+                    "name": "Get a Enterprise's Groups",
+                    "request": {
+                        "url": "https://api.box.com/2.0/groups",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "fe6b38fc-575b-f0d8-bde9-ec5fe10bec1a",
+                    "name": "Get Information about an Enterprise Group",
+                    "request": {
+                        "url": "https://api.box.com/2.0/groups/104687",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "33221edd-e750-6b79-dd48-69f4ab7719ba",
+                    "name": "Add a Group Collaboration",
+                    "request": {
+                        "url": "https://api.box.com/2.0/collaborations/",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"item\": { \"id\": \"1076455207\", \"type\": \"folder\"}, \"accessible_by\": { \"type\":\"group\", \"id\": \"104687\"}, \"role\": \"editor\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "2514ce97-2b2c-81e7-34f7-5d98a9147264",
+                    "name": "Add a Group Membership",
+                    "request": {
+                        "url": "https://api.box.com/2.0/group_memberships",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"group\": { \"id\": \"137557\", \"type\": \"group\"}, \"user\": { \"id\": \"192642898\"}}\n"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "679adc3d-4fef-36c1-6298-f9a4ce093fe3",
+                    "name": "Create an Enterprise Group",
+                    "request": {
+                        "url": "https://api.box.com/2.0/groups",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"SE Team\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "432a41d0-8a90-7427-84e0-076d5a3a0e38",
+                    "name": "Update a Group's Collaborations",
+                    "request": {
+                        "url": "https://api.box.com/2.0/collaborations/44519356",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{ \"accessible_by\": { \"type\":\"group\", \"id\": \"104687\"}, \"role\": \"Uploader\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "e74ade35-1e32-ec4f-08e9-8ebaf76f2d91",
+                    "name": "Update an Enterprise Group",
+                    "request": {
+                        "url": "https://api.box.com/2.0/groups/137561",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\":\"SE Team 3\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "01fd38b7-c1fb-3762-2ab1-c4c218a997c4",
+                    "name": "Update a Group Membership",
+                    "request": {
+                        "url": "https://api.box.com/2.0/group_memberships/1025175",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{ \"role\": \"submaster\" }"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "c38a6e64-7abd-cb63-f996-f219fa899a49",
+                    "name": "Delete a Group Collaboration",
+                    "request": {
+                        "url": "https://api.box.com/2.0/collaborations/44519086",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "9289c4de-bcd9-7a4b-53c8-bfa886a6b8aa",
+                    "name": "Delete a Group Membership",
+                    "request": {
+                        "url": "https://api.box.com/2.0/group_memberships/1025175",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "b21cbe91-c462-8f5b-ec03-866b15fb2e9c",
+                    "name": "Delete a an Enterprise Group",
+                    "request": {
+                        "url": "https://api.box.com/2.0/groups/137561",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "3641c1e3-7b23-9352-b267-531ae498dcc3",
+            "name": "On-Behalf-Of-1 copy-1",
+            "description": "",
+            "item": [
+                {
+                    "id": "fa9f4ccc-f32d-b476-5e83-56f4b8ce404c",
+                    "name": "Get the Items in a User's Trash",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/trash/items",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            },
+                            {
+                                "key": "On-Behalf-Of",
+                                "value": "joen.doe+what@box.com",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "token",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_id",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_secret",
+                                    "value": "",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "cae8799f-8639-e172-cf07-d5d8d9d012d8",
+            "name": "On-Behalf-Of-1",
+            "description": "",
+            "item": [
+                {
+                    "id": "4ec3a679-bbe6-f81e-8260-a7de9bf2fb88",
+                    "name": "Get the Items in a User's Trash",
+                    "request": {
+                        "url": "https://api.box.com/2.0/folders/trash/items",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            },
+                            {
+                                "key": "On-Behalf-Of",
+                                "value": "joen.doe+what@box.com",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "token",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_id",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_secret",
+                                    "value": "",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "fdbea569-15a1-3100-9d37-66ac6351adf3",
+            "name": "Provisioning API",
+            "description": "",
+            "item": [
+                {
+                    "id": "397f353b-74b3-87fb-5894-28c5f8d0d71c",
+                    "name": "Get an Access Token for a Scoped Folder",
+                    "request": {
+                        "url": "https://api.box.com/oauth2/token",
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [
+                                {
+                                    "key": "grant_type",
+                                    "value": "urn:box:oauth2:grant-type:provision",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_id",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_secret",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "username",
+                                    "value": "email.address@gmail.com",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "a74eb6de-fc03-12ae-0d73-1acdf495edb5",
+                    "name": "Request a New Access Token from User",
+                    "request": {
+                        "url": "https://api.box.com/oauth2/authorize?response_type=code&client_id=&state=authenticated&scope=folder_readwrite&folder_id=app_folder&redirect_uri=https://localhost",
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "token",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_id",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_secret",
+                                    "value": "",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "e2b2d70e-9c4f-61fe-6150-7f900ed9f2ce",
+            "name": "Search",
+            "description": "",
+            "item": [
+                {
+                    "id": "8a23db0e-4f01-15f3-e41e-077d3238f0b5",
+                    "name": "Search a User's Account",
+                    "request": {
+                        "url": "https://api.box.com/2.0/search?query=agenda",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "cb4b37d6-1a2c-7bcb-d886-73992683130c",
+            "name": "Shared Items",
+            "description": "",
+            "item": [
+                {
+                    "id": "3d113f28-7693-b9d8-9ab0-91c0b9cf7912",
+                    "name": "Get a Shared Item",
+                    "request": {
+                        "url": "https://api.box.com/2.0/shared_items",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            },
+                            {
+                                "key": "BoxApi",
+                                "value": "shared_link=https://box.com/s/5szm1glgq1foiai1kjqz",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "72cbade8-18a0-7a0e-1208-2f1014914ac7",
+            "name": "Tasks",
+            "description": "",
+            "item": [
+                {
+                    "id": "322af24a-6c80-9465-0564-2bfba80269cd",
+                    "name": "Get Tasks for a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/files/7170802730/tasks",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "3fee4d04-69e5-0d2d-3d5b-38c87e23c159",
+                    "name": "Get a Task Assignment",
+                    "request": {
+                        "url": "https://api.box.com/2.0/task_assignments/2810149",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "37639bbf-8bd1-0ddf-47a9-3b2478a06834",
+                    "name": "Get the Assignments for a Task",
+                    "request": {
+                        "url": "https://api.box.com/2.0/tasks/2073419/assignments",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "c06a8d75-b023-f605-7d3f-cec7b7cc3f83",
+                    "name": "Add a Task to a File",
+                    "request": {
+                        "url": "https://api.box.com/2.0/tasks",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{ \n  \"item\": { \"type\":\"file\", \"id\": \"7170802730\"},\n  \"action\": \"review\",\n  \"message\": \"Is this working?\",\n  \"assigned_to\": { \"type\": \"user\", \"id\": \"194651398\"}\n }\n\n"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "f2787468-20e0-a37d-df28-84fe9aa43c51",
+                    "name": "Create a Task Assignment",
+                    "request": {
+                        "url": "https://api.box.com/2.0/task_assignments",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{ \"task\": { \"id\": \"2073417\", \"type\": \"task\" }, \"assign_to\": { \"login\": \"john.doe+demo@box.com\" } }"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "a17e6196-aabd-be00-0d01-ec711f9c50ac",
+                    "name": "Create a Task",
+                    "request": {
+                        "url": "https://api.box.com/2.0/tasks",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"item\": {\"type\": \"file\", \"id\": \"7262132718\"}, \"action\": \"review\", \"message\" : \"vish is awesome\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "e12ee7fc-84fa-3207-f8e6-5b6daf2c570a",
+                    "name": "Create a Task Assignment",
+                    "request": {
+                        "url": "https://api.box.com/2.0/task_assignments",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{ \"task\": { \"id\": \"2073419\", \"type\": \"task\" }, \"assign_to\": { \"login\": \"john.doe+demo@box.com\" } }"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "236111f3-ad30-e56e-e0f8-1adf10b32a31",
+                    "name": "Update a Task Assignment",
+                    "request": {
+                        "url": "https://api.box.com/2.0/task_assignments/2810161",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{ \"message\": \"hello!!!\" , \"resolution_state\":\"completed\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "03b9d4cc-1d1b-adba-3f27-3cc773e19174",
+                    "name": "Update a Task",
+                    "request": {
+                        "url": "https://api.box.com/2.0/tasks/1817407",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"action\": \"approve\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "cbbe5f67-807c-fb26-e7dd-2edce87f44f6",
+                    "name": "Delete a Task Assignment",
+                    "request": {
+                        "url": "https://api.box.com/2.0/task_assignments/2810149",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "02d2b05a-370c-c01f-3731-aa76e01b00a0",
+                    "name": "Delete a Task",
+                    "request": {
+                        "url": "https://api.box.com/2.0/tasks/1817407",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": ""
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "191d402a-1c51-ea5e-5161-2f5915cfb9a4",
+            "name": "Users",
+            "description": "",
+            "item": [
+                {
+                    "id": "ca77e479-2e3b-eb88-b4ad-14b5e4bddf79",
+                    "name": "Get Email Aliases for a User",
+                    "request": {
+                        "url": "https://api.box.com/2.0/users/12927765/email_aliases",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "8617a6a6-7b10-ca01-4bb6-dae745cc7495",
+                    "name": "Get All Users in an Enterprise",
+                    "request": {
+                        "url": "https://api.box.com/2.0/users",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "b25160d3-6261-af86-4735-221cb2a10962",
+                    "name": "Get the Current User's Information",
+                    "request": {
+                        "url": "https://api.box.com/2.0/users/me",
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "bba704ae-4e1b-35ef-bc7f-a567aa367422",
+                    "name": "Add an Email Alias for a User",
+                    "request": {
+                        "url": "https://api.box.com/2.0/users/12927765/email_aliases",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"email\":\"john.doe.alias@box.com\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "c09a1c51-9142-86af-9937-301b415c099b",
+                    "name": "Create an Enterprise User",
+                    "request": {
+                        "url": "https://api.box.com/2.0/users",
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"login\": \"john.doe.new@box.com\", \"name\": \"Ned Stark\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "8eb6b7c0-75b3-b428-13fd-f019c2fd95fb",
+                    "name": "Change a User's Primary Login",
+                    "request": {
+                        "url": "https://api.box.com/2.0/users/12927765",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"login\":\"john.doe+newlogin@box.com\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "8f9222fe-dc46-0698-79f1-df00ab7a9396",
+                    "name": "Move a Folder into Another User's Folder",
+                    "request": {
+                        "url": "https://api.box.com/2.0/users/186941196/folders/0",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"owned_by\": {\"id\": \"12927765\"}}\n"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "5a965231-9b00-f8b4-75e9-9f317dc61357",
+                    "name": "Reset a User's Password",
+                    "request": {
+                        "url": "https://api.box.com/2.0/users/192642898",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"is_password_reset_required\":\"true\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "d62b6e0e-37cb-6bea-8763-77a00a9e8e2a",
+                    "name": "Update a User's Information",
+                    "request": {
+                        "url": "https://api.box.com/2.0/users/12927765",
+                        "method": "PUT",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"name\": \"Box Admin\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "1ee7062f-33e6-b195-f566-f2e10ab2441a",
+                    "name": "Delete an Enterprise User",
+                    "request": {
+                        "url": "https://api.box.com/2.0/users/186549705?notify=true&force=true",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "49ee13e1-98cc-ecff-9701-c38d0ec84e7a",
+                    "name": "Remove a User's Email Alias",
+                    "request": {
+                        "url": "https://api.box.com/2.0/users/12927765/email_aliases/597",
+                        "method": "DELETE",
+                        "header": [
+                            {
+                                "key": "Authorization",
+                                "value": "",
+                                "description": ""
+                            }
+                        ],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "_postman_id": "a5286882-89a4-9fac-da8d-ebe2fcd1a35b",
+            "name": "oAuth 2",
+            "description": "",
+            "item": [
+                {
+                    "id": "c54bf04d-3e95-e165-3ed1-f75ed6c2dc5a",
+                    "name": "Request Authorization",
+                    "request": {
+                        "url": "https://api.box.com/oauth2/authorize?response_type=code&client_id=&state=authenticated&redirect_uri=https://localhost",
+                        "method": "GET",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": []
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "34dd0717-7edd-36bd-ab62-66076bed112e",
+                    "name": "Get Access & Refresh Token",
+                    "request": {
+                        "url": "https://api.box.com/oauth2/token",
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "grant_type",
+                                    "value": "authorization_code",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "code",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_id",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_secret",
+                                    "value": "",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "12e54684-66d6-0111-5324-ae2e113adf65",
+                    "name": "Refresh an Access Token",
+                    "request": {
+                        "url": "https://api.box.com/oauth2/token",
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "grant_type",
+                                    "value": "refresh_token",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "refresh_token",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_id",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_secret",
+                                    "value": "",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                },
+                {
+                    "id": "4c7a2de9-f5ed-9603-4158-f07b46751cb8",
+                    "name": "Destroy a Token",
+                    "request": {
+                        "url": "https://api.box.com/oauth2/revoke",
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "formdata",
+                            "formdata": [
+                                {
+                                    "key": "token",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_id",
+                                    "value": "",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "client_secret",
+                                    "value": "",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        }
+    ]
+}
