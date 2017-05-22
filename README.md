@@ -1,6 +1,6 @@
 # Postman-to-k6
 
-Converts Postman collections (v2) to k6 scripts. Given a Postman collection, the transformer will auto-generate a [k6 script](https://docs.k6.io/docs) to be imported as user scenario for your load tests.
+Converts a [Postman collections](https://www.getpostman.com/docs/collections) to [k6 script](https://docs.k6.io/docs).
 
 The transformer converts Postman requests and [variables](http://blog.getpostman.com/2014/02/20/using-variables-inside-postman-and-collection-runner/) into k6 requests and variables respectively.
 
