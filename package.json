@@ -1,7 +1,7 @@
 {
   "name": "postman-to-k6",
   "description": "Convert a Postman collection to k6 script",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": {
     "name": "Borja Campina"
   },
