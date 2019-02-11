@@ -1,9 +1,9 @@
 {
   "name": "postman-to-k6",
   "description": "Convert a Postman collection to k6 script",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
-    "name": "Borja Campina"
+    "name": "Mulili Nzuki"
   },
   "license": "MIT",
   "keywords": [
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/loadimpact/postman-to-k6.git"
   },
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 10.15.1"
   },
   "preferGlobal": "true",
   "bin": {
@@ -31,9 +31,10 @@
     "jshint": "2.8.0"
   },
   "dependencies": {
+    "aws4": "^1.8.0",
     "commander": "2.9.0",
-    "strip-json-comments": "1.0.2",
     "postman-collection": "0.0.13",
-    "postman-collection-transformer": "^1.7.3"
+    "postman-collection-transformer": "^1.7.3",
+    "strip-json-comments": "1.0.2"
   }
 }
