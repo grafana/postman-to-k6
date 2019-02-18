@@ -32,8 +32,6 @@ node bin/postman-to-loadimpact.js examples/postman/v2/echo.json
 k6 run k6-script.js
 ```
 
-
-
 ## Options
 
 The transformer provides a command line interface with different options.
