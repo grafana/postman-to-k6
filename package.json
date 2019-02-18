@@ -27,9 +27,9 @@
     "lib": "lib"
   },
   "dependencies": {
-    "commander": "2.9.0",
-    "strip-json-comments": "1.0.2",
-    "postman-collection": "0.0.13",
-    "postman-collection-transformer": "^1.7.3"
+    "commander": "^2.19.0",
+    "postman-collection": "^3.4.3",
+    "postman-collection-transformer": "^3.0.0",
+    "strip-json-comments": "^2.0.1"
   }
 }
