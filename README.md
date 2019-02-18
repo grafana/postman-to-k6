@@ -1,4 +1,4 @@
-# Postman-to-k6
+# postman-to-k6
 
 Converts a [Postman collections](https://www.getpostman.com/docs/collections) to [k6 script](https://docs.k6.io/docs).
 
