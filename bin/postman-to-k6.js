@@ -51,4 +51,4 @@ program.parse(process.argv)
 function loadJSON (path) {
   var data = fs.readFileSync(path)
   return JSON.parse(stripJSONComments(data.toString()))
-};
+}
