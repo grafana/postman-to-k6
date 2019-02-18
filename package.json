@@ -19,12 +19,12 @@
     "node": ">= 0.10.0"
   },
   "preferGlobal": "true",
-  "bin": {
-    "postman-to-k6": "bin/postman-to-k6.js"
-  },
   "directories": {
     "bin": "bin",
     "lib": "lib"
+  },
+  "bin": {
+    "postman-to-k6": "bin/postman-to-k6.js"
   },
   "dependencies": {
     "commander": "^2.19.0",
