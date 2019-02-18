@@ -1,35 +1,35 @@
 {
-  "name": "postman-to-k6",
-  "description": "Convert a Postman collection to k6 script",
-  "version": "0.0.3",
-  "author": {
-    "name": "Borja Campina"
-  },
-  "license": "MIT",
-  "keywords": [
-    "k6",
-    "loadtest",
-    "postman"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/loadimpact/postman-to-k6.git"
-  },
-  "engines": {
-    "node": ">= 0.10.0"
-  },
-  "preferGlobal": "true",
-  "directories": {
-    "bin": "bin",
-    "lib": "lib"
-  },
-  "bin": {
-    "postman-to-k6": "bin/postman-to-k6.js"
-  },
-  "dependencies": {
-    "commander": "^2.19.0",
-    "postman-collection": "^3.4.3",
-    "postman-collection-transformer": "^3.0.0",
-    "strip-json-comments": "^2.0.1"
-  }
+    "name": "postman-to-k6",
+    "description": "Convert a Postman collection to k6 script",
+    "version": "0.0.3",
+    "author": {
+        "name": "Borja Campina"
+    },
+    "license": "MIT",
+    "keywords": [
+        "k6",
+        "loadtest",
+        "postman"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/loadimpact/postman-to-k6.git"
+    },
+    "engines": {
+        "node": ">= 0.10.0"
+    },
+    "preferGlobal": "true",
+    "directories": {
+        "bin": "bin",
+        "lib": "lib"
+    },
+    "bin": {
+        "postman-to-k6": "bin/postman-to-k6.js"
+    },
+    "dependencies": {
+        "commander": "^2.19.0",
+        "postman-collection": "^3.4.3",
+        "postman-collection-transformer": "^3.0.0",
+        "strip-json-comments": "^2.0.1"
+    }
 }
