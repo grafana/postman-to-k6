@@ -26,9 +26,6 @@
     "bin": "bin",
     "lib": "lib"
   },
-  "devDependencies": {
-    "jshint": "2.8.0"
-  },
   "dependencies": {
     "commander": "2.9.0",
     "strip-json-comments": "1.0.2",
