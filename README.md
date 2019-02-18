@@ -6,7 +6,7 @@ The transformer converts Postman requests and [variables](http://blog.getpostman
 
 Postman [pre-requests](https://www.getpostman.com/docs/pre_request_scripts) and [tests](https://www.getpostman.com/docs/writing_tests) are appended as comments before and after its respective k6 request. The pre-request and test behaviour could easily be replicated with the [K6 API](https://docs.k6.io/docs/k6).
 
-## Installation and usage
+## Usage
 
 As npm global package:
 
