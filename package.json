@@ -42,6 +42,6 @@
     "scripts": {
         "lint-js": "standard --verbose | snazzy",
         "lint": "npm-run-all lint-js",
-        "test-hoc": "cross-env NODE_PATH:lib:test ava"
+        "test-hoc": "cross-env NODE_PATH=lib:test ava"
     }
 }
