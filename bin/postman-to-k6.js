@@ -3,6 +3,7 @@
 var program = require('commander')
 var fs = require('fs')
 var stripJSONComments = require('strip-json-comments')
+var convertObject = require('../lib/convert/object')
 
 // describe the options and usage instruction for the `convert` command
 program
@@ -20,13 +21,8 @@ program
       return
     }
 
-    var converter = require('../lib/converters/postman-' + options.inputVersion)
-    if (!converter) {
-      console.error('unable to load converter ' + options.inputVersion)
-      return
-    }
-
-    converter.convert(input, function (error, result) {
+    var version = options.inputVersion
+    convertObject(input, version, (error, result) => {
       if (error) {
         console.error(error)
         return
