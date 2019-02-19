@@ -29,7 +29,6 @@
     "dependencies": {
         "commander": "^2.19.0",
         "postman-collection": "^3.4.3",
-        "postman-collection-transformer": "^3.0.0",
         "strip-json-comments": "^2.0.1"
     },
     "devDependencies": {
