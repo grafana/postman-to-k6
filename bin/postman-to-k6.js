@@ -15,7 +15,7 @@ program
     const version = options.inputVersion
     convertFile(path, version, (error, result) => {
       if (error) {
-        console.error(error)
+        console.error(error.message)
         return
       }
 
