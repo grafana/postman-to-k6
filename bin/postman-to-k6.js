@@ -16,22 +16,25 @@ program
 program.parse(process.argv)
 
 function run (path, options) {
+  // Convert
   const version = options.inputVersion
-  convertFile(path, version, (error, result) => {
-    if (error) {
-      console.error(error.message)
-      return
-    }
+  let result
+  try {
+    result = convertFile(path, version)
+  } catch (e) {
+    console.error(e.message)
+    return
+  }
 
-    if (options.output) {
-      fs.writeFile(options.output, result, function (error) {
-        if (error) {
-          console.error('could not create output ' + options.output)
-          console.error(error)
-        }
-      })
-    } else {
-      console.log(result)
-    }
-  })
+  // Output
+  if (options.output) {
+    fs.writeFile(options.output, result, function (error) {
+      if (error) {
+        console.error('could not create output ' + options.output)
+        console.error(error)
+      }
+    })
+  } else {
+    console.log(result)
+  }
 }
