@@ -29,7 +29,8 @@
     "dependencies": {
         "commander": "^2.19.0",
         "postman-collection": "^3.4.3",
-        "strip-json-comments": "^2.0.1"
+        "strip-json-comments": "^2.0.1",
+        "verror": "^1.10.0"
     },
     "devDependencies": {
         "ava": "^1.2.1",
