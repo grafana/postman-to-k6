@@ -1,8 +1,7 @@
 #!/usr/bin/env node
+
 var program = require('commander')
-
 var fs = require('fs')
-
 var stripJSONComments = require('strip-json-comments')
 
 // describe the options and usage instruction for the `convert` command
