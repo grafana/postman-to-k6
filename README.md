@@ -24,10 +24,10 @@ cd postman-to-k6
 npm install
 
 # On macOS, Linux, or OpenBSD
-bin/postman-to-k6.js example/postman/v2/echo.json -o k6-script.js
+bin/postman-to-k6.js example/v2/echo.json -o k6-script.js
 
 # On windows
-node bin/postman-to-loadimpact.js example/postman/v2/echo.json
+node bin/postman-to-loadimpact.js example/v2/echo.json
 
 k6 run k6-script.js
 ```
@@ -49,11 +49,11 @@ The transformer provides a command line interface with different options.
 
 ## Examples
 
-A collection of Postman examples are located under `./example/postman`.
+A collection of Postman examples are located under `example/`.
 
 The k6 script will be auto-generated when running:
 
-    $ postman-to-k6 example/postman/v2/echo.json - o k6-script.js
+    $ postman-to-k6 example/v2/echo.json - o k6-script.js
 
 Please use the [issue tracker](https://github.com/loadimpact/postman-to-k6/issues) to open a discussion or bug report.
 
