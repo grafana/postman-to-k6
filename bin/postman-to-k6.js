@@ -31,7 +31,7 @@ program
       if (options.output) {
         fs.writeFile(options.output, result, function (error) {
           if (error) {
-            console.error('Count not create output ' + options.output)
+            console.error('could not create output ' + options.output)
             console.error(error)
           }
         })
