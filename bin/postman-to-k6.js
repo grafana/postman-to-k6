@@ -2,8 +2,7 @@
 
 var program = require('commander')
 var fs = require('fs')
-var stripJSONComments = require('strip-json-comments')
-var convertObject = require('../lib/convert/object')
+var convertJson = require('../lib/convert/json')
 
 // describe the options and usage instruction for the `convert` command
 program
@@ -15,14 +14,14 @@ program
   .action(function (fileName, options) {
     var input
     try {
-      input = loadJSON(fileName)
+      input = fs.readFileSync(fileName).toString()
     } catch (e) {
       console.error('unable to load the input file!', e)
       return
     }
 
     var version = options.inputVersion
-    convertObject(input, version, (error, result) => {
+    convertJson(input, version, (error, result) => {
       if (error) {
         console.error(error)
         return
@@ -42,8 +41,3 @@ program
   })
 
 program.parse(process.argv)
-
-function loadJSON (path) {
-  var data = fs.readFileSync(path)
-  return JSON.parse(stripJSONComments(data.toString()))
-}
