@@ -33,7 +33,7 @@ export let options = {
 export default function() {
     let res;
     res = http.get("http://example.com",
-      { headers: { { "Authorization": "Basic dW5kZWZpbmVkOnVuZGVmaW5lZA==" } } });
+      { headers: { "Authorization" : "Basic dW5kZWZpbmVkOnVuZGVmaW5lZA==" } });
 
 }`)
 })
