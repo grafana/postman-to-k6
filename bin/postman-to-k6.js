@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-var program = require('commander')
-var fs = require('fs')
-var convertFile = require('../lib/convert/file')
+const program = require('commander')
+const fs = require('fs')
+const convertFile = require('../lib/convert/file')
 
 // describe the options and usage instruction for the `convert` command
 program
