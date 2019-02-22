@@ -12,11 +12,12 @@ test('request', t => {
 
 import http from "k6/http";
 
-export let options = {"maxRedirects":4};
+export let options = { maxRedirects: 4 };
 
-export default function () {
+export default function() {
   let res;
 
   res = http.get("http://example.com");
-};`)
+}
+`)
 })

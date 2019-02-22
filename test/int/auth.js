@@ -7,13 +7,14 @@ test('noauth', t => {
 
 import http from "k6/http";
 
-export let options = {"maxRedirects":4};
+export let options = { maxRedirects: 4 };
 
-export default function () {
+export default function() {
   let res;
 
   res = http.get("http://example.com");
-};`)
+}
+`)
 })
 
 test('basic', t => {
@@ -22,13 +23,16 @@ test('basic', t => {
 
 import http from "k6/http";
 
-export let options = {"maxRedirects":4};
+export let options = { maxRedirects: 4 };
 
-export default function () {
+export default function() {
   let res;
 
-  res = http.get("http://example.com", { headers: { "Authorization" : "Basic dW5kZWZpbmVkOnVuZGVmaW5lZA==" } });
-};`)
+  res = http.get("http://example.com", {
+    headers: { Authorization: "Basic dW5kZWZpbmVkOnVuZGVmaW5lZA==" }
+  });
+}
+`)
 })
 
 test('bearer', t => {
@@ -37,11 +41,14 @@ test('bearer', t => {
 
 import http from "k6/http";
 
-export let options = {"maxRedirects":4};
+export let options = { maxRedirects: 4 };
 
-export default function () {
+export default function() {
   let res;
 
-  res = http.get("http://example.com", { headers: { "Authorization" : "Bearer secrettoken" } });
-};`)
+  res = http.get("http://example.com", {
+    headers: { Authorization: "Bearer secrettoken" }
+  });
+}
+`)
 })
