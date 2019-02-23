@@ -31,6 +31,7 @@
         "postman-collection": "^3.4.3",
         "prettier": "^1.16.4",
         "strip-json-comments": "^2.0.1",
+        "urijs": "^1.19.1",
         "verror": "^1.10.0"
     },
     "devDependencies": {
