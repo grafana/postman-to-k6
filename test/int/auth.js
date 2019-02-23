@@ -29,7 +29,9 @@ export default function() {
   let res;
 
   res = http.get("http://example.com", {
-    headers: { Authorization: "Basic dW5kZWZpbmVkOnVuZGVmaW5lZA==" }
+    headers: {
+      Authorization: "Basic dW5kZWZpbmVkOnVuZGVmaW5lZA=="
+    }
   });
 }
 `)
@@ -47,7 +49,9 @@ export default function() {
   let res;
 
   res = http.get("http://example.com", {
-    headers: { Authorization: "Bearer secrettoken" }
+    headers: {
+      Authorization: "Bearer secrettoken"
+    }
   });
 }
 `)
