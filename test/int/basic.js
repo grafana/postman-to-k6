@@ -33,9 +33,10 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 export default function() {
-  const vars = {};
-  vars["domain"] = "example.com";
-  vars["machine"] = 573;
+  const vars = {
+    domain: "example.com",
+    machine: 573
+  };
 
   let res;
 
