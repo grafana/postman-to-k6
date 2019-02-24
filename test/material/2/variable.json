@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "20cd1c44-bab8-44c4-899d-564945acb7d9",
+		"name": "Variable",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TestRequest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "{{subdomain}}.example.com"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "49bda962-34ba-492e-8642-93c7798e6df6",
+			"key": "subdomain",
+			"value": "test",
+			"type": "string"
+		}
+	]
+}
