@@ -30,6 +30,7 @@ function run (path, options) {
     result = convertFile(path, version)
   } catch (e) {
     console.error(e.message)
+    console.log(e)
     return
   }
 
