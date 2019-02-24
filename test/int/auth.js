@@ -28,10 +28,8 @@ export let options = { maxRedirects: 4 };
 export default function() {
   let res;
 
-  res = http.get("http://example.com", {
-    headers: {
-      Authorization: "Basic dW5kZWZpbmVkOnVuZGVmaW5lZA=="
-    }
+  res = http.get("http://user123:secret@example.com", {
+    auth: "basic"
   });
 }
 `)
