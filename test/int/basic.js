@@ -34,11 +34,12 @@ export let options = { maxRedirects: 4 };
 
 export default function() {
   const vars = {};
-  vars["subdomain"] = "test";
+  vars["domain"] = "example.com";
+  vars["machine"] = 573;
 
   let res;
 
-  res = http.get(${'`http://${vars["subdomain"]}.example.com`'});
+  res = http.get(${'`http://${vars["machine"]}.${vars["domain"]}`'});
 }
 `)
 })
