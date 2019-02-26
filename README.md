@@ -65,7 +65,7 @@ A collection of Postman examples are located under `example/`.
 
 The k6 script will be auto-generated when running:
 
-    $ postman-to-k6 example/v2/echo.json - o k6-script.js
+    $ postman-to-k6 example/v2/echo.json -o k6-script.js
 
 Please use the [issue tracker](https://github.com/loadimpact/postman-to-k6/issues) to open a discussion or bug report.
 
