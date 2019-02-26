@@ -32,6 +32,18 @@ node bin/postman-to-loadimpact.js example/v2/echo.json
 k6 run k6-script.js
 ```
 
+## Advanced Features
+
+AWSv4 authentication requires browserified versions of the modules `aws4` and
+`urijs` in the files `./aws4.js` and `./urijs.js`, respectively.
+
+```shell
+npm install --global browserify
+npm install aws4 urijs
+browserify -r aws4 -s aws4 > aws4.js
+browserify -r urijs -s URI > urijs.js
+```
+
 ## Options
 
 The transformer provides a command line interface with different options.
