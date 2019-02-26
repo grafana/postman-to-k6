@@ -19,8 +19,7 @@ program
     'Output file path. If not specified writes to stdout.'
   )
   .action(run)
-
-program.parse(process.argv)
+  .parse(process.argv)
 
 function run (path, options) {
   // Convert
