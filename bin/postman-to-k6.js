@@ -21,7 +21,14 @@ program
   .action(run)
   .parse(process.argv)
 
-function run (path, options) {
+function run (...args) {
+  if (args.length <= 1) {
+    console.error('Provide path to Postman collection')
+    return
+  }
+  const options = args.pop()
+  const path = args.shift()
+
   // Convert
   const version = options.inputVersion
   let result
