@@ -3,10 +3,11 @@
 const convertFile = require('../lib/convert/file')
 const fs = require('fs')
 const program = require('commander')
+const version = require('project-version')
 
 // describe the options and usage instruction for the `convert` command
 program
-  .version(require('../package.json').version)
+  .version(version)
   .usage('<filePath> [options]')
   .description('Convert a Postman collection to k6 script')
   .option(
@@ -30,10 +31,10 @@ function run (...args) {
   const path = args.shift()
 
   // Convert
-  const version = options.inputVersion
+  const postmanVersion = options.inputVersion
   let result
   try {
-    result = convertFile(path, version)
+    result = convertFile(path, postmanVersion)
   } catch (e) {
     console.error(e.message)
     console.log(e)
