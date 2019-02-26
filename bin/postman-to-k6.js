@@ -42,7 +42,7 @@ function run (...args) {
 
   // Output
   if (options.output) {
-    fs.writeFile(options.output, result, function (error) {
+    fs.writeFile(options.output, result, error => {
       if (error) {
         console.error('could not create output ' + options.output)
         console.error(error)
