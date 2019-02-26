@@ -61,9 +61,7 @@ The transformer provides a command line interface with different options.
 
 ## Examples
 
-A collection of Postman examples are located under `example/`.
-
-The k6 script will be auto-generated when running:
+A collection of Postman examples are located under `example`.
 
     $ postman-to-k6 example/v2/echo.json -o k6-script.js
 
