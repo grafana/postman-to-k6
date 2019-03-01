@@ -44,6 +44,16 @@ browserify -r aws4 -s aws4 > aws4.js
 browserify -r urijs -s URI > urijs.js
 ```
 
+OAuth 1.0 authentication requires browserified versions of the modules
+`oath-1.0a` and `urijs`.
+
+```shell
+npm install --global browserify
+npm install oauth-1.0a urijs
+browserify -r oauth-1.0a -s OAuth > oauth-1.0a.js
+browserify -r urijs -s URI > urijs
+```
+
 ## Options
 
 The transformer provides a command line interface with different options.
