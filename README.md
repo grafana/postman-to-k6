@@ -44,7 +44,7 @@ browserify -r aws4 -s aws4 > aws4.js
 browserify -r urijs -s URI > urijs.js
 ```
 
-OAuth 1.0 authentication requires browserified versions of the modules
+OAuth 1 authentication requires browserified versions of the modules
 `oath-1.0a` and `urijs`.
 
 ```shell
