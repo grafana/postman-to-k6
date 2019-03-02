@@ -51,7 +51,15 @@ OAuth 1 authentication requires browserified versions of the modules
 npm install --global browserify
 npm install oauth-1.0a urijs
 browserify -r oauth-1.0a -s OAuth > oauth-1.0a.js
-browserify -r urijs -s URI > urijs
+browserify -r urijs -s URI > urijs.js
+```
+
+OAuth 2 authentication requires a browserified version of `urijs`.
+
+```shell
+npm install --global browserify
+npm install urijs
+browserify -r urijs -s URI > urijs.js
 ```
 
 ## Options
