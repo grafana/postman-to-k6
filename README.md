@@ -66,14 +66,14 @@ browserify -r urijs -s URI > urijs.js
 
 The transformer provides a command line interface with different options.
 
-      Usage: postman-to-k6 <filePath> [options]
+      Usage: postman-to-k6 <path> [options]
     
       Convert a Postman collection to k6 script
     
       Options:
     
-        -h, --help                    output usage information
-        -V, --version                 output the version number
+        -h, --help                    Print usage information.
+        -V, --version                 Print program version.
         -o --output <path>            Output file path. Default stdout.
 
 ## Examples

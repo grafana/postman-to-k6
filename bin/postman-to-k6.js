@@ -8,7 +8,7 @@ const version = require('project-version')
 // describe the options and usage instruction for the `convert` command
 program
   .version(version)
-  .usage('<filePath> [options]')
+  .usage('<path> [options]')
   .description('Convert a Postman collection to k6 script')
   .option('-o --output <path>', 'Output file path. Default stdout.')
   .action(run)
