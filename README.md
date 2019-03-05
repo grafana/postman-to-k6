@@ -74,7 +74,7 @@ The transformer provides a command line interface with different options.
     
         -h, --help                    output usage information
         -V, --version                 output the version number
-        -o --output <path>            Output file path. If not specified writes to stdout.
+        -o --output <path>            Output file path. Default stdout.
 
 ## Examples
 

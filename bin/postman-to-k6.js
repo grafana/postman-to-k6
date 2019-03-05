@@ -10,10 +10,7 @@ program
   .version(version)
   .usage('<filePath> [options]')
   .description('Convert a Postman collection to k6 script')
-  .option(
-    '-o --output <path>',
-    'Output file path. If not specified writes to stdout.'
-  )
+  .option('-o --output <path>', 'Output file path. Default stdout.')
   .action(run)
   .parse(process.argv)
 
