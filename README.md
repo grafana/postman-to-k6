@@ -74,7 +74,6 @@ The transformer provides a command line interface with different options.
     
         -h, --help                    output usage information
         -V, --version                 output the version number
-        -j --input-version <version>  Input version. Options `2.0.0` or `1.0.0`. Default `2.0.0`.
         -o --output <path>            Output file path. If not specified writes to stdout.
 
 ## Examples

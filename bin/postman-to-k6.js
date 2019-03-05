@@ -11,11 +11,6 @@ program
   .usage('<filePath> [options]')
   .description('Convert a Postman collection to k6 script')
   .option(
-    '-j --input-version <version>',
-    'Input version. Options `2.0.0` or `1.0.0`. Default `2.0.0`.', /^(2\.0\.0|1\.0\.0)$/,
-    '2.0.0'
-  )
-  .option(
     '-o --output <path>',
     'Output file path. If not specified writes to stdout.'
   )
@@ -31,10 +26,9 @@ function run (...args) {
   const path = args.shift()
 
   // Convert
-  const postmanVersion = options.inputVersion
   let result
   try {
-    result = convertFile(path, postmanVersion)
+    result = convertFile(path)
   } catch (e) {
     console.error(e.message)
     console.log(e)
