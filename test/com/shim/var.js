@@ -1,4 +1,4 @@
-/* global postman globals environment */
+/* global postman pm globals environment */
 
 import test from 'ava'
 import 'shim'
@@ -17,7 +17,7 @@ test.serial('globals read clear', t => {
 })
 
 test.serial('globals read set', t => {
-  postman[Scope]({ globals: { test: 'a' } })
+  postman[Scope]({ global: { test: 'a' } })
   t.is(globals.test, 'a')
 })
 
@@ -34,7 +34,7 @@ test.serial('getGlobalVariable clear', t => {
 })
 
 test.serial('getGlobalVariable set', t => {
-  postman[Scope]({ globals: { test: 'a' } })
+  postman[Scope]({ global: { test: 'a' } })
   t.is(postman.getGlobalVariable('test'), 'a')
 })
 
@@ -45,20 +45,20 @@ test.serial('setGlobalVariable clear', t => {
 })
 
 test.serial('setGlobalVariable set', t => {
-  postman[Scope]({ globals: { test: 'a' } })
+  postman[Scope]({ global: { test: 'a' } })
   postman.setGlobalVariable('test', 'b')
   t.is(globals.test, 'b')
 })
 
 test.serial('clearGlobalVariable', t => {
-  postman[Scope]({ globals: { test: 'a' } })
+  postman[Scope]({ global: { test: 'a' } })
   t.is(globals.test, 'a')
   postman.clearGlobalVariable('test')
   t.is(globals.test, undef)
 })
 
 test.serial('clearGlobalVariables', t => {
-  postman[Scope]({ globals: { test: 'a', test2: 'b' } })
+  postman[Scope]({ global: { test: 'a', test2: 'b' } })
   t.is(globals.test, 'a')
   t.is(globals.test2, 'b')
   postman.clearGlobalVariables()
@@ -119,4 +119,41 @@ test.serial('clearEnvironmentVariables', t => {
   postman.clearEnvironmentVariables()
   t.is(environment.test, undef)
   t.is(environment.test2, undef)
+})
+
+test.serial('variables.get clear', t => {
+  postman[Scope]()
+  t.is(pm.variables.get('test'), undef)
+})
+
+test.serial('variables.get global', t => {
+  postman[Scope]({ global: { test: 'a' } })
+  t.is(pm.variables.get('test'), 'a')
+})
+
+test.serial('variables.get collection', t => {
+  postman[Scope]({
+    global: { test: 'a' },
+    collection: { test: 'b' }
+  })
+  t.is(pm.variables.get('test'), 'b')
+})
+
+test.serial('variables.get environment', t => {
+  postman[Scope]({
+    global: { test: 'a' },
+    collection: { test: 'b' },
+    environment: { test: 'c' }
+  })
+  t.is(pm.variables.get('test'), 'c')
+})
+
+test.serial('variables.get data', t => {
+  postman[Scope]({
+    global: { test: 'a' },
+    collection: { test: 'b' },
+    environment: { test: 'c' },
+    data: { test: 'd' }
+  })
+  t.is(pm.variables.get('test'), 'd')
 })
