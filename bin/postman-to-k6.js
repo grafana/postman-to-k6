@@ -12,6 +12,7 @@ program
   .description('Convert a Postman collection to k6 script')
   .option('-o --output <path>', 'Output file path. Default stdout.')
   .option('-g --global <path>', 'JSON export of global variables.')
+  .option('-e --environment <path>', 'JSON export of environment.')
   .action(run)
   .parse(process.argv)
 
@@ -27,7 +28,8 @@ function run (...args) {
   let result
   try {
     result = convertFile(path, {
-      globals: options.global
+      globals: options.global,
+      environment: options.environment
     })
   } catch (e) {
     console.error(e.message)
