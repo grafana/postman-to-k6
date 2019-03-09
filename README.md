@@ -75,6 +75,8 @@ The transformer provides a command line interface with different options.
         -h, --help                    Print usage information.
         -V, --version                 Print program version.
         -o --output <path>            Output file path. Default stdout.
+        -g --global <path>            JSON export of global variables.
+        -e --environment <path>       JSON export of environment.
 
 ## Examples
 
