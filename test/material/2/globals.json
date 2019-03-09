@@ -1,0 +1,30 @@
+{
+	"id": "146e52f0-fd32-4814-8e58-8a3c0f4d5eb7",
+	"values": [
+		{
+			"key": "first",
+			"value": "one",
+			"type": "text",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "second",
+			"value": "two",
+			"type": "text",
+			"description": "",
+			"enabled": true
+		},
+		{
+			"key": "third",
+			"value": "three",
+			"type": "text",
+			"description": "",
+			"enabled": true
+		}
+	],
+	"name": "My Workspace Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2019-03-09T06:29:59.753Z",
+	"_postman_exported_using": "Postman/6.7.4"
+}
