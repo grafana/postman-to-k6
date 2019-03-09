@@ -13,6 +13,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -33,6 +34,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -55,6 +57,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -79,6 +82,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -101,6 +105,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -125,6 +130,7 @@ import aws4 from "./aws4.js";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -165,6 +171,7 @@ import { hmac } from "k6/crypto";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -215,6 +222,7 @@ import { hmac } from "k6/crypto";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -265,6 +273,7 @@ import { hmac } from "k6/crypto";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -312,6 +321,7 @@ import { hmac } from "k6/crypto";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -361,6 +371,7 @@ import { hmac } from "k6/crypto";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -411,6 +422,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -436,6 +448,7 @@ import URI from "./urijs.js";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -458,6 +471,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -483,6 +497,7 @@ import { group } from "k6";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -510,6 +525,7 @@ import { group } from "k6";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {

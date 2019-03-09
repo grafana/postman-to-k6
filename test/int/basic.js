@@ -18,6 +18,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -38,6 +39,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -58,6 +60,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -82,6 +85,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -110,6 +114,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Scope = Symbol.for("scope");
+const Var = Symbol.for("variable");
 postman[Scope]();
 
 export default function() {
@@ -120,7 +125,7 @@ export default function() {
 
   let res;
 
-  res = http.get(${'`http://${vars["machine"]}.${vars["domain"]}`'});
+  res = http.get(${'`http://${pm[Var]("machine")}.${pm[Var]("domain")}`'});
 }
 `)
 })
