@@ -12,6 +12,9 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
+const Scope = Symbol.for("scope");
+postman[Scope]();
+
 export default function() {
   let res;
 
@@ -28,6 +31,9 @@ import "./postman-shim.js";
 import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
+
+const Scope = Symbol.for("scope");
+postman[Scope]();
 
 export default function() {
   let res;
@@ -47,6 +53,9 @@ import "./postman-shim.js";
 import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
+
+const Scope = Symbol.for("scope");
+postman[Scope]();
 
 export default function() {
   let res;
@@ -69,6 +78,9 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
+const Scope = Symbol.for("scope");
+postman[Scope]();
+
 export default function() {
   let res;
 
@@ -87,6 +99,9 @@ import "./postman-shim.js";
 import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
+
+const Scope = Symbol.for("scope");
+postman[Scope]();
 
 export default function() {
   let res;
@@ -108,6 +123,9 @@ import URI from "./urijs.js";
 import aws4 from "./aws4.js";
 
 export let options = { maxRedirects: 4 };
+
+const Scope = Symbol.for("scope");
+postman[Scope]();
 
 export default function() {
   let res, address, options, credential, signed;
@@ -145,6 +163,9 @@ import OAuth from "./oauth-1.0a.js";
 import { hmac } from "k6/crypto";
 
 export let options = { maxRedirects: 4 };
+
+const Scope = Symbol.for("scope");
+postman[Scope]();
 
 export default function() {
   let res, options, oauth, request, auth, token;
@@ -193,6 +214,9 @@ import { hmac } from "k6/crypto";
 
 export let options = { maxRedirects: 4 };
 
+const Scope = Symbol.for("scope");
+postman[Scope]();
+
 export default function() {
   let res, options, oauth, request, auth, token;
 
@@ -240,6 +264,9 @@ import { hmac } from "k6/crypto";
 
 export let options = { maxRedirects: 4 };
 
+const Scope = Symbol.for("scope");
+postman[Scope]();
+
 export default function() {
   let res, options, oauth, request, auth, token;
 
@@ -283,6 +310,9 @@ import OAuth from "./oauth-1.0a.js";
 import { hmac } from "k6/crypto";
 
 export let options = { maxRedirects: 4 };
+
+const Scope = Symbol.for("scope");
+postman[Scope]();
 
 export default function() {
   let res, options, oauth, request, auth, token;
@@ -329,6 +359,9 @@ import URI from "./urijs.js";
 import { hmac } from "k6/crypto";
 
 export let options = { maxRedirects: 4 };
+
+const Scope = Symbol.for("scope");
+postman[Scope]();
 
 export default function() {
   let res, options, oauth, request, auth, token, address;
@@ -377,6 +410,9 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
+const Scope = Symbol.for("scope");
+postman[Scope]();
+
 export default function() {
   let res;
 
@@ -399,6 +435,9 @@ import URI from "./urijs.js";
 
 export let options = { maxRedirects: 4 };
 
+const Scope = Symbol.for("scope");
+postman[Scope]();
+
 export default function() {
   let res, address;
 
@@ -417,6 +456,9 @@ import "./postman-shim.js";
 import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
+
+const Scope = Symbol.for("scope");
+postman[Scope]();
 
 export default function() {
   let res;
@@ -439,6 +481,9 @@ import http from "k6/http";
 import { group } from "k6";
 
 export let options = { maxRedirects: 4 };
+
+const Scope = Symbol.for("scope");
+postman[Scope]();
 
 export default function() {
   group("TestFolder", function() {
@@ -463,6 +508,9 @@ import http from "k6/http";
 import { group } from "k6";
 
 export let options = { maxRedirects: 4 };
+
+const Scope = Symbol.for("scope");
+postman[Scope]();
 
 export default function() {
   group("TestFolder1", function() {
