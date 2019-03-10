@@ -34,32 +34,42 @@ k6 run k6-script.js
 
 ## Advanced Features
 
-AWSv4 authentication requires browserified versions of the modules `aws4` and
-`urijs` in the files `./aws4.js` and `./urijs.js`, respectively.
+Some features require browserified versions of certain npm modules. The
+browserified file should be in `./{module-name}.js`. Install browserify
+globally to get the `browserify` command.
 
 ```shell
 npm install --global browserify
+```
+
+AWSv4 authentication requires `aws4 urijs`.
+
+```shell
 npm install aws4 urijs
 browserify -r aws4 -s aws4 > aws4.js
 browserify -r urijs -s URI > urijs.js
 ```
 
-OAuth 1 authentication requires browserified versions of the modules
-`oath-1.0a` and `urijs`.
+OAuth 1 authentication requires `oath-1.0a urijs`.
 
 ```shell
-npm install --global browserify
 npm install oauth-1.0a urijs
 browserify -r oauth-1.0a -s OAuth > oauth-1.0a.js
 browserify -r urijs -s URI > urijs.js
 ```
 
-OAuth 2 authentication requires a browserified version of `urijs`.
+OAuth 2 authentication requires `urijs`.
 
 ```shell
-npm install --global browserify
 npm install urijs
 browserify -r urijs -s URI > urijs.js
+```
+
+A CSV data file requires `papaparse`.
+
+```shell
+npm install papaparse
+browserify -r papaparse -s papaparse > papaparse.js
 ```
 
 ## Options
