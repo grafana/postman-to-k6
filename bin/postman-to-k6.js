@@ -5,7 +5,6 @@ const fs = require('fs')
 const program = require('commander')
 const version = require('project-version')
 
-// describe the options and usage instruction for the `convert` command
 program
   .version(version)
   .usage('<path> [options]')
