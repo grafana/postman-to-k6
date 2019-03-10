@@ -77,6 +77,8 @@ The transformer provides a command line interface with different options.
         -o --output <path>            Output file path. Default stdout.
         -g --global <path>            JSON export of global variables.
         -e --environment <path>       JSON export of environment.
+        -c --csv <path>               CSV data file. Used to fill data variables.
+        -j --json <path>              JSON data file. Used to fill data variables.
 
 ## Examples
 
