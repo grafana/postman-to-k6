@@ -181,8 +181,14 @@ test.serial('Var simple', t => {
   t.is(pm[Var]('test'), 'a')
 })
 
-test.serial('Var $randomInt', t => {
+test.serial('$randomInt', t => {
   postman[Scope]()
   const value = pm[Var]('$randomInt')
   t.true(value >= 0 && value <= 1000)
+})
+
+test.serial('$timestamp', t => {
+  postman[Scope]()
+  const value = pm[Var]('$timestamp')
+  t.is(typeof value, 'number')
 })
