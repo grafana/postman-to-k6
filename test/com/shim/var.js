@@ -13,6 +13,24 @@ test.beforeEach(t => {
   postman[Reset]()
 })
 
+test.serial('$guid', t => {
+  postman[Scope]()
+  const value = pm[Var]('$guid')
+  t.true(/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/.test(value))
+})
+
+test.serial('$randomInt', t => {
+  postman[Scope]()
+  const value = pm[Var]('$randomInt')
+  t.true(value >= 0 && value <= 1000)
+})
+
+test.serial('$timestamp', t => {
+  postman[Scope]()
+  const value = pm[Var]('$timestamp')
+  t.is(typeof value, 'number')
+})
+
 test.serial('globals read clear', t => {
   postman[Scope]()
   t.is(globals.test, undef)
@@ -27,6 +45,49 @@ test.serial('globals write', t => {
   postman[Scope]()
   t.throws(() => {
     globals.test = 'a'
+  })
+})
+
+test.serial('environment read clear', t => {
+  postman[Scope]()
+  t.is(environment.test, undef)
+})
+
+test.serial('environment read set', t => {
+  postman[Scope]({ environment: { test: 'a' } })
+  t.is(environment.test, 'a')
+})
+
+test.serial('environment write', t => {
+  postman[Scope]()
+  t.throws(() => {
+    environment.test = 'a'
+  })
+})
+
+test.serial('data read clear', t => {
+  postman[Scope]({
+    data: []
+  })
+  postman[Iteration]()
+  t.is(data.test, undef)
+})
+
+test.serial('data read set', t => {
+  postman[Scope]({
+    data: [ { test: 'a' } ]
+  })
+  postman[Iteration]()
+  t.is(data.test, 'a')
+})
+
+test.serial('data write', t => {
+  postman[Scope]({
+    data: []
+  })
+  postman[Iteration]()
+  t.throws(() => {
+    data.test = 'a'
   })
 })
 
@@ -66,23 +127,6 @@ test.serial('postman.clearGlobalVariables', t => {
   postman.clearGlobalVariables()
   t.is(globals.test, undef)
   t.is(globals.test2, undef)
-})
-
-test.serial('environment read clear', t => {
-  postman[Scope]()
-  t.is(environment.test, undef)
-})
-
-test.serial('environment read set', t => {
-  postman[Scope]({ environment: { test: 'a' } })
-  t.is(environment.test, 'a')
-})
-
-test.serial('environment write', t => {
-  postman[Scope]()
-  t.throws(() => {
-    environment.test = 'a'
-  })
 })
 
 test.serial('postman.getEnvironmentVariable clear', t => {
@@ -150,32 +194,6 @@ test.serial('pm.variables.get environment', t => {
   t.is(pm.variables.get('test'), 'c')
 })
 
-test.serial('data read clear', t => {
-  postman[Scope]({
-    data: []
-  })
-  postman[Iteration]()
-  t.is(data.test, undef)
-})
-
-test.serial('data read set', t => {
-  postman[Scope]({
-    data: [ { test: 'a' } ]
-  })
-  postman[Iteration]()
-  t.is(data.test, 'a')
-})
-
-test.serial('data write', t => {
-  postman[Scope]({
-    data: []
-  })
-  postman[Iteration]()
-  t.throws(() => {
-    data.test = 'a'
-  })
-})
-
 test.serial('pm.variables.get data', t => {
   postman[Scope]({
     global: { test: 'a' },
@@ -205,22 +223,4 @@ test.serial('Var simple', t => {
     global: { test: 'a' }
   })
   t.is(pm[Var]('test'), 'a')
-})
-
-test.serial('$guid', t => {
-  postman[Scope]()
-  const value = pm[Var]('$guid')
-  t.true(/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/.test(value))
-})
-
-test.serial('$randomInt', t => {
-  postman[Scope]()
-  const value = pm[Var]('$randomInt')
-  t.true(value >= 0 && value <= 1000)
-})
-
-test.serial('$timestamp', t => {
-  postman[Scope]()
-  const value = pm[Var]('$timestamp')
-  t.is(typeof value, 'number')
 })
