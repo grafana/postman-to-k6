@@ -13,6 +13,8 @@ program
   .option('-o --output <path>', 'Output file path. Default stdout.')
   .option('-g --global <path>', 'JSON export of global variables.')
   .option('-e --environment <path>', 'JSON export of environment.')
+  .option('-c --csv <path>', 'CSV data file. Used to fill data variables')
+  .option('-j --json <path>', 'JSON data file. Used to fill data variables')
   .action(run)
   .parse(process.argv)
 
@@ -29,7 +31,9 @@ function run (...args) {
   try {
     result = convertFile(path, {
       globals: options.global,
-      environment: options.environment
+      environment: options.environment,
+      csv: options.csv,
+      json: options.json
     })
   } catch (e) {
     console.error(e.message)
