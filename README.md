@@ -29,8 +29,8 @@ k6 run k6-script.js
 ## Advanced Features
 
 Some features require browserified versions of certain npm modules. The
-browserified file should be in `./{module-name}.js`. Install browserify
-globally to get the `browserify` command.
+browserified file should be in `./{module-name}.js`. Install `browserify`
+globally to get the command.
 
 ```shell
 npm install --global browserify
