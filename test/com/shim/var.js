@@ -181,6 +181,12 @@ test.serial('Var simple', t => {
   t.is(pm[Var]('test'), 'a')
 })
 
+test.serial('$guid', t => {
+  postman[Scope]()
+  const value = pm[Var]('$guid')
+  t.true(/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/.test(value))
+})
+
 test.serial('$randomInt', t => {
   postman[Scope]()
   const value = pm[Var]('$randomInt')
