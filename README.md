@@ -22,13 +22,7 @@ As local repository:
 git clone git@github.com:loadimpact/postman-to-k6.git
 cd postman-to-k6
 npm install
-
-# On macOS, Linux, or OpenBSD
-bin/postman-to-k6.js example/v2/echo.json -o k6-script.js
-
-# On windows
-node bin/postman-to-loadimpact.js example/v2/echo.json
-
+node bin/postman-to-loadimpact.js example/v2/echo.json -o k6-script.js
 k6 run k6-script.js
 ```
 
