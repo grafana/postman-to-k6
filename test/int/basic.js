@@ -17,9 +17,9 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Scope = Symbol.for("scope");
+const Initial = Symbol.for("initial");
 const Var = Symbol.for("variable");
-postman[Scope]();
+postman[Initial]();
 
 export default function() {
   let res;
@@ -38,9 +38,9 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Scope = Symbol.for("scope");
+const Initial = Symbol.for("initial");
 const Var = Symbol.for("variable");
-postman[Scope]();
+postman[Initial]();
 
 export default function() {
   let res;
@@ -59,9 +59,9 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Scope = Symbol.for("scope");
+const Initial = Symbol.for("initial");
 const Var = Symbol.for("variable");
-postman[Scope]();
+postman[Initial]();
 
 export default function() {
   let res;
@@ -84,9 +84,9 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Scope = Symbol.for("scope");
+const Initial = Symbol.for("initial");
 const Var = Symbol.for("variable");
-postman[Scope]();
+postman[Initial]();
 
 export default function() {
   let res;

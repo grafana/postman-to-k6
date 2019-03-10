@@ -5,7 +5,7 @@ import 'shim'
 
 const undef = void 0
 const Reset = Symbol.for('reset')
-const Scope = Symbol.for('scope')
+const Initial = Symbol.for('initial')
 const Iteration = Symbol.for('iteration')
 const Var = Symbol.for('variable')
 
@@ -14,59 +14,59 @@ test.beforeEach(t => {
 })
 
 test.serial('$guid', t => {
-  postman[Scope]()
+  postman[Initial]()
   const value = pm[Var]('$guid')
   t.true(/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/.test(value))
 })
 
 test.serial('$randomInt', t => {
-  postman[Scope]()
+  postman[Initial]()
   const value = pm[Var]('$randomInt')
   t.true(value >= 0 && value <= 1000)
 })
 
 test.serial('$timestamp', t => {
-  postman[Scope]()
+  postman[Initial]()
   const value = pm[Var]('$timestamp')
   t.is(typeof value, 'number')
 })
 
 test.serial('globals read clear', t => {
-  postman[Scope]()
+  postman[Initial]()
   t.is(globals.test, undef)
 })
 
 test.serial('globals read set', t => {
-  postman[Scope]({ global: { test: 'a' } })
+  postman[Initial]({ global: { test: 'a' } })
   t.is(globals.test, 'a')
 })
 
 test.serial('globals write', t => {
-  postman[Scope]()
+  postman[Initial]()
   t.throws(() => {
     globals.test = 'a'
   })
 })
 
 test.serial('environment read clear', t => {
-  postman[Scope]()
+  postman[Initial]()
   t.is(environment.test, undef)
 })
 
 test.serial('environment read set', t => {
-  postman[Scope]({ environment: { test: 'a' } })
+  postman[Initial]({ environment: { test: 'a' } })
   t.is(environment.test, 'a')
 })
 
 test.serial('environment write', t => {
-  postman[Scope]()
+  postman[Initial]()
   t.throws(() => {
     environment.test = 'a'
   })
 })
 
 test.serial('data read clear', t => {
-  postman[Scope]({
+  postman[Initial]({
     data: []
   })
   postman[Iteration]()
@@ -74,7 +74,7 @@ test.serial('data read clear', t => {
 })
 
 test.serial('data read set', t => {
-  postman[Scope]({
+  postman[Initial]({
     data: [ { test: 'a' } ]
   })
   postman[Iteration]()
@@ -82,7 +82,7 @@ test.serial('data read set', t => {
 })
 
 test.serial('data write', t => {
-  postman[Scope]({
+  postman[Initial]({
     data: []
   })
   postman[Iteration]()
@@ -92,36 +92,36 @@ test.serial('data write', t => {
 })
 
 test.serial('postman.getGlobalVariable clear', t => {
-  postman[Scope]()
+  postman[Initial]()
   t.is(postman.getGlobalVariable('test'), undef)
 })
 
 test.serial('postman.getGlobalVariable set', t => {
-  postman[Scope]({ global: { test: 'a' } })
+  postman[Initial]({ global: { test: 'a' } })
   t.is(postman.getGlobalVariable('test'), 'a')
 })
 
 test.serial('postman.setGlobalVariable clear', t => {
-  postman[Scope]()
+  postman[Initial]()
   postman.setGlobalVariable('test', 'a')
   t.is(globals.test, 'a')
 })
 
 test.serial('postman.setGlobalVariable set', t => {
-  postman[Scope]({ global: { test: 'a' } })
+  postman[Initial]({ global: { test: 'a' } })
   postman.setGlobalVariable('test', 'b')
   t.is(globals.test, 'b')
 })
 
 test.serial('postman.clearGlobalVariable', t => {
-  postman[Scope]({ global: { test: 'a' } })
+  postman[Initial]({ global: { test: 'a' } })
   t.is(globals.test, 'a')
   postman.clearGlobalVariable('test')
   t.is(globals.test, undef)
 })
 
 test.serial('postman.clearGlobalVariables', t => {
-  postman[Scope]({ global: { test: 'a', test2: 'b' } })
+  postman[Initial]({ global: { test: 'a', test2: 'b' } })
   t.is(globals.test, 'a')
   t.is(globals.test2, 'b')
   postman.clearGlobalVariables()
@@ -130,36 +130,36 @@ test.serial('postman.clearGlobalVariables', t => {
 })
 
 test.serial('postman.getEnvironmentVariable clear', t => {
-  postman[Scope]({ environment: {} })
+  postman[Initial]({ environment: {} })
   t.is(postman.getEnvironmentVariable('test'), undef)
 })
 
 test.serial('postman.getEnvironmentVariable set', t => {
-  postman[Scope]({ environment: { test: 'a' } })
+  postman[Initial]({ environment: { test: 'a' } })
   t.is(postman.getEnvironmentVariable('test'), 'a')
 })
 
 test.serial('postman.setEnvironmentVariable clear', t => {
-  postman[Scope]({ environment: {} })
+  postman[Initial]({ environment: {} })
   postman.setEnvironmentVariable('test', 'a')
   t.is(environment.test, 'a')
 })
 
 test.serial('postman.setEnvironmentVariable set', t => {
-  postman[Scope]({ environment: { test: 'a' } })
+  postman[Initial]({ environment: { test: 'a' } })
   postman.setEnvironmentVariable('test', 'b')
   t.is(environment.test, 'b')
 })
 
 test.serial('postman.clearEnvironmentVariable', t => {
-  postman[Scope]({ environment: { test: 'a' } })
+  postman[Initial]({ environment: { test: 'a' } })
   t.is(environment.test, 'a')
   postman.clearEnvironmentVariable('test')
   t.is(environment.test, undef)
 })
 
 test.serial('postman.clearEnvironmentVariables', t => {
-  postman[Scope]({ environment: { test: 'a', test2: 'b' } })
+  postman[Initial]({ environment: { test: 'a', test2: 'b' } })
   t.is(environment.test, 'a')
   t.is(environment.test2, 'b')
   postman.clearEnvironmentVariables()
@@ -168,17 +168,17 @@ test.serial('postman.clearEnvironmentVariables', t => {
 })
 
 test.serial('pm.variables.get clear', t => {
-  postman[Scope]()
+  postman[Initial]()
   t.is(pm.variables.get('test'), undef)
 })
 
 test.serial('pm.variables.get global', t => {
-  postman[Scope]({ global: { test: 'a' } })
+  postman[Initial]({ global: { test: 'a' } })
   t.is(pm.variables.get('test'), 'a')
 })
 
 test.serial('pm.variables.get collection', t => {
-  postman[Scope]({
+  postman[Initial]({
     global: { test: 'a' },
     collection: { test: 'b' }
   })
@@ -186,7 +186,7 @@ test.serial('pm.variables.get collection', t => {
 })
 
 test.serial('pm.variables.get environment', t => {
-  postman[Scope]({
+  postman[Initial]({
     global: { test: 'a' },
     collection: { test: 'b' },
     environment: { test: 'c' }
@@ -195,7 +195,7 @@ test.serial('pm.variables.get environment', t => {
 })
 
 test.serial('pm.variables.get data', t => {
-  postman[Scope]({
+  postman[Initial]({
     global: { test: 'a' },
     collection: { test: 'b' },
     environment: { test: 'c' },
@@ -206,7 +206,7 @@ test.serial('pm.variables.get data', t => {
 })
 
 test.serial('pm.variables.get data iterated', t => {
-  postman[Scope]({
+  postman[Initial]({
     data: [
       { test: 'a' },
       { test: 'b' },
@@ -219,7 +219,7 @@ test.serial('pm.variables.get data iterated', t => {
 })
 
 test.serial('Var simple', t => {
-  postman[Scope]({
+  postman[Initial]({
     global: { test: 'a' }
   })
   t.is(pm[Var]('test'), 'a')
