@@ -6,6 +6,7 @@ import 'shim'
 const undef = void 0
 const Reset = Symbol.for('reset')
 const Scope = Symbol.for('scope')
+const Iteration = Symbol.for('iteration')
 const Var = Symbol.for('variable')
 
 test.beforeEach(t => {
@@ -147,6 +148,30 @@ test.serial('variables.get environment', t => {
     environment: { test: 'c' }
   })
   t.is(pm.variables.get('test'), 'c')
+})
+
+test.serial('variables.get data', t => {
+  postman[Scope]({
+    global: { test: 'a' },
+    collection: { test: 'b' },
+    environment: { test: 'c' },
+    data: [ { test: 'd' } ]
+  })
+  postman[Iteration]()
+  t.is(pm.variables.get('test'), 'd')
+})
+
+test.serial('variables.get data iterated', t => {
+  postman[Scope]({
+    data: [
+      { test: 'a' },
+      { test: 'b' },
+      { test: 'c' }
+    ]
+  })
+  postman[Iteration]()
+  postman[Iteration]()
+  t.is(pm.variables.get('test'), 'b')
 })
 
 test.serial('Var simple', t => {
