@@ -1,4 +1,4 @@
-/* global postman pm globals environment */
+/* global postman pm globals environment data */
 
 import test from 'ava'
 import 'shim'
@@ -148,6 +148,32 @@ test.serial('variables.get environment', t => {
     environment: { test: 'c' }
   })
   t.is(pm.variables.get('test'), 'c')
+})
+
+test.serial('data read clear', t => {
+  postman[Scope]({
+    data: []
+  })
+  postman[Iteration]()
+  t.is(data.test, undef)
+})
+
+test.serial('data read set', t => {
+  postman[Scope]({
+    data: [ { test: 'a' } ]
+  })
+  postman[Iteration]()
+  t.is(data.test, 'a')
+})
+
+test.serial('data write', t => {
+  postman[Scope]({
+    data: []
+  })
+  postman[Iteration]()
+  t.throws(() => {
+    data.test = 'a'
+  })
 })
 
 test.serial('variables.get data', t => {
