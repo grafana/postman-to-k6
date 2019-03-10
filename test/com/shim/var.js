@@ -148,3 +148,16 @@ test.serial('variables.get environment', t => {
   })
   t.is(pm.variables.get('test'), 'c')
 })
+
+test.serial('Var simple', t => {
+  postman[Scope]({
+    global: { test: 'a' }
+  })
+  t.is(pm[Var]('test'), 'a')
+})
+
+test.serial('Var $randomInt', t => {
+  postman[Scope]()
+  const value = pm[Var]('$randomInt')
+  t.true(value >= 0 && value <= 1000)
+})
