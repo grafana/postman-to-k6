@@ -7,10 +7,29 @@ const undef = void 0
 const Reset = Symbol.for('reset')
 const Initial = Symbol.for('initial')
 const Iteration = Symbol.for('iteration')
+const Scope = Symbol.for('scope')
 const Var = Symbol.for('variable')
 
 test.beforeEach(t => {
   postman[Reset]()
+})
+
+test.serial('scope', t => {
+  postman[Initial]()
+  t.plan(1)
+  postman[Scope](() => {
+    t.pass()
+  })
+})
+
+test.serial('scope post', t => {
+  postman[Initial]()
+  t.plan(2)
+  postman[Scope](() => {
+    t.pass()
+  }, () => {
+    t.pass()
+  })
 })
 
 test.serial('$guid', t => {
@@ -385,6 +404,46 @@ test.serial('pm.variables.get data iterated', t => {
   postman[Iteration]()
   postman[Iteration]()
   t.is(pm.variables.get('test'), 'b')
+})
+
+test.serial('pm.variables.get local', t => {
+  postman[Initial]({
+    global: { test: 'a' },
+    collection: { test: 'b' },
+    environment: { test: 'c' },
+    data: [ { test: 'd' } ]
+  })
+  postman[Iteration]()
+  postman[Scope](() => {
+    pm.variables.set('test', 'e')
+    t.is(pm.variables.get('test'), 'e')
+  })
+})
+
+test.serial('pm.variables.set scoped', t => {
+  postman[Initial]()
+  t.throws(() => {
+    pm.variables.set('test', 'a')
+  })
+})
+
+test.serial('pm.variables.set clear', t => {
+  postman[Initial]()
+  postman[Scope](() => {
+    t.is(pm.variables.get('test'), undef)
+    pm.variables.set('test', 'a')
+    t.is(pm.variables.get('test'), 'a')
+  })
+})
+
+test.serial('pm.variables.set set', t => {
+  postman[Initial]()
+  postman[Scope](() => {
+    pm.variables.set('test', 'a')
+    t.is(pm.variables.get('test'), 'a')
+    pm.variables.set('test', 'b')
+    t.is(pm.variables.get('test'), 'b')
+  })
 })
 
 test.serial('Var simple', t => {
