@@ -171,6 +171,64 @@ test.serial('postman.clearEnvironmentVariables', t => {
   t.is(environment.test2, undef)
 })
 
+test.serial('pm.environment.clear', t => {
+  postman[Initial]({ environment: { test: 'a', test2: 'b' } })
+  t.is(environment.test, 'a')
+  t.is(environment.test2, 'b')
+  pm.environment.clear()
+  t.is(environment.test, undef)
+  t.is(environment.test2, undef)
+})
+
+test.serial('pm.environment.get clear', t => {
+  postman[Initial]({ environment: {} })
+  t.is(pm.environment.get('test'), undef)
+})
+
+test.serial('pm.environment.get set', t => {
+  postman[Initial]({ environment: { test: 'a' } })
+  t.is(pm.environment.get('test'), 'a')
+})
+
+test.serial('pm.environment.has clear', t => {
+  postman[Initial]({ environment: {} })
+  t.is(pm.environment.has('test'), false)
+})
+
+test.serial('pm.environment.has set', t => {
+  postman[Initial]({ environment: { test: 'a' } })
+  t.is(pm.environment.has('test'), true)
+})
+
+test.serial('pm.environment.set clear', t => {
+  postman[Initial]({ environment: {} })
+  t.is(environment.test, undef)
+  pm.environment.set('test', 'a')
+  t.is(environment.test, 'a')
+})
+
+test.serial('pm.environment.set set', t => {
+  postman[Initial]({ environment: { test: 'a' } })
+  t.is(environment.test, 'a')
+  pm.environment.set('test', 'b')
+  t.is(environment.test, 'b')
+})
+
+test.serial('pm.environment.toObject', t => {
+  postman[Initial]({ environment: { test: 'a', test2: 'b' } })
+  const values = pm.environment.toObject()
+  t.is(typeof values, 'object')
+  t.is(values.test, 'a')
+  t.is(values.test2, 'b')
+})
+
+test.serial('pm.environment.unset', t => {
+  postman[Initial]({ environment: { test: 'a' } })
+  t.is(environment.test, 'a')
+  pm.environment.unset('test')
+  t.is(environment.test, undef)
+})
+
 test.serial('pm.globals.clear', t => {
   postman[Initial]({ global: { test: 'a', test2: 'b', test3: 'c' } })
   t.is(globals.test, 'a')
