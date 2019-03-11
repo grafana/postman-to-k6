@@ -66,25 +66,35 @@ test.serial('environment write', t => {
 })
 
 test.serial('data read clear', t => {
-  postman[Initial]({
-    data: []
-  })
+  postman[Initial]({ data: [] })
   postman[Iteration]()
   t.is(data.test, undef)
 })
 
 test.serial('data read set', t => {
-  postman[Initial]({
-    data: [ { test: 'a' } ]
-  })
+  postman[Initial]({ data: [ { test: 'a' } ] })
   postman[Iteration]()
   t.is(data.test, 'a')
 })
 
-test.serial('data write', t => {
+test.serial('data read iterated', t => {
   postman[Initial]({
-    data: []
+    data: [
+      { test: 'a' },
+      { test: 'b' },
+      { test: 'c' }
+    ]
   })
+  postman[Iteration]()
+  t.is(data.test, 'a')
+  postman[Iteration]()
+  t.is(data.test, 'b')
+  postman[Iteration]()
+  t.is(data.test, 'c')
+})
+
+test.serial('data write', t => {
+  postman[Initial]({ data: [] })
   postman[Iteration]()
   t.throws(() => {
     data.test = 'a'
@@ -280,6 +290,48 @@ test.serial('pm.globals.unset', t => {
   t.is(globals.test, 'a')
   pm.globals.unset('test')
   t.is(globals.test, undef)
+})
+
+test.serial('pm.iterationData unavailable', t => {
+  postman[Initial]()
+  t.is(pm.iterationData, undef)
+})
+
+test.serial('pm.iterationData.get clear', t => {
+  postman[Initial]({ data: [ {} ] })
+  postman[Iteration]()
+  t.is(pm.iterationData.get('test'), undef)
+})
+
+test.serial('pm.iterationData.get set', t => {
+  postman[Initial]({ data: [ { test: 'a' } ] })
+  postman[Iteration]()
+  t.is(pm.iterationData.get('test'), 'a')
+})
+
+test.serial('pm.iterationData.get iterated', t => {
+  postman[Initial]({
+    data: [
+      { test: 'a' },
+      { test: 'b' },
+      { test: 'c' }
+    ]
+  })
+  postman[Iteration]()
+  t.is(pm.iterationData.get('test'), 'a')
+  postman[Iteration]()
+  t.is(pm.iterationData.get('test'), 'b')
+  postman[Iteration]()
+  t.is(pm.iterationData.get('test'), 'c')
+})
+
+test.serial('pm.iterationData.toObject', t => {
+  postman[Initial]({ data: [ { test: 'a', test2: 'b' } ] })
+  postman[Iteration]()
+  const values = pm.iterationData.toObject()
+  t.is(typeof values, 'object')
+  t.is(values.test, 'a')
+  t.is(values.test2, 'b')
 })
 
 test.serial('pm.variables.get clear', t => {
