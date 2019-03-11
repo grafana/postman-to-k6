@@ -15,6 +15,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]({
@@ -27,6 +28,8 @@ postman[Initial]({
 
 export default function() {
   let res;
+
+  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});
@@ -45,6 +48,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]({
@@ -56,6 +60,8 @@ postman[Initial]({
 
 export default function() {
   let res;
+
+  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.get(${'`http://${pm[Var]("machine")}.${pm[Var]("domain")}`'});
@@ -76,6 +82,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]({
@@ -88,6 +95,8 @@ postman[Initial]({
 
 export default function() {
   let res;
+
+  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});
@@ -115,9 +124,9 @@ const file = (() => {
 })();
 
 const Initial = Symbol.for("initial");
+const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-const Iteration = Symbol.for("iteration");
 postman[Initial]({
   data: file
 });
@@ -125,7 +134,7 @@ postman[Initial]({
 export default function() {
   let res;
 
-  postman[Iteration](); // Advance data variables
+  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});
@@ -154,9 +163,9 @@ const file = (() => {
 })();
 
 const Initial = Symbol.for("initial");
+const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-const Iteration = Symbol.for("iteration");
 postman[Initial]({
   data: file
 });
@@ -164,7 +173,7 @@ postman[Initial]({
 export default function() {
   let res;
 
-  postman[Iteration](); // Advance data variables
+  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});

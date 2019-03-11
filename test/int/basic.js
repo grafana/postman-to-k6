@@ -18,12 +18,15 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]();
 
 export default function() {
   let res;
+
+  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.get("http://example.com");
@@ -42,12 +45,15 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]();
 
 export default function() {
   let res;
+
+  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.post("http://example.com", "line1\\nline2\\nline3\\n");
@@ -66,12 +72,15 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]();
 
 export default function() {
   let res;
+
+  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.post("http://example.com", {
@@ -94,12 +103,15 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]();
 
 export default function() {
   let res;
+
+  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.post(
