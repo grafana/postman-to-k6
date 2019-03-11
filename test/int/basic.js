@@ -18,13 +18,16 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]();
 
 export default function() {
   let res;
 
-  res = http.get("http://example.com");
+  postman[Scope](() => {
+    res = http.get("http://example.com");
+  });
 }
 `)
 })
@@ -39,13 +42,16 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]();
 
 export default function() {
   let res;
 
-  res = http.post("http://example.com", "line1\\nline2\\nline3\\n");
+  postman[Scope](() => {
+    res = http.post("http://example.com", "line1\\nline2\\nline3\\n");
+  });
 }
 `)
 })
@@ -60,16 +66,19 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]();
 
 export default function() {
   let res;
 
-  res = http.post("http://example.com", {
-    first: "one",
-    second: "two",
-    third: "three"
+  postman[Scope](() => {
+    res = http.post("http://example.com", {
+      first: "one",
+      second: "two",
+      third: "three"
+    });
   });
 }
 `)
@@ -85,21 +94,24 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]();
 
 export default function() {
   let res;
 
-  res = http.post(
-    "http://example.com",
-    { first: "one", second: "two", third: "three" },
-    {
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
+  postman[Scope](() => {
+    res = http.post(
+      "http://example.com",
+      { first: "one", second: "two", third: "three" },
+      {
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
       }
-    }
-  );
+    );
+  });
 }
 `)
 })

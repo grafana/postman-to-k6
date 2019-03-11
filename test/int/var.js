@@ -15,6 +15,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]({
   global: {
@@ -27,7 +28,9 @@ postman[Initial]({
 export default function() {
   let res;
 
-  res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});
+  postman[Scope](() => {
+    res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});
+  });
 }
 `)
 })
@@ -42,6 +45,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]({
   collection: {
@@ -53,7 +57,9 @@ postman[Initial]({
 export default function() {
   let res;
 
-  res = http.get(${'`http://${pm[Var]("machine")}.${pm[Var]("domain")}`'});
+  postman[Scope](() => {
+    res = http.get(${'`http://${pm[Var]("machine")}.${pm[Var]("domain")}`'});
+  });
 }
 `)
 })
@@ -70,6 +76,7 @@ import http from "k6/http";
 export let options = { maxRedirects: 4 };
 
 const Initial = Symbol.for("initial");
+const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 postman[Initial]({
   environment: {
@@ -82,7 +89,9 @@ postman[Initial]({
 export default function() {
   let res;
 
-  res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});
+  postman[Scope](() => {
+    res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});
+  });
 }
 `)
 })
@@ -106,6 +115,7 @@ const file = (() => {
 })();
 
 const Initial = Symbol.for("initial");
+const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 const Iteration = Symbol.for("iteration");
 postman[Initial]({
@@ -117,7 +127,9 @@ export default function() {
 
   postman[Iteration](); // Advance data variables
 
-  res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});
+  postman[Scope](() => {
+    res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});
+  });
 }
 `)
 })
@@ -142,6 +154,7 @@ const file = (() => {
 })();
 
 const Initial = Symbol.for("initial");
+const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 const Iteration = Symbol.for("iteration");
 postman[Initial]({
@@ -153,7 +166,9 @@ export default function() {
 
   postman[Iteration](); // Advance data variables
 
-  res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});
+  postman[Scope](() => {
+    res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});
+  });
 }
 `)
 })
