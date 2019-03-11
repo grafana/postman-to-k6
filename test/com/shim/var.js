@@ -103,12 +103,14 @@ test.serial('postman.getGlobalVariable set', t => {
 
 test.serial('postman.setGlobalVariable clear', t => {
   postman[Initial]()
+  t.is(globals.test, undef)
   postman.setGlobalVariable('test', 'a')
   t.is(globals.test, 'a')
 })
 
 test.serial('postman.setGlobalVariable set', t => {
   postman[Initial]({ global: { test: 'a' } })
+  t.is(globals.test, 'a')
   postman.setGlobalVariable('test', 'b')
   t.is(globals.test, 'b')
 })
@@ -141,12 +143,14 @@ test.serial('postman.getEnvironmentVariable set', t => {
 
 test.serial('postman.setEnvironmentVariable clear', t => {
   postman[Initial]({ environment: {} })
+  t.is(environment.test, undef)
   postman.setEnvironmentVariable('test', 'a')
   t.is(environment.test, 'a')
 })
 
 test.serial('postman.setEnvironmentVariable set', t => {
   postman[Initial]({ environment: { test: 'a' } })
+  t.is(environment.test, 'a')
   postman.setEnvironmentVariable('test', 'b')
   t.is(environment.test, 'b')
 })
@@ -167,13 +171,68 @@ test.serial('postman.clearEnvironmentVariables', t => {
   t.is(environment.test2, undef)
 })
 
+test.serial('pm.globals.clear', t => {
+  postman[Initial]({ global: { test: 'a', test2: 'b', test3: 'c' } })
+  t.is(globals.test, 'a')
+  t.is(globals.test2, 'b')
+  t.is(globals.test3, 'c')
+  pm.globals.clear()
+  t.is(globals.test, undef)
+  t.is(globals.test2, undef)
+  t.is(globals.test3, undef)
+})
+
+test.serial('pm.globals.get clear', t => {
+  postman[Initial]()
+  t.is(pm.globals.get('test'), undef)
+})
+
+test.serial('pm.globals.get set', t => {
+  postman[Initial]({ global: { test: 'a' } })
+  t.is(pm.globals.get('test'), 'a')
+})
+
+test.serial('pm.globals.has clear', t => {
+  postman[Initial]()
+  t.is(pm.globals.has('test'), false)
+})
+
+test.serial('pm.globals.has set', t => {
+  postman[Initial]({ global: { test: 'a' } })
+  t.is(pm.globals.has('test'), true)
+})
+
+test.serial('pm.globals.set clear', t => {
+  postman[Initial]()
+  t.is(globals.test, undef)
+  pm.globals.set('test', 'a')
+  t.is(globals.test, 'a')
+})
+
+test.serial('pm.globals.toObject', t => {
+  postman[Initial]({ global: { test: 'a', test2: 'b' } })
+  const values = pm.globals.toObject()
+  t.is(typeof values, 'object')
+  t.is(values.test, 'a')
+  t.is(values.test2, 'b')
+})
+
+test.serial('pm.globals.unset', t => {
+  postman[Initial]({ global: { test: 'a' } })
+  t.is(globals.test, 'a')
+  pm.globals.unset('test')
+  t.is(globals.test, undef)
+})
+
 test.serial('pm.variables.get clear', t => {
   postman[Initial]()
   t.is(pm.variables.get('test'), undef)
 })
 
 test.serial('pm.variables.get global', t => {
-  postman[Initial]({ global: { test: 'a' } })
+  postman[Initial]({
+    global: { test: 'a' }
+  })
   t.is(pm.variables.get('test'), 'a')
 })
 
@@ -219,8 +278,6 @@ test.serial('pm.variables.get data iterated', t => {
 })
 
 test.serial('Var simple', t => {
-  postman[Initial]({
-    global: { test: 'a' }
-  })
+  postman[Initial]({ global: { test: 'a' } })
   t.is(pm[Var]('test'), 'a')
 })
