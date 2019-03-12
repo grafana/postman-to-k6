@@ -21,7 +21,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res;
@@ -46,7 +45,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res;
@@ -71,7 +69,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res;
@@ -100,7 +97,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res;

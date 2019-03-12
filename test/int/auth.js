@@ -16,7 +16,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res;
@@ -41,7 +40,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res;
@@ -68,7 +66,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res;
@@ -97,7 +94,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res;
@@ -124,7 +120,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res;
@@ -153,7 +148,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res, address, options, credential, signed;
@@ -198,7 +192,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res, options, oauth, request, auth, token;
@@ -253,7 +246,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res, options, oauth, request, auth, token;
@@ -308,7 +300,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res, options, oauth, request, auth, token;
@@ -360,7 +351,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res, options, oauth, request, auth, token;
@@ -414,7 +404,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res, options, oauth, request, auth, token, address;
@@ -469,7 +458,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res;
@@ -499,7 +487,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res, address;
@@ -526,7 +513,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   let res;
@@ -556,7 +542,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   group("TestFolder", function() {
@@ -588,7 +573,6 @@ const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]();
 
 export default function() {
   group("TestFolder1", function() {
