@@ -14,11 +14,9 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]({
+postman[Symbol.for("initial")]({
   global: {
     first: "one",
     second: "two",
@@ -45,11 +43,9 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]({
+postman[Symbol.for("initial")]({
   collection: {
     domain: "example.com",
     machine: 573
@@ -77,11 +73,9 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]({
+postman[Symbol.for("initial")]({
   environment: {
     first: "one",
     second: "two",
@@ -117,11 +111,10 @@ const file = (() => {
   return rows;
 })();
 
-const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]({
+postman[Symbol.for("initial")]({
   data: file
 });
 
@@ -156,11 +149,10 @@ const file = (() => {
   return rows;
 })();
 
-const Initial = Symbol.for("initial");
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
-postman[Initial]({
+postman[Symbol.for("initial")]({
   data: file
 });
 

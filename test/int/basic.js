@@ -17,8 +17,6 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -41,8 +39,6 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -65,8 +61,6 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -93,8 +87,6 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 

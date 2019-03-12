@@ -12,8 +12,6 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -36,8 +34,6 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -62,8 +58,6 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -90,8 +84,6 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -116,8 +108,6 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -144,8 +134,6 @@ import aws4 from "./aws4.js";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -188,8 +176,6 @@ import { hmac } from "k6/crypto";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -242,8 +228,6 @@ import { hmac } from "k6/crypto";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -296,8 +280,6 @@ import { hmac } from "k6/crypto";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -347,8 +329,6 @@ import { hmac } from "k6/crypto";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -400,8 +380,6 @@ import { hmac } from "k6/crypto";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -454,8 +432,6 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -483,8 +459,6 @@ import URI from "./urijs.js";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -509,8 +483,6 @@ import http from "k6/http";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -538,8 +510,6 @@ import { group } from "k6";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
@@ -569,8 +539,6 @@ import { group } from "k6";
 
 export let options = { maxRedirects: 4 };
 
-const Initial = Symbol.for("initial");
-const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
 
