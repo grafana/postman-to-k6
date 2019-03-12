@@ -8,22 +8,36 @@ Postman [pre-requests](https://www.getpostman.com/docs/pre_request_scripts) and 
 
 ## Usage
 
-As npm global package:
+Install with npm to get the `postman-to-k6` command.
 
 ```bash
 npm install -g postman-to-k6
+```
+
+Pass a Postman collection export to convert.
+
+```bash
 postman-to-k6 postman-collection.json -o k6-script.js
 k6 run k6-script.js
 ```
 
-As local repository:
+Provide environment and global variable exports separately.
 
 ```bash
-git clone git@github.com:loadimpact/postman-to-k6.git
-cd postman-to-k6
-npm install
-node bin/postman-to-loadimpact.js example/v2/echo.json -o k6-script.js
-k6 run k6-script.js
+postman-to-k6 collection.json -g globals.json -e environment.json -o k6-script.js
+```
+
+You can also pass a data file in CSV format. See Advanced Features to install
+dependencies.
+
+```bash
+postman-to-k6 collection.json --csv data.csv -o k6-script.js
+```
+
+Or a data file in JSON format.
+
+```bash
+postman-to-k6 collection.json --json data.json -o k6-script.js
 ```
 
 ## Advanced Features
@@ -65,24 +79,6 @@ A CSV data file requires `papaparse`.
 npm install papaparse
 browserify -r papaparse -s papaparse > papaparse.js
 ```
-
-## Options
-
-The transformer provides a command line interface with different options.
-
-      Usage: postman-to-k6 <path> [options]
-    
-      Convert a Postman collection to k6 script
-    
-      Options:
-    
-        -h, --help                    Print usage information.
-        -V, --version                 Print program version.
-        -o, --output <path>            Output file path. Default stdout.
-        -g, --global <path>            JSON export of global variables.
-        -e, --environment <path>       JSON export of environment.
-        -c, --csv <path>               CSV data file. Used to fill data variables.
-        -j, --json <path>              JSON data file. Used to fill data variables.
 
 ## Examples
 
