@@ -34,8 +34,8 @@ Provide environment and global variable exports separately.
 postman-to-k6 collection.json -g globals.json -e environment.json -o k6-script.js
 ```
 
-You can also pass a data file in CSV format. See Advanced Features to install
-dependencies.
+You can also pass a data file in CSV format. See
+[Advanced Features](#advanced-features) to install dependencies.
 
 ```bash
 postman-to-k6 collection.json --csv data.csv -o k6-script.js
