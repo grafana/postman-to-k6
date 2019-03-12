@@ -50,8 +50,8 @@ postman-to-k6 collection.json --json data.json -o k6-script.js
 ## Advanced Features
 
 Some features require browserified versions of certain npm modules. The
-browserified file should be in `./{module-name}.js`. Install `browserify`
-globally to get the command.
+browserified file should be in `./{module}.js`. Install `browserify` to get the
+command.
 
 ```shell
 npm install --global browserify
