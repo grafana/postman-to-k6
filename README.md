@@ -58,7 +58,7 @@ browserify -r aws4 -s aws4 > aws4.js
 browserify -r urijs -s URI > urijs.js
 ```
 
-OAuth 1 authentication requires `oath-1.0a urijs`.
+OAuth 1 authentication requires `oauth-1.0a urijs`.
 
 ```shell
 npm install oauth-1.0a urijs
