@@ -6,6 +6,7 @@ Supported Features:
 
 - Variables (at all scopes + dynamic).
 - Data files.
+- Authentication methods (except Hawk).
 - `postman.*` interface.
 - `pm.*` interface.
 - Global variables exposed by Postman: `globals` `environment` `data`.
