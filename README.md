@@ -24,7 +24,7 @@ npm install -g postman-to-k6
 Pass a collection export to convert.
 
 ```bash
-postman-to-k6 postman-collection.json -o k6-script.js
+postman-to-k6 collection.json -o k6-script.js
 k6 run k6-script.js
 ```
 
