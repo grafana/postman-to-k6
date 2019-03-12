@@ -121,6 +121,9 @@ export let options = { maxRedirects: 4, iterations: 25 };
 
 const Scope = Symbol.for("scope");
 const Var = Symbol.for("variable");
+postman[Symbol.for("initial")]({
+  iterations: 25
+});
 
 export default function() {
   let res;
