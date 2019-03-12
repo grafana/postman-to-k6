@@ -1,6 +1,13 @@
 # postman-to-k6
 
-Converts a [Postman collection](https://www.getpostman.com/docs/collections) to [k6 script](https://docs.k6.io/docs).
+Convert a [Postman collection](https://www.getpostman.com/docs/collections) to [k6 script](https://docs.k6.io/docs).
+
+Supported Features:
+
+- Variables (at all scopes + dynamic).
+- `postman.*` interface.
+- `pm.*` interface.
+- Global variables exposed by Postman: `globals` `environment` `data`.
 
 Postman [pre-requests](https://www.getpostman.com/docs/pre_request_scripts) and [tests](https://www.getpostman.com/docs/writing_tests) are appended as comments before and after its respective k6 request. The pre-request and test behaviour could easily be replicated with the [k6 API](https://docs.k6.io/docs/k6).
 
