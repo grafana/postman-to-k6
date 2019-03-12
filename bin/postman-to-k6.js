@@ -10,6 +10,7 @@ program
   .usage('<path> [options]')
   .description('Convert a Postman collection to k6 script')
   .option('-o, --output <path>', 'Output file path. Default stdout.')
+  .option('-i, --iterations <count>', 'Number of iterations.')
   .option('-g, --global <path>', 'JSON export of global variables.')
   .option('-e, --environment <path>', 'JSON export of environment.')
   .option('-c, --csv <path>', 'CSV data file. Used to fill data variables.')
@@ -32,7 +33,8 @@ function run (...args) {
       globals: options.global,
       environment: options.environment,
       csv: options.csv,
-      json: options.json
+      json: options.json,
+      iterations: options.iterations
     })
   } catch (e) {
     console.error(e.message)
