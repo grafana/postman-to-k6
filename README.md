@@ -5,6 +5,7 @@ Convert a [Postman collection](https://www.getpostman.com/docs/collections) to [
 Supported Features:
 
 - Variables (at all scopes + dynamic).
+- Data files.
 - `postman.*` interface.
 - `pm.*` interface.
 - Global variables exposed by Postman: `globals` `environment` `data`.
