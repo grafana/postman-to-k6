@@ -17,33 +17,39 @@ Postman [pre-requests](https://www.getpostman.com/docs/pre_request_scripts) and 
 
 Install with npm to get the `postman-to-k6` command.
 
-```bash
+```shell
 npm install -g postman-to-k6
 ```
 
 Pass a collection export to convert.
 
-```bash
+```shell
 postman-to-k6 collection.json -o k6-script.js
 k6 run k6-script.js
 ```
 
+The default script runs 1 iteration. Increase if desired.
+
+```shell
+postman-to-k6 collection.json -i 25 -o k6-script.js
+```
+
 Provide environment and global variable exports separately.
 
-```bash
+```shell
 postman-to-k6 collection.json -g globals.json -e environment.json -o k6-script.js
 ```
 
 You can also pass a data file in CSV format. See
 [Advanced Features](#advanced-features) to install dependencies.
 
-```bash
+```shell
 postman-to-k6 collection.json --csv data.csv -o k6-script.js
 ```
 
 Or a data file in JSON format.
 
-```bash
+```shell
 postman-to-k6 collection.json --json data.json -o k6-script.js
 ```
 
