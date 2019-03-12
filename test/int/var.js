@@ -29,8 +29,6 @@ postman[Initial]({
 export default function() {
   let res;
 
-  postman[Iteration]();
-
   postman[Scope](() => {
     res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});
   });
@@ -60,8 +58,6 @@ postman[Initial]({
 
 export default function() {
   let res;
-
-  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.get(${'`http://${pm[Var]("machine")}.${pm[Var]("domain")}`'});
@@ -95,8 +91,6 @@ postman[Initial]({
 
 export default function() {
   let res;
-
-  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.get(${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'});

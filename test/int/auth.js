@@ -21,8 +21,6 @@ postman[Initial]();
 export default function() {
   let res;
 
-  postman[Iteration]();
-
   postman[Scope](() => {
     res = http.get("http://example.com");
   });
@@ -47,8 +45,6 @@ postman[Initial]();
 
 export default function() {
   let res;
-
-  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.get("http://user123:secret@example.com", {
@@ -76,8 +72,6 @@ postman[Initial]();
 
 export default function() {
   let res;
-
-  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.get("http://example.com", {
@@ -108,8 +102,6 @@ postman[Initial]();
 export default function() {
   let res;
 
-  postman[Iteration]();
-
   postman[Scope](() => {
     res = http.get("http://user123:secret@example.com", {
       auth: "digest"
@@ -136,8 +128,6 @@ postman[Initial]();
 
 export default function() {
   let res;
-
-  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.get("http://user123:secret@example.com", {
@@ -167,8 +157,6 @@ postman[Initial]();
 
 export default function() {
   let res, address, options, credential, signed;
-
-  postman[Iteration]();
 
   postman[Scope](() => {
     address = new URI("http://example.com");
@@ -214,8 +202,6 @@ postman[Initial]();
 
 export default function() {
   let res, options, oauth, request, auth, token;
-
-  postman[Iteration]();
 
   postman[Scope](() => {
     options = {
@@ -272,8 +258,6 @@ postman[Initial]();
 export default function() {
   let res, options, oauth, request, auth, token;
 
-  postman[Iteration]();
-
   postman[Scope](() => {
     options = {
       consumer: {
@@ -329,8 +313,6 @@ postman[Initial]();
 export default function() {
   let res, options, oauth, request, auth, token;
 
-  postman[Iteration]();
-
   postman[Scope](() => {
     options = {
       consumer: {
@@ -382,8 +364,6 @@ postman[Initial]();
 
 export default function() {
   let res, options, oauth, request, auth, token;
-
-  postman[Iteration]();
 
   postman[Scope](() => {
     options = {
@@ -438,8 +418,6 @@ postman[Initial]();
 
 export default function() {
   let res, options, oauth, request, auth, token, address;
-
-  postman[Iteration]();
 
   postman[Scope](() => {
     options = {
@@ -496,8 +474,6 @@ postman[Initial]();
 export default function() {
   let res;
 
-  postman[Iteration]();
-
   postman[Scope](() => {
     res = http.get("http://example.com", {
       headers: {
@@ -528,8 +504,6 @@ postman[Initial]();
 export default function() {
   let res, address;
 
-  postman[Iteration]();
-
   postman[Scope](() => {
     address = new URI("http://example.com");
     address.addQuery("access_token", "token");
@@ -556,8 +530,6 @@ postman[Initial]();
 
 export default function() {
   let res;
-
-  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.get("http://example.com", {
@@ -587,8 +559,6 @@ const Var = Symbol.for("variable");
 postman[Initial]();
 
 export default function() {
-  postman[Iteration]();
-
   group("TestFolder", function() {
     let res;
 
@@ -621,8 +591,6 @@ const Var = Symbol.for("variable");
 postman[Initial]();
 
 export default function() {
-  postman[Iteration]();
-
   group("TestFolder1", function() {
     group("TestFolder2", function() {
       group("TestFolder3", function() {

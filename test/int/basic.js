@@ -26,8 +26,6 @@ postman[Initial]();
 export default function() {
   let res;
 
-  postman[Iteration]();
-
   postman[Scope](() => {
     res = http.get("http://example.com");
   });
@@ -53,8 +51,6 @@ postman[Initial]();
 export default function() {
   let res;
 
-  postman[Iteration]();
-
   postman[Scope](() => {
     res = http.post("http://example.com", "line1\\nline2\\nline3\\n");
   });
@@ -79,8 +75,6 @@ postman[Initial]();
 
 export default function() {
   let res;
-
-  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.post("http://example.com", {
@@ -110,8 +104,6 @@ postman[Initial]();
 
 export default function() {
   let res;
-
-  postman[Iteration]();
 
   postman[Scope](() => {
     res = http.post(
