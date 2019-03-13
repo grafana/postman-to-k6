@@ -110,6 +110,7 @@ const file = (() => {
   const rows = JSON.parse(text);
   return rows;
 })();
+options.iterations = file.length;
 
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
@@ -148,6 +149,7 @@ const file = (() => {
   const rows = papaparse.parse(text, { header: true }).data;
   return rows;
 })();
+options.iterations = file.length;
 
 const Iteration = Symbol.for("iteration");
 const Scope = Symbol.for("scope");
