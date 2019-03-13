@@ -10,6 +10,7 @@ Supported Features:
 - `postman.*` interface.
 - `pm.*` interface.
 - Global variables exposed by Postman: `globals` `environment` `data`.
+- `xml2Json` conversion.
 
 Postman [pre-requests](https://www.getpostman.com/docs/pre_request_scripts) and [tests](https://www.getpostman.com/docs/writing_tests) are appended as comments before and after its respective k6 request. The pre-request and test behaviour could easily be replicated with the [k6 API](https://docs.k6.io/docs/k6).
 
@@ -91,6 +92,13 @@ A CSV data file requires `papaparse`.
 ```shell
 npm install papaparse
 browserify -r papaparse -s papaparse > papaparse.js
+```
+
+The `xml2Json` method requires `xmljs`.
+
+```shell
+npm install xml2js
+browserify -r xml2js -s xml2js > xml2js.js
 ```
 
 ## Examples
