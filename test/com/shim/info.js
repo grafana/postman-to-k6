@@ -1,4 +1,4 @@
-/* global postman pm */
+/* global postman pm iteration */
 
 import test from 'ava'
 import 'shim'
@@ -11,15 +11,20 @@ test.beforeEach(t => {
 })
 
 test('iteration', t => {
+  global.__ITER = 7
+  t.is(iteration, 7)
+})
+
+test('pm.info.iteration', t => {
   global.__ITER = 5
   t.is(pm.info.iteration, 5)
 })
 
-test('iterationCount default', t => {
+test('pm.info.iterationCount default', t => {
   t.is(pm.info.iterationCount, 1)
 })
 
-test('iterationCount custom', t => {
+test('pm.info.iterationCount custom', t => {
   postman[Initial]({ iterations: 25 })
   t.is(pm.info.iterationCount, 25)
 })
