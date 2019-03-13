@@ -9,7 +9,8 @@ Supported Features:
 - Authentication methods (except Hawk).
 - `postman.*` interface.
 - `pm.*` interface.
-- Global variables exposed by Postman: `globals` `environment` `data`.
+- Global variables exposed by Postman: `globals` `environment` `data`
+  `iteration`.
 - `xml2Json` conversion.
 
 Postman [pre-requests](https://www.getpostman.com/docs/pre_request_scripts) and [tests](https://www.getpostman.com/docs/writing_tests) are appended as comments before and after its respective k6 request. The pre-request and test behaviour could easily be replicated with the [k6 API](https://docs.k6.io/docs/k6).
