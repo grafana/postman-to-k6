@@ -5,7 +5,7 @@ import 'shim/core'
 
 const Reset = Symbol.for('reset')
 const Initial = Symbol.for('initial')
-const Scope = Symbol.for('scope')
+const Request = Symbol.for('request')
 
 test.beforeEach(t => {
   postman[Reset]()
@@ -17,13 +17,13 @@ test('iteration', t => {
 })
 
 test('pm.info.eventName pre', t => {
-  postman[Scope](() => {
+  postman[Request]([], () => {
     t.is(pm.info.eventName, 'prerequest')
   })
 })
 
 test('pm.info.eventName post', t => {
-  postman[Scope](() => {}, () => {
+  postman[Request]([], null, () => {
     t.is(pm.info.eventName, 'test')
   })
 })
