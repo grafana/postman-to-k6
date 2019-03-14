@@ -1,7 +1,7 @@
 /* global postman pm globals environment data */
 
 import test from 'ava'
-import 'shim/core'
+import mockRequire from 'mock-require'
 
 const undef = void 0
 const Reset = Symbol.for('reset')
@@ -9,6 +9,11 @@ const Initial = Symbol.for('initial')
 const Iteration = Symbol.for('iteration')
 const Request = Symbol.for('request')
 const Var = Symbol.for('variable')
+
+test.before(t => {
+  mockRequire('k6/http', { request: () => {} })
+  require('shim/core')
+})
 
 test.beforeEach(t => {
   postman[Reset]()
