@@ -7,7 +7,7 @@ const Reset = Symbol.for('reset')
 
 test.before(t => {
   mockRequire('../../../lib/xml2js.js', 'xml2js')
-  require('shim')
+  require('shim/core')
 })
 
 test.beforeEach(t => {

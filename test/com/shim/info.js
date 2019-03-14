@@ -1,7 +1,7 @@
 /* global postman pm iteration */
 
 import test from 'ava'
-import 'shim'
+import 'shim/core'
 
 const Reset = Symbol.for('reset')
 const Initial = Symbol.for('initial')

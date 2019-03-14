@@ -1,7 +1,7 @@
 /* global postman */
 
 import test from 'ava'
-import 'shim'
+import 'shim/core'
 
 const Reset = Symbol.for('reset')
 

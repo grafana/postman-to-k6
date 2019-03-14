@@ -1,7 +1,7 @@
 /* global postman pm globals environment data */
 
 import test from 'ava'
-import 'shim'
+import 'shim/core'
 
 const undef = void 0
 const Reset = Symbol.for('reset')
