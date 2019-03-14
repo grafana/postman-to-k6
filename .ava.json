@@ -1,3 +1,6 @@
 {
-    "verbose": true
+    "verbose": true,
+    "require": [
+        "@babel/register"
+    ]
 }
