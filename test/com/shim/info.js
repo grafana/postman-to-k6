@@ -51,6 +51,16 @@ test('pm.info.iterationCount custom', t => {
   t.is(pm.info.iterationCount, 25)
 })
 
+test('pm.info.requestId', t => {
+  postman[Request]({
+    pre () {
+      t.throws(() => {
+        pm.info.requestId /* eslint-disable-line no-unused-expressions */
+      })
+    }
+  })
+})
+
 test('pm.info.requestName', t => {
   postman[Request]({
     name: 'Test Request',
