@@ -55,3 +55,13 @@ test('request.method', t => {
     }
   })
 })
+
+test('request.name', t => {
+  postman[Request]({
+    name: 'Test Request',
+    method: 'get',
+    pre () {
+      t.is(request.name, 'Test Request')
+    }
+  })
+})
