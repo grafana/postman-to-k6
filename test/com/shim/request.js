@@ -75,6 +75,16 @@ test('request.headers', t => {
   })
 })
 
+test('request.id', t => {
+  postman[Request]({
+    pre () {
+      t.throws(() => {
+        request.id /* eslint-disable-line no-unused-expressions */
+      })
+    }
+  })
+})
+
 test('request.method', t => {
   postman[Request]({
     method: 'get',
