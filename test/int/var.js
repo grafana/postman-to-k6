@@ -24,7 +24,11 @@ postman[Symbol.for("initial")]({
 });
 
 export default function() {
-  postman[Request](["GET", "http://{{first}}.{{third}}"]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://{{first}}.{{third}}"
+  });
 }
 `)
 })
@@ -47,7 +51,11 @@ postman[Symbol.for("initial")]({
 });
 
 export default function() {
-  postman[Request](["GET", "http://{{machine}}.{{domain}}"]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://{{machine}}.{{domain}}"
+  });
 }
 `)
 })
@@ -73,7 +81,11 @@ postman[Symbol.for("initial")]({
 });
 
 export default function() {
-  postman[Request](["GET", "http://{{first}}.{{third}}"]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://{{first}}.{{third}}"
+  });
 }
 `)
 })
@@ -106,7 +118,11 @@ postman[Symbol.for("initial")]({
 export default function() {
   postman[Iteration]();
 
-  postman[Request](["GET", "http://{{first}}.{{third}}"]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://{{first}}.{{third}}"
+  });
 }
 `)
 })
@@ -140,7 +156,11 @@ postman[Symbol.for("initial")]({
 export default function() {
   postman[Iteration]();
 
-  postman[Request](["GET", "http://{{first}}.{{third}}"]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://{{first}}.{{third}}"
+  });
 }
 `)
 })
@@ -174,7 +194,11 @@ postman[Symbol.for("initial")]({
 export default function() {
   postman[Iteration]();
 
-  postman[Request](["GET", "http://{{first}}.{{third}}"]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://{{first}}.{{third}}"
+  });
 }
 `)
 })

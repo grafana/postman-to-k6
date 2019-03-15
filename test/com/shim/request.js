@@ -17,19 +17,41 @@ test.beforeEach(t => {
   postman[Reset]()
 })
 
+test('pre', t => {
+  postman[Request]({
+    pre () {
+      t.pass()
+    }
+  })
+})
+
+test('post', t => {
+  postman[Request]({
+    post () {
+      t.pass()
+    }
+  })
+})
+
 test('request', t => {
   t.plan(4)
   t.is(request, undef)
-  postman[Request]([], () => {
-    t.is(typeof request, 'object')
-  }, () => {
-    t.is(typeof request, 'object')
+  postman[Request]({
+    pre () {
+      t.is(typeof request, 'object')
+    },
+    post () {
+      t.is(typeof request, 'object')
+    }
   })
   t.is(request, undef)
 })
 
 test('request.method', t => {
-  postman[Request]([ 'get' ], () => {
-    t.is(request.method, 'GET')
+  postman[Request]({
+    method: 'get',
+    pre () {
+      t.is(request.method, 'GET')
+    }
   })
 })

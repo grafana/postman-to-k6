@@ -23,23 +23,27 @@ test('require standard', t => {
 })
 
 test('require prerequest', t => {
-  postman[Request]([], () => {
-    t.throws(() => {
-      global.require('console')
-    })
+  postman[Request]({
+    pre () {
+      t.throws(() => {
+        global.require('console')
+      })
+    }
   })
 })
 
 test('require postrequest', t => {
-  postman[Request]([], null, () => {
-    t.throws(() => {
-      global.require('console')
-    })
+  postman[Request]({
+    post () {
+      t.throws(() => {
+        global.require('console')
+      })
+    }
   })
 })
 
 test('require released', t => {
-  postman[Request]([])
+  postman[Request]({})
   t.notThrows(() => {
     global.require('console')
   })

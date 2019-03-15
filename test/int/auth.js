@@ -15,7 +15,11 @@ const Request = Symbol.for("request");
 const Var = Symbol.for("variable");
 
 export default function() {
-  postman[Request](["GET", "http://example.com"]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://example.com"
+  });
 }
 `)
 })
@@ -32,14 +36,14 @@ const Request = Symbol.for("request");
 const Var = Symbol.for("variable");
 
 export default function() {
-  postman[Request]([
-    "GET",
-    "http://user123:secret@example.com",
-    null,
-    {
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://user123:secret@example.com",
+    options: {
       auth: "basic"
     }
-  ]);
+  });
 }
 `)
 })
@@ -56,16 +60,14 @@ const Request = Symbol.for("request");
 const Var = Symbol.for("variable");
 
 export default function() {
-  postman[Request]([
-    "GET",
-    "http://example.com",
-    null,
-    {
-      headers: {
-        Authorization: "Bearer secrettoken"
-      }
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://example.com",
+    headers: {
+      Authorization: "Bearer secrettoken"
     }
-  ]);
+  });
 }
 `)
 })
@@ -82,14 +84,14 @@ const Request = Symbol.for("request");
 const Var = Symbol.for("variable");
 
 export default function() {
-  postman[Request]([
-    "GET",
-    "http://user123:secret@example.com",
-    null,
-    {
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://user123:secret@example.com",
+    options: {
       auth: "digest"
     }
-  ]);
+  });
 }
 `)
 })
@@ -106,14 +108,14 @@ const Request = Symbol.for("request");
 const Var = Symbol.for("variable");
 
 export default function() {
-  postman[Request]([
-    "GET",
-    "http://user123:secret@example.com",
-    null,
-    {
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://user123:secret@example.com",
+    options: {
       auth: "ntlm"
     }
-  ]);
+  });
 }
 `)
 })
@@ -150,14 +152,12 @@ export default function() {
     sessionToken: "session"
   };
   signed = aws4.sign(options, credential);
-  postman[Request]([
-    "GET",
-    ${'`http://${signed.hostname}${signed.path}`'},
-    null,
-    {
-      headers: signed.headers
-    }
-  ]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: ${'`http://${signed.hostname}${signed.path}`'},
+    headers: signed.headers
+  });
 }
 `)
 })
@@ -204,14 +204,12 @@ export default function() {
   };
   oauth = OAuth(options);
   auth = oauth.toHeader(oauth.authorize(request, token));
-  postman[Request]([
-    "GET",
-    "http://example.com",
-    null,
-    {
-      headers: auth
-    }
-  ]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://example.com",
+    headers: auth
+  });
 }
 `)
 })
@@ -258,14 +256,12 @@ export default function() {
   };
   oauth = OAuth(options);
   auth = oauth.toHeader(oauth.authorize(request, token));
-  postman[Request]([
-    "GET",
-    "http://example.com",
-    null,
-    {
-      headers: auth
-    }
-  ]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://example.com",
+    headers: auth
+  });
 }
 `)
 })
@@ -309,14 +305,12 @@ export default function() {
   };
   oauth = OAuth(options);
   auth = oauth.toHeader(oauth.authorize(request, token));
-  postman[Request]([
-    "GET",
-    "http://example.com",
-    null,
-    {
-      headers: auth
-    }
-  ]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://example.com",
+    headers: auth
+  });
 }
 `)
 })
@@ -363,7 +357,12 @@ export default function() {
   };
   oauth = OAuth(options);
   auth = oauth.authorize(request, token);
-  postman[Request](["POST", "http://example.com", auth]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "POST",
+    address: "http://example.com",
+    data: auth
+  });
 }
 `)
 })
@@ -415,7 +414,12 @@ export default function() {
   for (const key of Object.keys(auth)) {
     address.addQuery(key, auth[key]);
   }
-  postman[Request](["GET", address.toString(), "line1\\nline2\\nline3\\n"]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: address.toString(),
+    data: "line1\\nline2\\nline3\\n"
+  });
 }
 `)
 })
@@ -432,16 +436,14 @@ const Request = Symbol.for("request");
 const Var = Symbol.for("variable");
 
 export default function() {
-  postman[Request]([
-    "GET",
-    "http://example.com",
-    null,
-    {
-      headers: {
-        Authorization: "Bearer token"
-      }
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://example.com",
+    headers: {
+      Authorization: "Bearer token"
     }
-  ]);
+  });
 }
 `)
 })
@@ -463,7 +465,11 @@ export default function() {
 
   address = new URI("http://example.com");
   address.addQuery("access_token", "token");
-  postman[Request](["GET", address.toString()]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: address.toString()
+  });
 }
 `)
 })
@@ -480,16 +486,14 @@ const Request = Symbol.for("request");
 const Var = Symbol.for("variable");
 
 export default function() {
-  postman[Request]([
-    "GET",
-    "http://example.com",
-    null,
-    {
-      headers: {
-        Authorization: "Bearer token"
-      }
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://example.com",
+    headers: {
+      Authorization: "Bearer token"
     }
-  ]);
+  });
 }
 `)
 })
@@ -508,16 +512,14 @@ const Var = Symbol.for("variable");
 
 export default function() {
   group("TestFolder", function() {
-    postman[Request]([
-      "GET",
-      "http://example.com",
-      null,
-      {
-        headers: {
-          Authorization: "Bearer token"
-        }
+    postman[Request]({
+      name: "TestRequest",
+      method: "GET",
+      address: "http://example.com",
+      headers: {
+        Authorization: "Bearer token"
       }
-    ]);
+    });
   });
 }
 `)
@@ -540,16 +542,14 @@ export default function() {
     group("TestFolder2", function() {
       group("TestFolder3", function() {
         group("TestFolder4", function() {
-          postman[Request]([
-            "GET",
-            "http://example.com",
-            null,
-            {
-              headers: {
-                Authorization: "Bearer token"
-              }
+          postman[Request]({
+            name: "TestRequest",
+            method: "GET",
+            address: "http://example.com",
+            headers: {
+              Authorization: "Bearer token"
             }
-          ]);
+          });
         });
       });
     });

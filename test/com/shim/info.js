@@ -22,14 +22,18 @@ test('iteration', t => {
 })
 
 test('pm.info.eventName pre', t => {
-  postman[Request]([], () => {
-    t.is(pm.info.eventName, 'prerequest')
+  postman[Request]({
+    pre () {
+      t.is(pm.info.eventName, 'prerequest')
+    }
   })
 })
 
 test('pm.info.eventName post', t => {
-  postman[Request]([], null, () => {
-    t.is(pm.info.eventName, 'test')
+  postman[Request]({
+    post () {
+      t.is(pm.info.eventName, 'test')
+    }
   })
 })
 

@@ -19,24 +19,6 @@ test.beforeEach(t => {
   postman[Reset]()
 })
 
-test.serial('scope', t => {
-  postman[Initial]()
-  t.plan(1)
-  postman[Request]([], () => {
-    t.pass()
-  })
-})
-
-test.serial('scope post', t => {
-  postman[Initial]()
-  t.plan(2)
-  postman[Request]([], () => {
-    t.pass()
-  }, () => {
-    t.pass()
-  })
-})
-
 test.serial('$guid', t => {
   postman[Initial]()
   const value = pm[Var]('$guid')
@@ -419,9 +401,11 @@ test.serial('pm.variables.get local', t => {
     data: [ { test: 'd' } ]
   })
   postman[Iteration]()
-  postman[Request]([], () => {
-    pm.variables.set('test', 'e')
-    t.is(pm.variables.get('test'), 'e')
+  postman[Request]({
+    pre () {
+      pm.variables.set('test', 'e')
+      t.is(pm.variables.get('test'), 'e')
+    }
   })
 })
 
@@ -434,20 +418,24 @@ test.serial('pm.variables.set scoped', t => {
 
 test.serial('pm.variables.set clear', t => {
   postman[Initial]()
-  postman[Request]([], () => {
-    t.is(pm.variables.get('test'), undef)
-    pm.variables.set('test', 'a')
-    t.is(pm.variables.get('test'), 'a')
+  postman[Request]({
+    pre () {
+      t.is(pm.variables.get('test'), undef)
+      pm.variables.set('test', 'a')
+      t.is(pm.variables.get('test'), 'a')
+    }
   })
 })
 
 test.serial('pm.variables.set set', t => {
   postman[Initial]()
-  postman[Request]([], () => {
-    pm.variables.set('test', 'a')
-    t.is(pm.variables.get('test'), 'a')
-    pm.variables.set('test', 'b')
-    t.is(pm.variables.get('test'), 'b')
+  postman[Request]({
+    pre () {
+      pm.variables.set('test', 'a')
+      t.is(pm.variables.get('test'), 'a')
+      pm.variables.set('test', 'b')
+      t.is(pm.variables.get('test'), 'b')
+    }
   })
 })
 

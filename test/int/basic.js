@@ -20,7 +20,11 @@ const Request = Symbol.for("request");
 const Var = Symbol.for("variable");
 
 export default function() {
-  postman[Request](["GET", "http://example.com"]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://example.com"
+  });
 }
 `)
 })
@@ -37,7 +41,12 @@ const Request = Symbol.for("request");
 const Var = Symbol.for("variable");
 
 export default function() {
-  postman[Request](["POST", "http://example.com", "line1\\nline2\\nline3\\n"]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "POST",
+    address: "http://example.com",
+    data: "line1\\nline2\\nline3\\n"
+  });
 }
 `)
 })
@@ -54,11 +63,12 @@ const Request = Symbol.for("request");
 const Var = Symbol.for("variable");
 
 export default function() {
-  postman[Request]([
-    "POST",
-    "http://example.com",
-    { first: "one", second: "two", third: "three" }
-  ]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "POST",
+    address: "http://example.com",
+    data: { first: "one", second: "two", third: "three" }
+  });
 }
 `)
 })
@@ -75,16 +85,15 @@ const Request = Symbol.for("request");
 const Var = Symbol.for("variable");
 
 export default function() {
-  postman[Request]([
-    "POST",
-    "http://example.com",
-    { first: "one", second: "two", third: "three" },
-    {
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      }
+  postman[Request]({
+    name: "TestRequest",
+    method: "POST",
+    address: "http://example.com",
+    data: { first: "one", second: "two", third: "three" },
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded"
     }
-  ]);
+  });
 }
 `)
 })
@@ -106,7 +115,11 @@ postman[Symbol.for("initial")]({
 });
 
 export default function() {
-  postman[Request](["GET", "http://example.com"]);
+  postman[Request]({
+    name: "TestRequest",
+    method: "GET",
+    address: "http://example.com"
+  });
 }
 `)
 })
