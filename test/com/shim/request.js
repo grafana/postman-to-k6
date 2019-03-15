@@ -47,6 +47,20 @@ test('request', t => {
   t.is(request, undef)
 })
 
+test('request.headers', t => {
+  const headers = {
+    First: 'One',
+    Second: 'Two',
+    Third: 'Three'
+  }
+  postman[Request]({
+    headers,
+    pre () {
+      t.deepEqual(request.headers, headers)
+    }
+  })
+})
+
 test('request.method', t => {
   postman[Request]({
     method: 'get',
