@@ -1,4 +1,4 @@
-/* global postman request */
+/* global postman pm request */
 
 import test from 'ava'
 import mockRequire from 'mock-require'
@@ -108,6 +108,15 @@ test('request.url', t => {
     address: 'http://example.com',
     pre () {
       t.is(request.url, 'http://example.com')
+    }
+  })
+})
+
+test('pm.request.url', t => {
+  postman[Request]({
+    address: 'http://example.com',
+    pre () {
+      t.is(pm.request.url, 'http://example.com')
     }
   })
 })
