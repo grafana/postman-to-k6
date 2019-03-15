@@ -59,9 +59,17 @@ test('request.method', t => {
 test('request.name', t => {
   postman[Request]({
     name: 'Test Request',
-    method: 'get',
     pre () {
       t.is(request.name, 'Test Request')
+    }
+  })
+})
+
+test('request.url', t => {
+  postman[Request]({
+    address: 'http://example.com',
+    pre () {
+      t.is(request.url, 'http://example.com')
     }
   })
 })
