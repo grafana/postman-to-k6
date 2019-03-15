@@ -12,7 +12,6 @@ import "./postman-shim.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   postman[Request]({
@@ -33,7 +32,6 @@ import "./postman-shim.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   postman[Request]({
@@ -57,7 +55,6 @@ import "./postman-shim.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   postman[Request]({
@@ -81,7 +78,6 @@ import "./postman-shim.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   postman[Request]({
@@ -105,7 +101,6 @@ import "./postman-shim.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   postman[Request]({
@@ -131,7 +126,6 @@ import aws4 from "./aws4.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   let address, options, credential, signed;
@@ -173,7 +167,6 @@ import { hmac } from "k6/crypto";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   let options, oauth, request, auth, token;
@@ -225,7 +218,6 @@ import { hmac } from "k6/crypto";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   let options, oauth, request, auth, token;
@@ -277,7 +269,6 @@ import { hmac } from "k6/crypto";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   let options, oauth, request, auth, token;
@@ -326,7 +317,6 @@ import { hmac } from "k6/crypto";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   let options, oauth, request, auth, token;
@@ -379,7 +369,6 @@ import { hmac } from "k6/crypto";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   let options, oauth, request, auth, token, address;
@@ -433,7 +422,6 @@ import "./postman-shim.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   postman[Request]({
@@ -458,7 +446,6 @@ import URI from "./urijs.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   let address;
@@ -483,7 +470,6 @@ import "./postman-shim.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   postman[Request]({
@@ -508,7 +494,6 @@ import { group } from "k6";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   group("TestFolder", function() {
@@ -535,7 +520,6 @@ import { group } from "k6";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   group("TestFolder1", function() {

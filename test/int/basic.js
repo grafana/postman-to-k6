@@ -17,7 +17,6 @@ import "./postman-shim.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   postman[Request]({
@@ -38,7 +37,6 @@ import "./postman-shim.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   postman[Request]({
@@ -60,7 +58,6 @@ import "./postman-shim.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   postman[Request]({
@@ -82,7 +79,6 @@ import "./postman-shim.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 
 export default function() {
   postman[Request]({
@@ -109,7 +105,6 @@ import "./postman-shim.js";
 export let options = { maxRedirects: 4, iterations: 25 };
 
 const Request = Symbol.for("request");
-const Var = Symbol.for("variable");
 postman[Symbol.for("initial")]({
   iterations: 25
 });
