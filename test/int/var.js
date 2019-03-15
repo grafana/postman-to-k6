@@ -24,7 +24,7 @@ postman[Symbol.for("initial")]({
 });
 
 export default function() {
-  postman[Request](["GET", ${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'}]);
+  postman[Request](["GET", "http://{{first}}.{{third}}"]);
 }
 `)
 })
@@ -47,10 +47,7 @@ postman[Symbol.for("initial")]({
 });
 
 export default function() {
-  postman[Request]([
-    "GET",
-    ${'`http://${pm[Var]("machine")}.${pm[Var]("domain")}`'}
-  ]);
+  postman[Request](["GET", "http://{{machine}}.{{domain}}"]);
 }
 `)
 })
@@ -76,7 +73,7 @@ postman[Symbol.for("initial")]({
 });
 
 export default function() {
-  postman[Request](["GET", ${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'}]);
+  postman[Request](["GET", "http://{{first}}.{{third}}"]);
 }
 `)
 })
@@ -109,7 +106,7 @@ postman[Symbol.for("initial")]({
 export default function() {
   postman[Iteration]();
 
-  postman[Request](["GET", ${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'}]);
+  postman[Request](["GET", "http://{{first}}.{{third}}"]);
 }
 `)
 })
@@ -143,7 +140,7 @@ postman[Symbol.for("initial")]({
 export default function() {
   postman[Iteration]();
 
-  postman[Request](["GET", ${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'}]);
+  postman[Request](["GET", "http://{{first}}.{{third}}"]);
 }
 `)
 })
@@ -177,7 +174,7 @@ postman[Symbol.for("initial")]({
 export default function() {
   postman[Iteration]();
 
-  postman[Request](["GET", ${'`http://${pm[Var]("first")}.${pm[Var]("third")}`'}]);
+  postman[Request](["GET", "http://{{first}}.{{third}}"]);
 }
 `)
 })
