@@ -111,12 +111,3 @@ test('request.url', t => {
     }
   })
 })
-
-test('pm.request.url', t => {
-  postman[Request]({
-    address: 'http://example.com',
-    pre () {
-      t.is(pm.request.url, 'http://example.com')
-    }
-  })
-})
