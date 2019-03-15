@@ -439,7 +439,7 @@ test.serial('pm.variables.set set', t => {
   })
 })
 
-test.serial('Var simple', t => {
+test.serial('pm[Var] simple', t => {
   postman[Initial]({ global: { test: 'a' } })
   t.is(pm[Var]('test'), 'a')
 })
