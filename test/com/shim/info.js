@@ -50,3 +50,12 @@ test('pm.info.iterationCount custom', t => {
   postman[Initial]({ iterations: 25 })
   t.is(pm.info.iterationCount, 25)
 })
+
+test('pm.info.requestName', t => {
+  postman[Request]({
+    name: 'Test Request',
+    pre () {
+      t.is(pm.info.requestName, 'Test Request')
+    }
+  })
+})
