@@ -1,4 +1,4 @@
-/* global postman pm request */
+/* global postman request */
 
 import test from 'ava'
 import mockRequire from 'mock-require'
