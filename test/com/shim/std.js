@@ -16,13 +16,13 @@ test.beforeEach(t => {
   postman[Reset]()
 })
 
-test('require standard', t => {
+test.serial('require standard', t => {
   t.notThrows(() => {
     global.require('console')
   })
 })
 
-test('require prerequest', t => {
+test.serial('require prerequest', t => {
   postman[Request]({
     pre () {
       t.throws(() => {
@@ -32,7 +32,7 @@ test('require prerequest', t => {
   })
 })
 
-test('require postrequest', t => {
+test.serial('require postrequest', t => {
   postman[Request]({
     post () {
       t.throws(() => {
@@ -42,7 +42,7 @@ test('require postrequest', t => {
   })
 })
 
-test('require released', t => {
+test.serial('require released', t => {
   postman[Request]({})
   t.notThrows(() => {
     global.require('console')

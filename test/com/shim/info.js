@@ -16,12 +16,12 @@ test.beforeEach(t => {
   postman[Reset]()
 })
 
-test('iteration', t => {
+test.serial('iteration', t => {
   global.__ITER = 7
   t.is(iteration, 7)
 })
 
-test('pm.info.eventName pre', t => {
+test.serial('pm.info.eventName pre', t => {
   postman[Request]({
     pre () {
       t.is(pm.info.eventName, 'prerequest')
@@ -29,7 +29,7 @@ test('pm.info.eventName pre', t => {
   })
 })
 
-test('pm.info.eventName post', t => {
+test.serial('pm.info.eventName post', t => {
   postman[Request]({
     post () {
       t.is(pm.info.eventName, 'test')
@@ -37,21 +37,21 @@ test('pm.info.eventName post', t => {
   })
 })
 
-test('pm.info.iteration', t => {
+test.serial('pm.info.iteration', t => {
   global.__ITER = 5
   t.is(pm.info.iteration, 5)
 })
 
-test('pm.info.iterationCount default', t => {
+test.serial('pm.info.iterationCount default', t => {
   t.is(pm.info.iterationCount, 1)
 })
 
-test('pm.info.iterationCount custom', t => {
+test.serial('pm.info.iterationCount custom', t => {
   postman[Initial]({ iterations: 25 })
   t.is(pm.info.iterationCount, 25)
 })
 
-test('pm.info.requestId', t => {
+test.serial('pm.info.requestId', t => {
   postman[Request]({
     pre () {
       t.throws(() => {
@@ -61,7 +61,7 @@ test('pm.info.requestId', t => {
   })
 })
 
-test('pm.info.requestName', t => {
+test.serial('pm.info.requestName', t => {
   postman[Request]({
     name: 'Test Request',
     pre () {
