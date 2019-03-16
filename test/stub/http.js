@@ -5,7 +5,7 @@ const Reset = Symbol.for('reset')
 const http = {
   request: sinon.stub(),
   [Reset] () {
-    http.request.reset()
+    this.request.reset()
   }
 }
 
