@@ -2,6 +2,7 @@
 
 import test from 'ava'
 import mockRequire from 'mock-require'
+let http
 
 const undef = void 0
 
@@ -10,14 +11,16 @@ const Request = Symbol.for('request')
 
 test.before(t => {
   mockRequire('k6/http', 'stub/http')
+  http = require('k6/http')
   require('shim/core')
 })
 
 test.beforeEach(t => {
+  http[Reset]()
   postman[Reset]()
 })
 
-test('pre', t => {
+test.serial('pre', t => {
   postman[Request]({
     pre () {
       t.pass()
@@ -25,7 +28,7 @@ test('pre', t => {
   })
 })
 
-test('post', t => {
+test.serial('post', t => {
   postman[Request]({
     post () {
       t.pass()
@@ -33,7 +36,7 @@ test('post', t => {
   })
 })
 
-test('request', t => {
+test.serial('request', t => {
   t.plan(4)
   t.is(request, undef)
   postman[Request]({
@@ -47,7 +50,7 @@ test('request', t => {
   t.is(request, undef)
 })
 
-test('request.data', t => {
+test.serial('request.data', t => {
   const data = {
     First: 'One',
     Second: 'Two',
@@ -61,7 +64,7 @@ test('request.data', t => {
   })
 })
 
-test('request.headers', t => {
+test.serial('request.headers', t => {
   const headers = {
     First: 'One',
     Second: 'Two',
@@ -75,7 +78,7 @@ test('request.headers', t => {
   })
 })
 
-test('request.id', t => {
+test.serial('request.id', t => {
   postman[Request]({
     pre () {
       t.throws(() => {
@@ -85,7 +88,7 @@ test('request.id', t => {
   })
 })
 
-test('request.method', t => {
+test.serial('request.method', t => {
   postman[Request]({
     method: 'get',
     pre () {
@@ -94,7 +97,7 @@ test('request.method', t => {
   })
 })
 
-test('request.name', t => {
+test.serial('request.name', t => {
   postman[Request]({
     name: 'Test Request',
     pre () {
@@ -103,11 +106,27 @@ test('request.name', t => {
   })
 })
 
-test('request.url', t => {
+test.serial('request.url', t => {
   postman[Request]({
     address: 'http://example.com',
     pre () {
       t.is(request.url, 'http://example.com')
     }
   })
+})
+
+test.serial('args', t => {
+  postman[Request]({
+    method: 'GET',
+    address: 'http://example.com',
+    data: { test: 'a', test2: 'b' },
+    headers: { Test: 'a', Test2: 'b' },
+    options: { auth: 'basic' }
+  })
+  t.true(http.request.calledOnce)
+  const args = http.request.firstCall.args
+  t.is(args[0], 'GET')
+  t.is(args[1], 'http://example.com')
+  t.deepEqual(args[2], { test: 'a', test2: 'b' })
+  t.deepEqual(args[3], { auth: 'basic', headers: { Test: 'a', Test2: 'b' } })
 })
