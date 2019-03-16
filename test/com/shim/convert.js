@@ -2,17 +2,20 @@
 
 import test from 'ava'
 import mockRequire from 'mock-require'
+let http
 
 const Reset = Symbol.for('reset')
 
 test.before(t => {
   mockRequire('k6/http', 'stub/http')
   mockRequire('../../../lib/xml2js.js', 'xml2js')
+  http = require('k6/http')
   require('shim/core')
   require('shim/xml2Json')
 })
 
 test.beforeEach(t => {
+  http[Reset]()
   postman[Reset]()
 })
 

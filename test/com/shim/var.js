@@ -2,6 +2,7 @@
 
 import test from 'ava'
 import mockRequire from 'mock-require'
+let http
 
 const undef = void 0
 const Reset = Symbol.for('reset')
@@ -12,10 +13,12 @@ const Var = Symbol.for('variable')
 
 test.before(t => {
   mockRequire('k6/http', 'stub/http')
+  http = require('k6/http')
   require('shim/core')
 })
 
 test.beforeEach(t => {
+  http[Reset]()
   postman[Reset]()
 })
 
