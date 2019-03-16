@@ -8,7 +8,7 @@ const Initial = Symbol.for('initial')
 const Request = Symbol.for('request')
 
 test.before(t => {
-  mockRequire('k6/http', { request: () => {} })
+  mockRequire('k6/http', 'stub/http')
   require('shim/core')
 })
 

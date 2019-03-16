@@ -8,7 +8,7 @@ const Request = Symbol.for('request')
 
 test.before(t => {
   global.require = require // Simulate k6 global require
-  mockRequire('k6/http', { request: () => {} })
+  mockRequire('k6/http', 'stub/http')
   require('shim/core')
 })
 

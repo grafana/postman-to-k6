@@ -6,7 +6,7 @@ import mockRequire from 'mock-require'
 const Reset = Symbol.for('reset')
 
 test.before(t => {
-  mockRequire('k6/http', { request: () => {} })
+  mockRequire('k6/http', 'stub/http')
   mockRequire('../../../lib/xml2js.js', 'xml2js')
   require('shim/core')
   require('shim/xml2Json')

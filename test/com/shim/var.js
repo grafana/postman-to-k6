@@ -11,7 +11,7 @@ const Request = Symbol.for('request')
 const Var = Symbol.for('variable')
 
 test.before(t => {
-  mockRequire('k6/http', { request: () => {} })
+  mockRequire('k6/http', 'stub/http')
   require('shim/core')
 })
 
