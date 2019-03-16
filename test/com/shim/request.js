@@ -7,6 +7,7 @@ let http
 const undef = void 0
 
 const Reset = Symbol.for('reset')
+const Initial = Symbol.for('initial')
 const Request = Symbol.for('request')
 
 test.before(t => {
@@ -129,4 +130,16 @@ test.serial('args', t => {
   t.is(args[1], 'http://example.com')
   t.deepEqual(args[2], { test: 'a', test2: 'b' })
   t.deepEqual(args[3], { auth: 'basic', headers: { Test: 'a', Test2: 'b' } })
+})
+
+test.serial('variable', t => {
+  postman[Initial]({
+    global: { domain: 'example.com', path: '/index.html' }
+  })
+  postman[Request]({
+    address: 'http://{{domain}}{{path}}'
+  })
+  t.true(http.request.calledOnce)
+  const args = http.request.firstCall.args
+  t.is(args[1], 'http://example.com/index.html')
 })
