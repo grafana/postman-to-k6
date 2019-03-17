@@ -1,4 +1,4 @@
-/* global postman */
+/* global postman pm */
 /* global responseCookies */
 
 import test from 'ava'
@@ -76,7 +76,7 @@ test.serial('cookie.storeId', t => {
   })
 })
 
-test.serial('post.getResponseCookie', t => {
+test.serial('postman.getResponseCookie', t => {
   const cookie = {
     domain: 'example.com',
     httpOnly: false,
@@ -93,6 +93,23 @@ test.serial('post.getResponseCookie', t => {
       for (const key of Object.keys(cookie)) {
         t.is(responseCookie[key], cookie[key])
       }
+    }
+  })
+})
+
+test.serial('pm.cookies.has clear', t => {
+  postman[Request]({
+    post () {
+      t.false(pm.cookies.has('Theme'))
+    }
+  })
+})
+
+test.serial('pm.cookies.has set', t => {
+  http.request.returns({ cookies: { Theme: [ { name: 'Theme' } ] } })
+  postman[Request]({
+    post () {
+      t.true(pm.cookies.has('Theme'))
     }
   })
 })
