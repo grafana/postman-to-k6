@@ -1,5 +1,5 @@
 /* global postman pm */
-/* global responseBody responseCode responseTime */
+/* global responseBody responseCode responseHeaders responseTime */
 
 import test from 'ava'
 import mockRequire from 'mock-require'
@@ -52,6 +52,21 @@ test.serial('responseCode.name', t => {
     post () {
       t.throws(() => {
         responseCode.name /* eslint-disable-line no-unused-expressions */
+      })
+    }
+  })
+})
+
+test.serial('responseHeaders', t => {
+  http.request.returns({ headers: {
+    Server: 'MasterControlProgram',
+    Allow: 'GET, POST, HEAD'
+  } })
+  postman[Request]({
+    post () {
+      t.deepEqual(responseHeaders, {
+        Server: 'MasterControlProgram',
+        Allow: 'GET, POST, HEAD'
       })
     }
   })
