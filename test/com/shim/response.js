@@ -55,3 +55,21 @@ test.serial('pm.response.responseTime', t => {
     }
   })
 })
+
+test.serial('pm.response.text string', t => {
+  http.request.returns({ body: 'Response body' })
+  postman[Request]({
+    post () {
+      t.is(pm.response.text(), 'Response body')
+    }
+  })
+})
+
+test.serial('pm.response.text binary', t => {
+  http.request.returns({ body: [ 0x01, 0x02, 0x03 ] })
+  postman[Request]({
+    post () {
+      t.is(pm.response.text(), null)
+    }
+  })
+})
