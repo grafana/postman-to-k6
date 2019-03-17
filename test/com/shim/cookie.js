@@ -131,3 +131,18 @@ test.serial('pm.cookies.has set', t => {
     }
   })
 })
+
+test.serial('pm.cookies.toObject', t => {
+  http.request.returns({ cookies: {
+    Theme: [ { name: 'Theme', value: 'Aqua' } ],
+    Session: [ { name: 'Session', value: 'abc123' } ]
+  } })
+  postman[Request]({
+    post () {
+      t.deepEqual(pm.cookies.toObject(), {
+        Theme: 'Aqua',
+        Session: 'abc123'
+      })
+    }
+  })
+})
