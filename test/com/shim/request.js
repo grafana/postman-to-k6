@@ -1,4 +1,4 @@
-/* global postman request */
+/* global postman pm request */
 
 import test from 'ava'
 import mockRequire from 'mock-require'
@@ -112,6 +112,17 @@ test.serial('request.url', t => {
     address: 'http://example.com',
     pre () {
       t.is(request.url, 'http://example.com')
+    }
+  })
+})
+
+test.serial('pm.request.url', t => {
+  postman[Request]({
+    address: 'http://example.com',
+    pre () {
+      t.throws(() => {
+        pm.request.url /* eslint-disable-line no-unused-expressions */
+      })
     }
   })
 })
