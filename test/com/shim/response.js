@@ -81,6 +81,15 @@ test.serial('responseTime', t => {
   })
 })
 
+test.serial('postman.getResponseHeader', t => {
+  http.request.returns({ headers: { Server: 'MasterControlProgram' } })
+  postman[Request]({
+    post () {
+      t.is(postman.getResponseHeader('server'), 'MasterControlProgram')
+    }
+  })
+})
+
 test.serial('pm.response.code', t => {
   http.request.returns({ status: 418 })
   postman[Request]({
