@@ -41,7 +41,7 @@ test.serial('pm.response.reason', t => {
   postman[Request]({
     post () {
       t.throws(() => {
-        pm.response.reason /* eslint-disable-line no-unused-expressions */
+        pm.response.reason()
       })
     }
   })
