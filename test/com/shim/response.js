@@ -37,6 +37,16 @@ test.serial('responseCode.code', t => {
   })
 })
 
+test.serial('responseCode.name', t => {
+  postman[Request]({
+    post () {
+      t.throws(() => {
+        responseCode.name /* eslint-disable-line no-unused-expressions */
+      })
+    }
+  })
+})
+
 test.serial('responseTime', t => {
   http.request.returns({ timings: { duration: 556 } })
   postman[Request]({
