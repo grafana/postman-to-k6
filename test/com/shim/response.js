@@ -1,5 +1,5 @@
 /* global postman pm */
-/* global responseBody responseTime */
+/* global responseBody responseCode responseTime */
 
 import test from 'ava'
 import mockRequire from 'mock-require'
@@ -24,6 +24,15 @@ test.serial('responseBody', t => {
   postman[Request]({
     post () {
       t.is(responseBody, 'Response body')
+    }
+  })
+})
+
+test.serial('responseCode.code', t => {
+  http.request.returns({ status: 418 })
+  postman[Request]({
+    post () {
+      t.is(responseCode.code, 418)
     }
   })
 })
