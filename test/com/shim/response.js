@@ -27,6 +27,16 @@ test.serial('pm.response.code', t => {
   })
 })
 
+test.serial('pm.response.headers', t => {
+  postman[Request]({
+    post () {
+      t.throws(() => {
+        pm.response.headers /* eslint-disable-line no-unused-expressions */
+      })
+    }
+  })
+})
+
 test.serial('pm.response.reason', t => {
   postman[Request]({
     post () {
