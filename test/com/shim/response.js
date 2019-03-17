@@ -1,5 +1,5 @@
 /* global postman pm */
-/* global responseBody */
+/* global responseBody responseTime */
 
 import test from 'ava'
 import mockRequire from 'mock-require'
@@ -24,6 +24,15 @@ test.serial('responseBody', t => {
   postman[Request]({
     post () {
       t.is(responseBody, 'Response body')
+    }
+  })
+})
+
+test.serial('responseTime', t => {
+  http.request.returns({ timings: { duration: 556 } })
+  postman[Request]({
+    post () {
+      t.is(responseTime, 556)
     }
   })
 })
