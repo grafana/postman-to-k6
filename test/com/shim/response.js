@@ -1,4 +1,5 @@
 /* global postman pm */
+/* global responseBody */
 
 import test from 'ava'
 import mockRequire from 'mock-require'
@@ -16,6 +17,15 @@ test.before(t => {
 test.beforeEach(t => {
   http[Reset]()
   postman[Reset]()
+})
+
+test.serial('responseBody', t => {
+  http.request.returns({ body: 'Response body' })
+  postman[Request]({
+    post () {
+      t.is(responseBody, 'Response body')
+    }
+  })
 })
 
 test.serial('pm.response.code', t => {
