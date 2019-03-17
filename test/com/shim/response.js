@@ -37,6 +37,16 @@ test.serial('responseCode.code', t => {
   })
 })
 
+test.serial('responseCode.detail', t => {
+  postman[Request]({
+    post () {
+      t.throws(() => {
+        responseCode.detail /* eslint-disable-line no-unused-expressions */
+      })
+    }
+  })
+})
+
 test.serial('responseCode.name', t => {
   postman[Request]({
     post () {
