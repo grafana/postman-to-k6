@@ -46,3 +46,12 @@ test.serial('pm.response.reason', t => {
     }
   })
 })
+
+test.serial('pm.response.responseTime', t => {
+  http.request.returns({ timings: { duration: 556 } })
+  postman[Request]({
+    post () {
+      t.is(pm.response.responseTime, 556)
+    }
+  })
+})
