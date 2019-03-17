@@ -97,6 +97,24 @@ test.serial('postman.getResponseCookie', t => {
   })
 })
 
+test.serial('pm.cookies.get clear', t => {
+  postman[Request]({
+    post () {
+      t.is(pm.cookies.get('Theme'), null)
+    }
+  })
+})
+
+test.serial('pm.cookies.get set', t => {
+  const cookie = { name: 'Theme', value: 'Aqua' }
+  http.request.returns({ cookies: { Theme: [ cookie ] } })
+  postman[Request]({
+    post () {
+      t.is(pm.cookies.get('Theme'), 'Aqua')
+    }
+  })
+})
+
 test.serial('pm.cookies.has clear', t => {
   postman[Request]({
     post () {
