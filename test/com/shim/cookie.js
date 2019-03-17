@@ -75,3 +75,24 @@ test.serial('cookie.storeId', t => {
     }
   })
 })
+
+test.serial('post.getResponseCookie', t => {
+  const cookie = {
+    domain: 'example.com',
+    httpOnly: false,
+    name: 'Theme',
+    path: '/',
+    secure: false,
+    value: 'Aqua'
+  }
+  http.request.returns({ cookies: { Theme: [ cookie ] } })
+  postman[Request]({
+    post () {
+      const responseCookie = postman.getResponseCookie('Theme')
+      t.is(typeof responseCookie, 'object')
+      for (const key of Object.keys(cookie)) {
+        t.is(responseCookie[key], cookie[key])
+      }
+    }
+  })
+})
