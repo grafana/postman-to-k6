@@ -37,6 +37,15 @@ test.serial('pm.response.headers', t => {
   })
 })
 
+test.serial('pm.response.json', t => {
+  http.request.returns({ body: '{ "test": "a", "test2": "b" }' })
+  postman[Request]({
+    post () {
+      t.deepEqual(pm.response.json(), { test: 'a', test2: 'b' })
+    }
+  })
+})
+
 test.serial('pm.response.reason', t => {
   postman[Request]({
     post () {
