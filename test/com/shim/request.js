@@ -116,6 +116,16 @@ test.serial('request.url', t => {
   })
 })
 
+test.serial('pm.request.headers', t => {
+  postman[Request]({
+    pre () {
+      t.throws(() => {
+        pm.request.headers /* eslint-disable-line no-unused-expressions */
+      })
+    }
+  })
+})
+
 test.serial('pm.request.url', t => {
   postman[Request]({
     address: 'http://example.com',
