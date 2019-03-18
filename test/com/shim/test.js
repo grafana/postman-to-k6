@@ -389,6 +389,22 @@ test.serial('pm.response.to.not.be.info pass', t => {
   })
 })
 
+test.serial('pm.response.to.not.be.notFound fail', t => {
+  http.request.returns({ status: 404 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.not.be.notFound
+  })
+})
+
+test.serial('pm.response.to.not.be.notFound pass', t => {
+  http.request.returns({ status: 400 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.not.be.notFound
+  })
+})
+
 test.serial('pm.response.to.not.be.ok fail', t => {
   http.request.returns({ status: 200 })
   expectFail(t)
