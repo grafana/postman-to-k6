@@ -285,6 +285,38 @@ test.serial('pm.response.to.be.unauthorized pass', t => {
   })
 })
 
+test.serial('pm.response.to.have.status invalid', t => {
+  define(() => {
+    t.throws(() => {
+      pm.response.to.have.status(null)
+    })
+  })
+})
+
+test.serial('pm.response.to.have.status string', t => {
+  define(() => {
+    t.throws(() => {
+      pm.response.to.have.status('OK')
+    })
+  })
+})
+
+test.serial('pm.response.to.have.status fail', t => {
+  http.request.returns({ status: 404 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.have.status(200)
+  })
+})
+
+test.serial('pm.response.to.have.status pass', t => {
+  http.request.returns({ status: 200 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.have.status(200)
+  })
+})
+
 test.serial('pm.response.to.not.be.accepted fail', t => {
   http.request.returns({ status: 202 })
   expectFail(t)
