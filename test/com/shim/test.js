@@ -20,6 +20,14 @@ function expectPass (t) {
   })
 }
 
+function define (logic) {
+  postman[Request]({
+    post () {
+      pm.test('test', logic)
+    }
+  })
+}
+
 test.before(t => {
   mockRequire('k6', 'stub/k6')
   mockRequire('k6/http', 'stub/http')
@@ -58,33 +66,37 @@ test.serial('tests', t => {
 
 test.serial('pm.test', t => {
   expectPass(t)
-  postman[Request]({
-    post () {
-      pm.test('test', () => {})
-    }
-  })
+  define(() => {})
 })
 
 test.serial('pm.response.to.be.info fail', t => {
   http.request.returns({ status: 200 })
   expectFail(t)
-  postman[Request]({
-    post () {
-      pm.test('test', () => {
-        pm.response.to.be.info
-      })
-    }
+  define(() => {
+    pm.response.to.be.info
   })
 })
 
 test.serial('pm.response.to.be.info pass', t => {
   http.request.returns({ status: 156 })
   expectPass(t)
-  postman[Request]({
-    post () {
-      pm.test('test', () => {
-        pm.response.to.be.info
-      })
-    }
+  define(() => {
+    pm.response.to.be.info
+  })
+})
+
+test.serial('pm.response.to.not.be.info fail', t => {
+  http.request.returns({ status: 156 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.not.be.info
+  })
+})
+
+test.serial('pm.response.to.not.be.info pass', t => {
+  http.request.returns({ status: 200 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.not.be.info
   })
 })
