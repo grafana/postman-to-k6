@@ -141,6 +141,22 @@ test.serial('pm.response.to.be.error 5xx', t => {
   })
 })
 
+test.serial('pm.response.to.be.forbidden fail', t => {
+  http.request.returns({ status: 400 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.be.forbidden
+  })
+})
+
+test.serial('pm.response.to.be.forbidden pass', t => {
+  http.request.returns({ status: 403 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.be.forbidden
+  })
+})
+
 test.serial('pm.response.to.be.info fail', t => {
   http.request.returns({ status: 200 })
   expectFail(t)
