@@ -436,3 +436,19 @@ test.serial('pm.response.to.not.be.success pass', t => {
     pm.response.to.not.be.success
   })
 })
+
+test.serial('pm.response.to.not.be.unauthorized fail', t => {
+  http.request.returns({ status: 401 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.not.be.unauthorized
+  })
+})
+
+test.serial('pm.response.to.not.be.unauthorized pass', t => {
+  http.request.returns({ status: 400 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.not.be.unauthorized
+  })
+})
