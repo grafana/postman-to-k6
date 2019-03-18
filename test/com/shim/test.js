@@ -69,6 +69,22 @@ test.serial('pm.test', t => {
   define(() => {})
 })
 
+test.serial('pm.response.to.be.accepted fail', t => {
+  http.request.returns({ status: 200 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.be.accepted
+  })
+})
+
+test.serial('pm.response.to.be.accepted pass', t => {
+  http.request.returns({ status: 202 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.be.accepted
+  })
+})
+
 test.serial('pm.response.to.be.clientError fail', t => {
   http.request.returns({ status: 100 })
   expectFail(t)
