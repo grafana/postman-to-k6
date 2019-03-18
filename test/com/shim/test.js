@@ -85,6 +85,30 @@ test.serial('pm.response.to.be.clientError pass', t => {
   })
 })
 
+test.serial('pm.response.to.be.error fail', t => {
+  http.request.returns({ status: 100 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.be.error
+  })
+})
+
+test.serial('pm.response.to.be.error 4xx', t => {
+  http.request.returns({ status: 498 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.be.error
+  })
+})
+
+test.serial('pm.response.to.be.error 5xx', t => {
+  http.request.returns({ status: 543 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.be.error
+  })
+})
+
 test.serial('pm.response.to.be.info fail', t => {
   http.request.returns({ status: 200 })
   expectFail(t)
