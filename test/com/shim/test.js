@@ -85,6 +85,22 @@ test.serial('pm.response.to.be.info pass', t => {
   })
 })
 
+test.serial('pm.response.to.be.redirection fail', t => {
+  http.request.returns({ status: 100 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.be.redirection
+  })
+})
+
+test.serial('pm.response.to.be.redirection pass', t => {
+  http.request.returns({ status: 344 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.be.redirection
+  })
+})
+
 test.serial('pm.response.to.be.success fail', t => {
   http.request.returns({ status: 100 })
   expectFail(t)
