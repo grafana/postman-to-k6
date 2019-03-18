@@ -301,6 +301,22 @@ test.serial('pm.response.to.not.be.accepted pass', t => {
   })
 })
 
+test.serial('pm.response.to.not.be.badRequest fail', t => {
+  http.request.returns({ status: 400 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.not.be.badRequest
+  })
+})
+
+test.serial('pm.response.to.not.be.badRequest pass', t => {
+  http.request.returns({ status: 401 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.not.be.badRequest
+  })
+})
+
 test.serial('pm.response.to.not.be.clientError fail', t => {
   http.request.returns({ status: 434 })
   expectFail(t)
