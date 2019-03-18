@@ -173,6 +173,22 @@ test.serial('pm.response.to.be.info pass', t => {
   })
 })
 
+test.serial('pm.response.to.be.notFound fail', t => {
+  http.request.returns({ status: 400 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.be.notFound
+  })
+})
+
+test.serial('pm.response.to.be.notFound pass', t => {
+  http.request.returns({ status: 404 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.be.notFound
+  })
+})
+
 test.serial('pm.response.to.be.ok fail', t => {
   http.request.returns({ status: 202 })
   expectFail(t)
