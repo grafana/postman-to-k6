@@ -117,6 +117,22 @@ test.serial('pm.response.to.be.redirection pass', t => {
   })
 })
 
+test.serial('pm.response.to.be.serverError fail', t => {
+  http.request.returns({ status: 100 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.be.serverError
+  })
+})
+
+test.serial('pm.response.to.be.serverError pass', t => {
+  http.request.returns({ status: 523 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.be.serverError
+  })
+})
+
 test.serial('pm.response.to.be.success fail', t => {
   http.request.returns({ status: 100 })
   expectFail(t)
