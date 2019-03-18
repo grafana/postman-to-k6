@@ -8,6 +8,18 @@ let k6, http
 const Reset = Symbol.for('reset')
 const Request = Symbol.for('request')
 
+function expectFail (t) {
+  k6.check.callsFake((response, tests) => {
+    t.false(tests.test(response))
+  })
+}
+
+function expectPass (t) {
+  k6.check.callsFake((response, tests) => {
+    t.true(tests.test(response))
+  })
+}
+
 test.before(t => {
   mockRequire('k6', 'stub/k6')
   mockRequire('k6/http', 'stub/http')
@@ -45,11 +57,34 @@ test.serial('tests', t => {
 })
 
 test.serial('pm.test', t => {
+  expectPass(t)
   postman[Request]({
     post () {
       pm.test('test', () => {})
     }
   })
-  t.true(k6.check.calledOnce)
-  t.true(k6.check.firstCall.args[1].test({}))
+})
+
+test.serial('pm.response.to.be.info fail', t => {
+  http.request.returns({ status: 200 })
+  expectFail(t)
+  postman[Request]({
+    post () {
+      pm.test('test', () => {
+        pm.response.to.be.info
+      })
+    }
+  })
+})
+
+test.serial('pm.response.to.be.info pass', t => {
+  http.request.returns({ status: 156 })
+  expectPass(t)
+  postman[Request]({
+    post () {
+      pm.test('test', () => {
+        pm.response.to.be.info
+      })
+    }
+  })
 })
