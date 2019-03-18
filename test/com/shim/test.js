@@ -1,4 +1,5 @@
-/* global postman tests */
+/* global postman pm tests */
+/* eslint-disable no-unused-expressions */
 
 import test from 'ava'
 import mockRequire from 'mock-require'
@@ -41,4 +42,14 @@ test.serial('tests', t => {
   const call3 = k6.check.getCall(2).args[1]
   t.true('third' in call3)
   t.true(call3.third())
+})
+
+test.serial('pm.test', t => {
+  postman[Request]({
+    post () {
+      pm.test('test', () => {})
+    }
+  })
+  t.true(k6.check.calledOnce)
+  t.true(k6.check.firstCall.args[1].test({}))
 })
