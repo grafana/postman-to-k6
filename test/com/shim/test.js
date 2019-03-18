@@ -285,6 +285,37 @@ test.serial('pm.response.to.be.unauthorized pass', t => {
   })
 })
 
+test.serial('pm.response.to.have.header exist fail', t => {
+  expectFail(t)
+  define(() => {
+    pm.response.to.have.header('Allow')
+  })
+})
+
+test.serial('pm.response.to.have.header exist pass', t => {
+  http.request.returns({ headers: { Allow: 'GET' } })
+  expectPass(t)
+  define(() => {
+    pm.response.to.have.header('Allow')
+  })
+})
+
+test.serial('pm.response.to.have.header value fail', t => {
+  http.request.returns({ headers: { Allow: 'GET' } })
+  expectFail(t)
+  define(() => {
+    pm.response.to.have.header('Allow', 'POST')
+  })
+})
+
+test.serial('pm.response.to.have.header value pass', t => {
+  http.request.returns({ headers: { Allow: 'GET' } })
+  expectPass(t)
+  define(() => {
+    pm.response.to.have.header('Allow', 'GET')
+  })
+})
+
 test.serial('pm.response.to.have.status invalid', t => {
   define(() => {
     t.throws(() => {
