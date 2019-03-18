@@ -333,6 +333,22 @@ test.serial('pm.response.to.not.be.redirection pass', t => {
   })
 })
 
+test.serial('pm.response.to.not.be.serverError fail', t => {
+  http.request.returns({ status: 584 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.not.be.serverError
+  })
+})
+
+test.serial('pm.response.to.not.be.serverError pass', t => {
+  http.request.returns({ status: 100 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.not.be.serverError
+  })
+})
+
 test.serial('pm.response.to.not.be.success fail', t => {
   http.request.returns({ status: 254 })
   expectFail(t)
