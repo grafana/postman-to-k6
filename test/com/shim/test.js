@@ -285,6 +285,22 @@ test.serial('pm.response.to.be.unauthorized pass', t => {
   })
 })
 
+test.serial('pm.response.to.not.be.accepted fail', t => {
+  http.request.returns({ status: 202 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.not.be.accepted
+  })
+})
+
+test.serial('pm.response.to.not.be.accepted pass', t => {
+  http.request.returns({ status: 200 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.not.be.accepted
+  })
+})
+
 test.serial('pm.response.to.not.be.clientError fail', t => {
   http.request.returns({ status: 434 })
   expectFail(t)
