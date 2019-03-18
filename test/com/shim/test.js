@@ -364,6 +364,70 @@ test.serial('pm.response.to.have.header value pass', t => {
   })
 })
 
+test.serial('pm.response.to.have.jsonBody exist fail', t => {
+  http.request.returns({ body: 'not a json body' })
+  expectFail(t)
+  define(() => {
+    pm.response.to.have.jsonBody()
+  })
+})
+
+test.serial('pm.response.to.have.jsonBody exist pass', t => {
+  http.request.returns({ body: '{"test":"a","test2":"b"}' })
+  expectPass(t)
+  define(() => {
+    pm.response.to.have.jsonBody()
+  })
+})
+
+test.serial('pm.response.to.have.jsonBody equal fail', t => {
+  http.request.returns({ body: '{"test":"a","test2":"b"}' })
+  expectFail(t)
+  define(() => {
+    pm.response.to.have.jsonBody({ test: 'a' })
+  })
+})
+
+test.serial('pm.response.to.have.jsonBody equal pass', t => {
+  http.request.returns({ body: '{"test":"a","test2":"b"}' })
+  expectPass(t)
+  define(() => {
+    pm.response.to.have.jsonBody({ test: 'a', test2: 'b' })
+  })
+})
+
+test.serial('pm.response.to.have.jsonBody path fail', t => {
+  http.request.returns({ body: '{"test":"a"}' })
+  expectFail(t)
+  define(() => {
+    pm.response.to.have.jsonBody('test2')
+  })
+})
+
+test.serial('pm.response.to.have.jsonBody path pass', t => {
+  http.request.returns({ body: '{"test":"a","test2":"b"}' })
+  expectPass(t)
+  define(() => {
+    pm.response.to.have.jsonBody('test2')
+  })
+})
+
+test.serial('pm.response.to.have.jsonBody value fail', t => {
+  http.request.returns({ body: '{"test":"a"}' })
+  expectFail(t)
+  define(() => {
+    pm.response.to.have.jsonBody('test', 'b')
+  })
+})
+
+test.serial('pm.response.to.have.jsonBody value pass', t => {
+  http.request.returns({ body: '{"test":"a"}' })
+  expectPass(t)
+  define(() => {
+    pm.response.to.have.jsonBody('test', 'a')
+  })
+})
+
 test.serial('pm.response.to.have.status invalid', t => {
   define(() => {
     t.throws(() => {
