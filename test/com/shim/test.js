@@ -205,6 +205,22 @@ test.serial('pm.response.to.be.ok pass', t => {
   })
 })
 
+test.serial('pm.response.to.be.rateLimited fail', t => {
+  http.request.returns({ status: 400 })
+  expectFail(t)
+  define(() => {
+    pm.response.to.be.rateLimited
+  })
+})
+
+test.serial('pm.response.to.be.rateLimited pass', t => {
+  http.request.returns({ status: 429 })
+  expectPass(t)
+  define(() => {
+    pm.response.to.be.rateLimited
+  })
+})
+
 test.serial('pm.response.to.be.redirection fail', t => {
   http.request.returns({ status: 100 })
   expectFail(t)
