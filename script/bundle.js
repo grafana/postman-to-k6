@@ -25,4 +25,4 @@ for (const module of modules) {
     .pipe(fs.createWriteStream(path))
 }
 fs.ensureDirSync(`${dir}/shim`)
-fs.copy('lib/shim', `${dir}/shim`)
+fs.copySync('lib/shim', `${dir}/shim`)

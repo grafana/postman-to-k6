@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 const convertFile = require('../lib/convert/file')
-const fs = require('fs')
+const fs = require('fs-extra')
+const path = require('path')
 const program = require('commander')
 const version = require('project-version')
 
@@ -24,12 +25,12 @@ function run (...args) {
     return
   }
   const options = args.pop()
-  const path = args.shift()
+  const input = args.shift()
 
   // Convert
   let result
   try {
-    result = convertFile(path, {
+    result = convertFile(input, {
       globals: options.global,
       environment: options.environment,
       csv: options.csv,
@@ -43,6 +44,11 @@ function run (...args) {
   }
 
   // Output
+  const dir = (options.output ? path.dirname(options.output) : '.')
+  if (path.resolve(dir) !== path.resolve(`${__dirname}/..`)) {
+    fs.ensureDirSync(`${dir}/bundle`)
+    fs.copySync(path.resolve(`${__dirname}/../bundle`), `${dir}/bundle`)
+  }
   if (options.output) {
     fs.writeFile(options.output, result, error => {
       if (error) {
