@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "52d70974-1c12-489d-b133-b8fc01626e0c",
+		"name": "Pre",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TestRequest",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "700b12e1-51ee-4446-977c-20a07ddaa316",
+						"exec": [
+							"pm.variables.set('test', 'a')",
+							"pm.variables.set('test2', 'b')",
+							"pm.variables.set('test3', 'c')",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "example.com"
+			},
+			"response": []
+		}
+	]
+}
