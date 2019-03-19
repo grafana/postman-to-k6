@@ -856,6 +856,32 @@ test.serial('pm.response.to.not.have.jsonBody value pass', t => {
   })
 })
 
+test.serial('pm.response.to.not.have.jsonSchema fail', t => {
+  http.request.returns({ body: '{"test":7}' })
+  expectFail(t)
+  const schema = {
+    properties: {
+      test: { type: 'integer' }
+    }
+  }
+  define(() => {
+    pm.response.to.not.have.jsonSchema(schema)
+  })
+})
+
+test.serial('pm.response.to.not.have.jsonSchema pass', t => {
+  http.request.returns({ body: '{"test":"a"}' })
+  expectPass(t)
+  const schema = {
+    properties: {
+      test: { type: 'integer' }
+    }
+  }
+  define(() => {
+    pm.response.to.not.have.jsonSchema(schema)
+  })
+})
+
 test.serial('pm.response.to.not.have.status invalid', t => {
   define(() => {
     t.throws(() => {
