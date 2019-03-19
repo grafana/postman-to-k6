@@ -3,6 +3,7 @@
 import test from 'ava'
 import mockRequire from 'mock-require'
 const lodash = Symbol('lodash')
+const cheerio = Symbol('cheerio')
 let k6, http
 
 const Reset = Symbol.for('reset')
@@ -13,6 +14,7 @@ test.before(t => {
   mockRequire('k6', 'stub/k6')
   mockRequire('k6/http', 'stub/http')
   mockRequire('../../../lib/lodash.js', lodash)
+  mockRequire('../../../lib/cheerio.js', cheerio)
   k6 = require('k6')
   http = require('k6/http')
   require('shim/core')
@@ -62,6 +64,15 @@ test.serial('lodash', t => {
   postman[Request]({
     pre () {
       t.is(global.require('lodash'), lodash)
+    }
+  })
+})
+
+test.serial('cheerio', t => {
+  require('shim/cheerio')
+  postman[Request]({
+    pre () {
+      t.is(global.require('cheerio'), cheerio)
     }
   })
 })
