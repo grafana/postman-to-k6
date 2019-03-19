@@ -167,3 +167,9 @@ test.serial('variable', t => {
   const args = http.request.firstCall.args
   t.is(args[1], 'http://example.com/index.html')
 })
+
+test.serial('pm.sendRequest', t => {
+  t.throws(() => {
+    pm.sendRequest()
+  })
+})
