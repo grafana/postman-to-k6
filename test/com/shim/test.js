@@ -31,9 +31,11 @@ function define (logic) {
 test.before(t => {
   mockRequire('k6', 'stub/k6')
   mockRequire('k6/http', 'stub/http')
+  mockRequire('../../../lib/ajv.js', 'ajv')
   k6 = require('k6')
   http = require('k6/http')
   require('shim/core')
+  require('shim/jsonSchema')
 })
 
 test.beforeEach(t => {
@@ -425,6 +427,32 @@ test.serial('pm.response.to.have.jsonBody value pass', t => {
   expectPass(t)
   define(() => {
     pm.response.to.have.jsonBody('test', 'a')
+  })
+})
+
+test.serial('pm.response.to.have.jsonSchema fail', t => {
+  http.request.returns({ body: '{"test":"a"}' })
+  expectFail(t)
+  const schema = {
+    properties: {
+      test: { type: 'integer' }
+    }
+  }
+  define(() => {
+    pm.response.to.have.jsonSchema(schema)
+  })
+})
+
+test.serial('pm.response.to.have.jsonSchema pass', t => {
+  http.request.returns({ body: '{"test":7}' })
+  expectPass(t)
+  const schema = {
+    properties: {
+      test: { type: 'integer' }
+    }
+  }
+  define(() => {
+    pm.response.to.have.jsonSchema(schema)
   })
 })
 
