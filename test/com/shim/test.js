@@ -704,6 +704,54 @@ test.serial('pm.response.to.not.be.unauthorized pass', t => {
   })
 })
 
+test.serial('pm.response.to.not.have.body exist fail', t => {
+  http.request.returns({ body: 'Response body' })
+  expectFail(t)
+  define(() => {
+    pm.response.to.not.have.body()
+  })
+})
+
+test.serial('pm.response.to.not.have.body exist pass', t => {
+  http.request.returns({})
+  expectPass(t)
+  define(() => {
+    pm.response.to.not.have.body()
+  })
+})
+
+test.serial('pm.response.to.not.have.body string fail', t => {
+  http.request.returns({ body: 'Response body' })
+  expectFail(t)
+  define(() => {
+    pm.response.to.not.have.body('Response body')
+  })
+})
+
+test.serial('pm.response.to.not.have.body string pass', t => {
+  http.request.returns({ body: 'Response body' })
+  expectPass(t)
+  define(() => {
+    pm.response.to.not.have.body('Body')
+  })
+})
+
+test.serial('pm.response.to.not.have.body regex fail', t => {
+  http.request.returns({ body: 'Response body' })
+  expectFail(t)
+  define(() => {
+    pm.response.to.not.have.body(/body/)
+  })
+})
+
+test.serial('pm.response.to.not.have.body regex pass', t => {
+  http.request.returns({ body: 'Response body' })
+  expectPass(t)
+  define(() => {
+    pm.response.to.not.have.body(/Test/)
+  })
+})
+
 test.serial('pm.response.to.not.have.header exist fail', t => {
   http.request.returns({ headers: { Allow: 'GET' } })
   expectFail(t)
