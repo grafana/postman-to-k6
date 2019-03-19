@@ -4,6 +4,8 @@ Convert a [Postman collection](https://www.getpostman.com/docs/collections) to [
 
 Supported Features:
 
+- Prerequest scripts.
+- Test scripts.
 - Variables (at all scopes + dynamic).
 - Data files.
 - Authentication methods (except Hawk).
@@ -12,8 +14,6 @@ Supported Features:
 - Global variables exposed by Postman: `globals` `environment` `data`
   `iteration`.
 - `xml2Json` conversion.
-
-Postman [pre-requests](https://www.getpostman.com/docs/pre_request_scripts) and [tests](https://www.getpostman.com/docs/writing_tests) are appended as comments before and after its respective k6 request. The pre-request and test behaviour could easily be replicated with the [k6 API](https://docs.k6.io/docs/k6).
 
 ## Usage
 
