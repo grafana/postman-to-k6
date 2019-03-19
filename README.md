@@ -55,53 +55,6 @@ Or a data file in JSON format.
 postman-to-k6 collection.json --json data.json -o k6-script.js
 ```
 
-## Advanced Features
-
-Some features require browserified versions of certain npm modules. The
-browserified file should be in `./{module}.js`. Install `browserify` to get the
-command.
-
-```shell
-npm install --global browserify
-```
-
-AWSv4 authentication requires `aws4 urijs`.
-
-```shell
-npm install aws4 urijs
-browserify -r aws4 -s aws4 > aws4.js
-browserify -r urijs -s URI > urijs.js
-```
-
-OAuth 1 authentication requires `oauth-1.0a urijs`.
-
-```shell
-npm install oauth-1.0a urijs
-browserify -r oauth-1.0a -s OAuth > oauth-1.0a.js
-browserify -r urijs -s URI > urijs.js
-```
-
-OAuth 2 authentication requires `urijs`.
-
-```shell
-npm install urijs
-browserify -r urijs -s URI > urijs.js
-```
-
-A CSV data file requires `papaparse`.
-
-```shell
-npm install papaparse
-browserify -r papaparse -s papaparse > papaparse.js
-```
-
-The `xml2Json` method requires `xml2js`.
-
-```shell
-npm install xml2js
-browserify -r xml2js -s xml2js > xml2js.js
-```
-
 ## Examples
 
 A collection of Postman examples are located under `example`.
