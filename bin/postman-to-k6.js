@@ -4,7 +4,11 @@ const convertFile = require('../lib/convert/file')
 const fs = require('fs-extra')
 const path = require('path')
 const program = require('commander')
-const version = require('project-version')
+const pkginfo = require('pkginfo')
+
+pkginfo(module, 'version')
+const version = module.exports.version
+delete module.exports.version
 
 program
   .version(version)
