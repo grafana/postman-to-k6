@@ -27,29 +27,38 @@
         "postman-to-k6": "bin/postman-to-k6.js"
     },
     "dependencies": {
+        "ajv": "^6.10.0",
+        "aws4": "^1.8.0",
+        "browserify": "^16.2.3",
+        "chai": "^4.2.0",
+        "cheerio": "^1.0.0-rc.2",
         "commander": "^2.19.0",
+        "crypto-js": "^3.1.9-1",
+        "fs-extra": "^7.0.1",
+        "lodash": "^4.17.11",
+        "oauth-1.0a": "^2.2.5",
+        "papaparse": "^4.6.3",
         "postman-collection": "^3.4.3",
         "prettier": "^1.16.4",
         "project-version": "^1.2.0",
         "strip-json-comments": "^2.0.1",
         "urijs": "^1.19.1",
-        "verror": "^1.10.0"
+        "verror": "^1.10.0",
+        "xml2js": "^0.4.19"
     },
     "devDependencies": {
         "@babel/preset-env": "^7.3.4",
         "@babel/register": "^7.0.0",
-        "ajv": "^6.10.0",
         "ava": "^1.2.1",
-        "chai": "^4.2.0",
         "cross-env": "^5.2.0",
         "mock-require": "^3.0.3",
         "npm-run-all": "^4.1.5",
         "sinon": "^7.2.7",
         "snazzy": "^8.0.0",
-        "standard": "^12.0.1",
-        "xml2js": "^0.4.19"
+        "standard": "^12.0.1"
     },
     "scripts": {
+        "bundle": "node script/bundle.js",
         "lint-js": "standard --verbose | snazzy",
         "lint": "npm-run-all lint-js",
         "test-com": "cross-env NODE_PATH=lib:test ava test/com",

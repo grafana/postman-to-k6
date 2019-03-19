@@ -95,7 +95,7 @@ npm install papaparse
 browserify -r papaparse -s papaparse > papaparse.js
 ```
 
-The `xml2Json` method requires `xmljs`.
+The `xml2Json` method requires `xml2js`.
 
 ```shell
 npm install xml2js
