@@ -704,6 +704,46 @@ test.serial('pm.response.to.not.be.unauthorized pass', t => {
   })
 })
 
+test.serial('pm.response.to.not.have.header exist fail', t => {
+  http.request.returns({ headers: { Allow: 'GET' } })
+  expectFail(t)
+  define(() => {
+    pm.response.to.not.have.header('Allow')
+  })
+})
+
+test.serial('pm.response.to.not.have.header exist pass', t => {
+  http.request.returns({ headers: { Server: 'MasterControlProgram' } })
+  expectPass(t)
+  define(() => {
+    pm.response.to.not.have.header('Allow')
+  })
+})
+
+test.serial('pm.response.to.not.have.header value fail', t => {
+  http.request.returns({ headers: { Server: 'MasterControlProgram' } })
+  expectFail(t)
+  define(() => {
+    // do not deal with evil programs
+    pm.response.to.not.have.header('Server', 'MasterControlProgram')
+  })
+})
+
+test.serial('pm.response.to.not.have.header value pass clear', t => {
+  expectPass(t)
+  define(() => {
+    pm.response.to.not.have.header('Server', 'MasterControlProgram')
+  })
+})
+
+test.serial('pm.response.to.not.have.header value pass set', t => {
+  http.request.returns({ headers: { Server: 'AlanHome' } })
+  expectPass(t)
+  define(() => {
+    pm.response.to.not.have.header('Server', 'MasterControlProgram')
+  })
+})
+
 test.serial('pm.response.to.not.have.status invalid', t => {
   define(() => {
     t.throws(() => {
