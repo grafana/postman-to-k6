@@ -32,10 +32,12 @@ test.before(t => {
   mockRequire('k6', 'stub/k6')
   mockRequire('k6/http', 'stub/http')
   mockRequire('../../../lib/ajv.js', 'ajv')
+  mockRequire('../../../lib/chai.js', 'chai')
   k6 = require('k6')
   http = require('k6/http')
   require('shim/core')
   require('shim/jsonSchema')
+  require('shim/expect')
 })
 
 test.beforeEach(t => {
@@ -911,5 +913,19 @@ test.serial('pm.response.to.not.have.status pass', t => {
   expectPass(t)
   define(() => {
     pm.response.to.not.have.status(576)
+  })
+})
+
+test.serial('pm.expect fail', t => {
+  expectFail(t)
+  define(() => {
+    pm.expect('Response body').to.include('Test')
+  })
+})
+
+test.serial('pm.expect pass', t => {
+  expectPass(t)
+  define(() => {
+    pm.expect('Response body').to.include('Response')
   })
 })
