@@ -49,10 +49,8 @@ function run (...args) {
 
   // Output
   const dir = (options.output ? path.dirname(options.output) : '.')
-  if (path.resolve(dir) !== path.resolve(`${__dirname}/..`)) {
-    fs.ensureDirSync(`${dir}/bundle`)
-    fs.copySync(path.resolve(`${__dirname}/../vendor`), `${dir}/bundle`)
-  }
+  fs.ensureDirSync(`${dir}/libs`)
+  fs.copySync(path.resolve(`${__dirname}/../vendor`), `${dir}/libs`)
   if (options.output) {
     fs.writeFile(options.output, result, error => {
       if (error) {
