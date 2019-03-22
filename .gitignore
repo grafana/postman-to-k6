@@ -22,7 +22,7 @@ bower_components/*
 # dependencies
 /node_modules
 /bower_components
-/bundle
+/vendor
 
 # misc
 /.sass-cache

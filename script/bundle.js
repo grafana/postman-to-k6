@@ -3,7 +3,7 @@
 const fs = require('fs-extra')
 const browserify = require('browserify')
 
-const dir = 'bundle'
+const dir = 'vendor'
 const modules = [
   'aws4',
   'chai',
