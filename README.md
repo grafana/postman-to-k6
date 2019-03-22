@@ -14,6 +14,7 @@ Supported Features:
 - Global variables exposed by Postman: `globals` `environment` `data`
   `iteration`.
 - `xml2Json` conversion.
+- File formats v2 and v2.1.
 
 ## Usage
 
