@@ -17,6 +17,9 @@ import "./libs/shim/core.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
+postman[Symbol.for("initial")]({
+  options
+});
 
 export default function() {
   postman[Request]({
@@ -37,6 +40,9 @@ import "./libs/shim/core.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
+postman[Symbol.for("initial")]({
+  options
+});
 
 export default function() {
   postman[Request]({
@@ -58,6 +64,9 @@ import "./libs/shim/core.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
+postman[Symbol.for("initial")]({
+  options
+});
 
 export default function() {
   postman[Request]({
@@ -79,6 +88,9 @@ import "./libs/shim/core.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
+postman[Symbol.for("initial")]({
+  options
+});
 
 export default function() {
   postman[Request]({
@@ -106,7 +118,7 @@ export let options = { maxRedirects: 4, iterations: 25 };
 
 const Request = Symbol.for("request");
 postman[Symbol.for("initial")]({
-  iterations: 25
+  options
 });
 
 export default function() {

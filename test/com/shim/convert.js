@@ -16,7 +16,7 @@ test.before(t => {
   require('shim/xml2Json')
 })
 
-test.beforeEach(t => {
+test.afterEach.always(t => {
   k6[Reset]()
   http[Reset]()
   postman[Reset]()

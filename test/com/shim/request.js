@@ -18,7 +18,7 @@ test.before(t => {
   require('shim/core')
 })
 
-test.beforeEach(t => {
+test.afterEach.always(t => {
   k6[Reset]()
   http[Reset]()
   postman[Reset]()
@@ -140,6 +140,18 @@ test.serial('pm.request.url', t => {
   })
 })
 
+test.serial('variable', t => {
+  postman[Initial]({
+    global: { domain: 'example.com', path: '/index.html' }
+  })
+  postman[Request]({
+    address: 'http://{{domain}}{{path}}'
+  })
+  t.true(http.request.calledOnce)
+  const args = http.request.firstCall.args
+  t.is(args[1], 'http://example.com/index.html')
+})
+
 test.serial('args', t => {
   postman[Request]({
     method: 'GET',
@@ -154,18 +166,6 @@ test.serial('args', t => {
   t.is(args[1], 'http://example.com')
   t.deepEqual(args[2], { test: 'a', test2: 'b' })
   t.deepEqual(args[3], { auth: 'basic', headers: { Test: 'a', Test2: 'b' } })
-})
-
-test.serial('variable', t => {
-  postman[Initial]({
-    global: { domain: 'example.com', path: '/index.html' }
-  })
-  postman[Request]({
-    address: 'http://{{domain}}{{path}}'
-  })
-  t.true(http.request.calledOnce)
-  const args = http.request.firstCall.args
-  t.is(args[1], 'http://example.com/index.html')
 })
 
 test.serial('pm.sendRequest', t => {

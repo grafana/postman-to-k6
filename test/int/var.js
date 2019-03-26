@@ -15,6 +15,7 @@ export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
 postman[Symbol.for("initial")]({
+  options,
   global: {
     first: "one",
     second: "two",
@@ -42,6 +43,7 @@ export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
 postman[Symbol.for("initial")]({
+  options,
   collection: {
     domain: "example.com",
     machine: 573
@@ -70,6 +72,7 @@ export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
 postman[Symbol.for("initial")]({
+  options,
   environment: {
     first: "one",
     second: "two",
@@ -108,6 +111,7 @@ options.iterations = file.length;
 const Iteration = Symbol.for("iteration");
 const Request = Symbol.for("request");
 postman[Symbol.for("initial")]({
+  options,
   data: file
 });
 
@@ -145,6 +149,7 @@ options.iterations = file.length;
 const Iteration = Symbol.for("iteration");
 const Request = Symbol.for("request");
 postman[Symbol.for("initial")]({
+  options,
   data: file
 });
 
@@ -181,8 +186,8 @@ const file = (() => {
 const Iteration = Symbol.for("iteration");
 const Request = Symbol.for("request");
 postman[Symbol.for("initial")]({
-  data: file,
-  iterations: 27
+  options,
+  data: file
 });
 
 export default function() {

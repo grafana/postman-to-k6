@@ -16,10 +16,11 @@ test.before(t => {
   require('shim/core')
 })
 
-test.beforeEach(t => {
+test.afterEach.always(t => {
   k6[Reset]()
   http[Reset]()
   postman[Reset]()
+  delete global.__ITER
 })
 
 test.serial('iteration', t => {
@@ -48,12 +49,15 @@ test.serial('pm.info.iteration', t => {
   t.is(pm.info.iteration, 5)
 })
 
-test.serial('pm.info.iterationCount default', t => {
-  t.is(pm.info.iterationCount, 1)
+test.serial('pm.info.iterationCount clear', t => {
+  const options = {}
+  postman[Initial]({ options })
+  t.is(pm.info.iterationCount, Number.POSITIVE_INFINITY)
 })
 
-test.serial('pm.info.iterationCount custom', t => {
-  postman[Initial]({ iterations: 25 })
+test.serial('pm.info.iterationCount set', t => {
+  const options = { iterations: 25 }
+  postman[Initial]({ options })
   t.is(pm.info.iterationCount, 25)
 })
 

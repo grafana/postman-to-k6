@@ -19,32 +19,28 @@ test.before(t => {
   require('shim/core')
 })
 
-test.beforeEach(t => {
+test.afterEach.always(t => {
   k6[Reset]()
   http[Reset]()
   postman[Reset]()
 })
 
 test.serial('$guid', t => {
-  postman[Initial]()
   const value = pm[Var]('$guid')
   t.true(/\w{8}-\w{4}-\w{4}-\w{4}-\w{12}/.test(value))
 })
 
 test.serial('$randomInt', t => {
-  postman[Initial]()
   const value = pm[Var]('$randomInt')
   t.true(value >= 0 && value <= 1000)
 })
 
 test.serial('$timestamp', t => {
-  postman[Initial]()
   const value = pm[Var]('$timestamp')
   t.is(typeof value, 'number')
 })
 
 test.serial('globals read clear', t => {
-  postman[Initial]()
   t.is(globals.test, undef)
 })
 
@@ -54,14 +50,12 @@ test.serial('globals read set', t => {
 })
 
 test.serial('globals write', t => {
-  postman[Initial]()
   t.throws(() => {
     globals.test = 'a'
   })
 })
 
 test.serial('environment read clear', t => {
-  postman[Initial]()
   t.is(environment.test, undef)
 })
 
@@ -71,7 +65,6 @@ test.serial('environment read set', t => {
 })
 
 test.serial('environment write', t => {
-  postman[Initial]()
   t.throws(() => {
     environment.test = 'a'
   })
@@ -114,7 +107,6 @@ test.serial('data write', t => {
 })
 
 test.serial('postman.getGlobalVariable clear', t => {
-  postman[Initial]()
   t.is(postman.getGlobalVariable('test'), undef)
 })
 
@@ -124,7 +116,6 @@ test.serial('postman.getGlobalVariable set', t => {
 })
 
 test.serial('postman.setGlobalVariable clear', t => {
-  postman[Initial]()
   t.is(globals.test, undef)
   postman.setGlobalVariable('test', 'a')
   t.is(globals.test, 'a')
@@ -263,7 +254,6 @@ test.serial('pm.globals.clear', t => {
 })
 
 test.serial('pm.globals.get clear', t => {
-  postman[Initial]()
   t.is(pm.globals.get('test'), undef)
 })
 
@@ -273,7 +263,6 @@ test.serial('pm.globals.get set', t => {
 })
 
 test.serial('pm.globals.has clear', t => {
-  postman[Initial]()
   t.is(pm.globals.has('test'), false)
 })
 
@@ -283,7 +272,6 @@ test.serial('pm.globals.has set', t => {
 })
 
 test.serial('pm.globals.set clear', t => {
-  postman[Initial]()
   t.is(globals.test, undef)
   pm.globals.set('test', 'a')
   t.is(globals.test, 'a')
@@ -305,7 +293,6 @@ test.serial('pm.globals.unset', t => {
 })
 
 test.serial('pm.iterationData unavailable', t => {
-  postman[Initial]()
   t.is(pm.iterationData, undef)
 })
 
@@ -347,7 +334,6 @@ test.serial('pm.iterationData.toObject', t => {
 })
 
 test.serial('pm.variables.get clear', t => {
-  postman[Initial]()
   t.is(pm.variables.get('test'), undef)
 })
 
@@ -416,14 +402,12 @@ test.serial('pm.variables.get local', t => {
 })
 
 test.serial('pm.variables.set scoped', t => {
-  postman[Initial]()
   t.throws(() => {
     pm.variables.set('test', 'a')
   })
 })
 
 test.serial('pm.variables.set clear', t => {
-  postman[Initial]()
   postman[Request]({
     pre () {
       t.is(pm.variables.get('test'), undef)
@@ -434,7 +418,6 @@ test.serial('pm.variables.set clear', t => {
 })
 
 test.serial('pm.variables.set set', t => {
-  postman[Initial]()
   postman[Request]({
     pre () {
       pm.variables.set('test', 'a')

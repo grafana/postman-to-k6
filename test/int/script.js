@@ -10,6 +10,9 @@ import "./libs/shim/core.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
+postman[Symbol.for("initial")]({
+  options
+});
 
 export default function() {
   postman[Request]({
@@ -36,6 +39,9 @@ export let options = { maxRedirects: 4 };
 
 const Pre = Symbol.for("pre");
 const Request = Symbol.for("request");
+postman[Symbol.for("initial")]({
+  options
+});
 
 export default function() {
   postman[Pre].push(() => {
@@ -66,6 +72,9 @@ export let options = { maxRedirects: 4 };
 
 const Pre = Symbol.for("pre");
 const Request = Symbol.for("request");
+postman[Symbol.for("initial")]({
+  options
+});
 
 export default function() {
   group("TestFolder", function() {
@@ -98,6 +107,9 @@ export let options = { maxRedirects: 4 };
 
 const Pre = Symbol.for("pre");
 const Request = Symbol.for("request");
+postman[Symbol.for("initial")]({
+  options
+});
 
 export default function() {
   group("TestFolder", function() {
@@ -142,6 +154,9 @@ import "./libs/shim/core.js";
 export let options = { maxRedirects: 4 };
 
 const Request = Symbol.for("request");
+postman[Symbol.for("initial")]({
+  options
+});
 
 export default function() {
   postman[Request]({
@@ -168,6 +183,9 @@ export let options = { maxRedirects: 4 };
 
 const Post = Symbol.for("post");
 const Request = Symbol.for("request");
+postman[Symbol.for("initial")]({
+  options
+});
 
 export default function() {
   postman[Post].push(() => {
@@ -198,6 +216,9 @@ export let options = { maxRedirects: 4 };
 
 const Post = Symbol.for("post");
 const Request = Symbol.for("request");
+postman[Symbol.for("initial")]({
+  options
+});
 
 export default function() {
   group("TestFolder", function() {
@@ -230,6 +251,9 @@ export let options = { maxRedirects: 4 };
 
 const Post = Symbol.for("post");
 const Request = Symbol.for("request");
+postman[Symbol.for("initial")]({
+  options
+});
 
 export default function() {
   group("TestFolder", function() {
