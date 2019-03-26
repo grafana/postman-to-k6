@@ -168,7 +168,7 @@ export default function() {
     auth(config, Var) {
       const address = new URI(config.address);
       const options = {
-        method: "get",
+        method: "GET",
         protocol: address.protocol(),
         hostname: address.hostname(),
         port: address.port(),
