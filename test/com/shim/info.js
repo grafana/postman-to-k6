@@ -2,6 +2,7 @@
 
 import test from 'ava'
 import mockRequire from 'mock-require'
+import uuidv4 from 'uuid/v4'
 let k6, http
 
 const Reset = Symbol.for('reset')
@@ -62,11 +63,11 @@ test.serial('pm.info.iterationCount set', t => {
 })
 
 test.serial('pm.info.requestId', t => {
+  const id = uuidv4()
   postman[Request]({
+    id,
     pre () {
-      t.throws(() => {
-        pm.info.requestId /* eslint-disable-line no-unused-expressions */
-      })
+      t.is(pm.info.requestId, id)
     }
   })
 })

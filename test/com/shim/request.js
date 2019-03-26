@@ -2,6 +2,7 @@
 
 import test from 'ava'
 import mockRequire from 'mock-require'
+import uuidv4 from 'uuid/v4'
 let k6, http
 
 const undef = void 0
@@ -83,11 +84,11 @@ test.serial('request.headers', t => {
 })
 
 test.serial('request.id', t => {
+  const id = uuidv4()
   postman[Request]({
+    id,
     pre () {
-      t.throws(() => {
-        request.id /* eslint-disable-line no-unused-expressions */
-      })
+      t.is(request.id, id)
     }
   })
 })
