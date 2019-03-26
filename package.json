@@ -1,16 +1,19 @@
 {
     "name": "postman-to-k6",
-    "description": "Convert a Postman collection to k6 script",
+    "description": "Convert a Postman collection to k6 JavaScript",
     "version": "0.0.3",
-    "author": {
-        "name": "Borja Campina"
-    },
-    "license": "MIT",
+    "license": "Apache-2.0",
     "keywords": [
         "k6",
+        "postman",
         "loadtest",
-        "postman"
+        "load-test",
+        "load-testing",
+        "server-load",
+        "performance"
     ],
+    "homepage": "https://github.com/loadimpact/postman-to-k6",
+    "bugs": "https://github.com/loadimpact/postman-to-k6/issues",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/loadimpact/postman-to-k6.git"
