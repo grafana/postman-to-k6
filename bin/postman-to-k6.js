@@ -39,7 +39,8 @@ function run (...args) {
       environment: options.environment,
       csv: !!options.csv,
       json: !!options.json,
-      iterations: options.iterations
+      iterations: options.iterations,
+      id: true
     })
   } catch (e) {
     console.error(e.message)
