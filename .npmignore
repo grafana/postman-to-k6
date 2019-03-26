@@ -1,14 +1,25 @@
 
 ### NPM Specific: Disregard recursive project files
 ### ===============================================
+*.tgz
+*.code-workspace
+/.ava.json
+/.babelrc
+/.circleci
 /.editorconfig
+/.gitattributes
 /.gitmodules
 /.jscsrc
 /.jshintrc
 /.jsbeautifyrc
 /.jsdoc-config.json
+/ava.config.js
+/build
+/doc
+/example
 /scripts
 /test
+/vendor
 
 # CI related files
 .ci/
