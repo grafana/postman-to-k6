@@ -1,0 +1,38 @@
+{
+	"info": {
+		"_postman_id": "60151e48-4c46-49d9-b784-bf2565d057d5",
+		"name": "Body",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TestRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first",
+							"value": "one",
+							"type": "text"
+						},
+						{
+							"key": "second",
+							"value": "two",
+							"type": "text"
+						},
+						{
+							"key": "third",
+							"value": "three",
+							"type": "text"
+						}
+					]
+				},
+				"url": "example.com"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "fd1c7b79-ac6c-4d67-861e-d58dcd786ee8",
+		"name": "Post",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TestRequest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "example.com"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "test",
+			"script": {
+				"id": "00b89b60-36df-43c5-bb95-12accafff535",
+				"type": "text/javascript",
+				"exec": [
+					"pm.variables.set('test', 'a')",
+					"pm.variables.set('test', 'b')",
+					"pm.variables.set('test', 'c')",
+					""
+				]
+			}
+		}
+	]
+}

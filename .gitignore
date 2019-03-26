@@ -1,4 +1,5 @@
 npm-debug.log
+package-lock.json
 .bundle
 NERD_*
 tmp
@@ -21,6 +22,8 @@ bower_components/*
 # dependencies
 /node_modules
 /bower_components
+/vendor
+/libs
 
 # misc
 /.sass-cache

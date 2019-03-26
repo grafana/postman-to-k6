@@ -1,63 +1,65 @@
-# Postman-to-k6
+# postman-to-k6
 
-Converts a [Postman collections](https://www.getpostman.com/docs/collections) to [k6 script](https://docs.k6.io/docs).
+Convert a [Postman collection](https://www.getpostman.com/docs/collections) to [k6 script](https://docs.k6.io/docs).
 
-The transformer converts Postman requests and [variables](http://blog.getpostman.com/2014/02/20/using-variables-inside-postman-and-collection-runner/) into k6 requests and variables respectively.
+Supported Features:
 
-Postman [pre-requests](https://www.getpostman.com/docs/pre_request_scripts) and [tests](https://www.getpostman.com/docs/writing_tests) are appended as comments before and after its respective k6 request. The pre-request and test behaviour could easily be replicated with the [K6 API](https://docs.k6.io/docs/k6).
+- Prerequest scripts.
+- Test scripts.
+- Variables (at all scopes + dynamic).
+- Data files.
+- Authentication methods (except Hawk).
+- `postman.*` interface.
+- `pm.*` interface.
+- Global variables exposed by Postman: `globals` `environment` `data`
+  `iteration`.
+- `xml2Json` conversion.
+- File formats v2 and v2.1.
 
-## Installation and usage
+## Usage
 
-As npm global package:
+Install with npm to get the `postman-to-k6` command.
 
-```bash
+```shell
 npm install -g postman-to-k6
-postman-to-k6 postman-collection.json -o k6-script.js
+```
+
+Pass a collection export to convert.
+
+```shell
+postman-to-k6 collection.json -o k6-script.js
 k6 run k6-script.js
 ```
 
-As local repository:
+The default script runs 1 iteration. Increase if desired.
 
-```bash
-git clone git@github.com:loadimpact/postman-to-k6.git
-cd postman-to-k6
-npm install
-
-#On macOS, Linux, or OpenBSD
-bin/postman-to-k6.js examples/postman/v2/echo.json -o k6-script.js
-
-#On windows
-node bin/postman-to-loadimpact.js examples/postman/v2/echo.json
-
-k6 run k6-script.js
+```shell
+postman-to-k6 collection.json -i 25 -o k6-script.js
 ```
 
+Provide environment and global variable exports separately.
 
+```shell
+postman-to-k6 collection.json -g globals.json -e environment.json -o k6-script.js
+```
 
-## Options
+You can also pass a data file in CSV format.
 
-The transformer provides a command line interface with different options.
+```shell
+postman-to-k6 collection.json --csv data.csv -o k6-script.js
+```
 
-      Usage: postman-to-k6 <filePath> [options]
-    
-      Convert a Postman collection to k6 script
-    
-      Options:
-    
-        -h, --help                    output usage information
-        -V, --version                 output the version number
-        -j --input-version <version>  Input version. Options `2.0.0` or `1.0.0`. Default `2.0.0`.
-        -o --output <path>            Target file path where the converted collection will be written. Default `console`
+Or a data file in JSON format.
+
+```shell
+postman-to-k6 collection.json --json data.json -o k6-script.js
+```
 
 ## Examples
 
-A collection of Postman examples are located under `./examples/postman`.
+A collection of Postman examples are located under `example`.
 
-The k6 script will be auto-generated when running:
-
-    $ postman-to-k6 examples/postman/v2/echo.json - o k6-script.js
-
-Please, use the [issue tracker](https://github.com/loadimpact/postman-to-k6/issues) to open a discussion or bug report.
+    $ postman-to-k6 example/v2/echo.json -o k6-script.js
 
 ## Credits
 

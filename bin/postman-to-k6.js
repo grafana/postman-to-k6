@@ -1,56 +1,72 @@
 #!/usr/bin/env node
-var program = require('commander'),
-    fs = require('fs'),
-    stripJSONComments = require('strip-json-comments');
 
-// describe the options and usage instruction for the `convert` command
+const convertFile = require('../lib/convert/file')
+const fs = require('fs-extra')
+const path = require('path')
+const program = require('commander')
+const pkginfo = require('pkginfo')
+
+pkginfo(module, 'version')
+const version = module.exports.version
+delete module.exports.version
+
 program
-    .version(require('../package.json').version)
-    .usage('<filePath> [options]')
-    .description('Convert a Postman collection to Load Impact Lua user scenario')
-    .option('-j --input-version <version>', 'Input version. Options `2.0.0` or `1.0.0`. Default `2.0.0`.', /^(2.0.0|1.0.0)$/i, '2.0.0')
-    .option('-o --output <path>', 'Target file path where the converted collection will be written. Default `console`')
-    .action(function (fileName, options) {
+  .version(version)
+  .usage('<path> [options]')
+  .description('Convert a Postman collection to k6 script')
+  .option('-o, --output <path>', 'Output file path. Default stdout.')
+  .option('-i, --iterations <count>', 'Number of iterations.')
+  .option('-g, --global <path>', 'JSON export of global variables.')
+  .option('-e, --environment <path>', 'JSON export of environment.')
+  .option('-c, --csv <path>', 'CSV data file. Used to fill data variables.')
+  .option('-j, --json <path>', 'JSON data file. Used to fill data variables.')
+  .action(run)
+  .parse(process.argv)
 
-      var input;
-      try {
-        input = loadJSON(fileName);
-      } catch (e) {
-        console.error('unable to load the input file!', e);
-        return;
+function run (...args) {
+  if (args.length <= 1) {
+    console.error('Provide path to Postman collection')
+    return
+  }
+  const options = args.pop()
+  const input = args.shift()
+
+  // Convert
+  let result
+  try {
+    result = convertFile(input, {
+      globals: options.global,
+      environment: options.environment,
+      csv: !!options.csv,
+      json: !!options.json,
+      iterations: options.iterations,
+      id: true
+    })
+  } catch (e) {
+    console.error(e.message)
+    console.log(e)
+    return
+  }
+
+  // Output
+  const dir = (options.output ? path.dirname(options.output) : '.')
+  fs.ensureDirSync(`${dir}/libs`)
+  fs.emptyDirSync(`${dir}/libs`)
+  fs.copySync(path.resolve(`${__dirname}/../vendor`), `${dir}/libs`)
+  fs.copySync(path.resolve(`${__dirname}/../lib/shim`), `${dir}/libs/shim`)
+  if (options.csv) {
+    fs.copySync(options.csv, `${dir}/data.csv`)
+  } else if (options.json) {
+    fs.copySync(options.json, `${dir}/data.json`)
+  }
+  if (options.output) {
+    fs.writeFile(options.output, result, error => {
+      if (error) {
+        console.error('could not create output ' + options.output)
+        console.error(error)
       }
-
-      var converter = require('../lib/converters/postman-' + options.inputVersion);
-      if (!converter) {
-        console.error('unable to load converter ' + options.inputVersion);
-        return;
-      }
-
-      converter.convert(input, function(error, result) {
-        if (error) {
-          console.error(error);
-          return;
-        }
-
-        if (options.output) {
-          fs.writeFile(options.output, result, function(error) {
-            if (error) {
-              console.error('Count not create output '+options.output);
-              console.error(error);
-            }
-          });
-        } else {
-          console.log(result);
-        }
-      });
-
-
-    });
-
-
-program.parse(process.argv);
-
-function loadJSON(path) {
-  var data = fs.readFileSync(path);
-  return JSON.parse(stripJSONComments(data.toString()));
-};
+    })
+  } else {
+    console.log(result)
+  }
+}
