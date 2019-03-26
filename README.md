@@ -64,7 +64,7 @@ A collection of Postman examples are located under `example`.
 ## Unsupported Features
 
 - Sending requests from scripts: `pm.sendRequest`
-- Controlling request execution order: `pm.setNextRequest`
+- Controlling request execution order: `postman.setNextRequest`
 - Cookie properties: `hostOnly` `session` `storeId`
 - Textual response message: `responseCode.name` `responseCode.detail`
   `pm.response.reason` `pm.response.to.have.status(reason)`
