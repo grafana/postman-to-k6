@@ -37,8 +37,8 @@ function run (...args) {
     result = convertFile(input, {
       globals: options.global,
       environment: options.environment,
-      csv: options.csv,
-      json: options.json,
+      csv: !!options.csv,
+      json: !!options.json,
       iterations: options.iterations
     })
   } catch (e) {
@@ -51,6 +51,11 @@ function run (...args) {
   const dir = (options.output ? path.dirname(options.output) : '.')
   fs.ensureDirSync(`${dir}/libs`)
   fs.copySync(path.resolve(`${__dirname}/../vendor`), `${dir}/libs`)
+  if (options.csv) {
+    fs.copySync(options.csv, `${dir}/data.csv`)
+  } else if (options.json) {
+    fs.copySync(options.json, `${dir}/data.json`)
+  }
   if (options.output) {
     fs.writeFile(options.output, result, error => {
       if (error) {

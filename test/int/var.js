@@ -102,7 +102,7 @@ export let options = { maxRedirects: 4 };
 
 const file = (() => {
   // Load data file
-  const text = open("test/material/2/data-json.json");
+  const text = open("./data.json");
   const rows = JSON.parse(text);
   return rows;
 })();
@@ -140,7 +140,7 @@ export let options = { maxRedirects: 4 };
 
 const file = (() => {
   // Load data file
-  const text = open("test/material/2/data-csv.csv");
+  const text = open("./data.csv");
   const rows = papaparse.parse(text, { header: true }).data;
   return rows;
 })();
@@ -178,7 +178,7 @@ export let options = { maxRedirects: 4, iterations: 27 };
 
 const file = (() => {
   // Load data file
-  const text = open("test/material/2/data-json.json");
+  const text = open("./data.json");
   const rows = JSON.parse(text);
   return rows;
 })();
