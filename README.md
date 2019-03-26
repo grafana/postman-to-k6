@@ -63,14 +63,14 @@ A collection of Postman examples are located under `example`.
 
 ## Unsupported Features
 
-- Sending requests from scripts: `pm.sendRequest`.
-- Controlling request execution order: `pm.setNextRequest`.
-- Cookie properties `hostOnly` `session` `storeId`.
+- Sending requests from scripts: `pm.sendRequest`
+- Controlling request execution order: `pm.setNextRequest`
+- Cookie properties: `hostOnly` `session` `storeId`
 - Textual response message: `responseCode.name` `responseCode.detail`
   `pm.response.reason` `pm.response.to.have.status(reason)`
-  `pm.response.to.not.have.status(reason)`.
+  `pm.response.to.not.have.status(reason)`
 - Properties returning Postman classes: `pm.request.url` `pm.request.headers`
-  `pm.response.headers`.
+  `pm.response.headers`
 - Deprecated `xmlToJson` method.
 - Request IDs are changed. Postman doesn't provide them in the export so we
   have to generate new ones.
