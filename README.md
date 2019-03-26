@@ -78,4 +78,4 @@ A collection of Postman examples are located under `example`.
 
 ## Credits
 
-Thanks to [borjacampina](https://github.com/borjacampina) for creating this tool.
+Thanks to [bookmoons](https://github.com/bookmoons) for creating this tool. Also, thanks to [borjacampina](https://github.com/borjacampina) for creating the original incarnation of the tool.
