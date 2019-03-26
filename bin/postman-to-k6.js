@@ -50,7 +50,9 @@ function run (...args) {
   // Output
   const dir = (options.output ? path.dirname(options.output) : '.')
   fs.ensureDirSync(`${dir}/libs`)
+  fs.emptyDirSync(`${dir}/libs`)
   fs.copySync(path.resolve(`${__dirname}/../vendor`), `${dir}/libs`)
+  fs.copySync(path.resolve(`${__dirname}/../lib/shim`), `${dir}/libs/shim`)
   if (options.csv) {
     fs.copySync(options.csv, `${dir}/data.csv`)
   } else if (options.json) {

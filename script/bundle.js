@@ -17,6 +17,7 @@ const modules = [
 ]
 
 fs.ensureDirSync(dir)
+fs.emptyDirSync(dir)
 for (const module of modules) {
   const path = `${dir}/${module}.js`
   browserify({ standalone: module })
@@ -24,5 +25,3 @@ for (const module of modules) {
     .bundle()
     .pipe(fs.createWriteStream(path))
 }
-fs.ensureDirSync(`${dir}/shim`)
-fs.copySync('lib/shim', `${dir}/shim`)
