@@ -83,6 +83,7 @@ A collection of Postman examples are located under `example`.
   `pm.response.to.not.have.status(reason)`
 - Properties returning Postman classes: `pm.request.url` `pm.request.headers`
   `pm.response.headers`
+- The Hawk authentication method.
 - Deprecated `xmlToJson` method.
 - Request IDs are changed. Postman doesn't provide them in the export so we
   have to generate new ones.
