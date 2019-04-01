@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "2189072b-ebab-45ef-8dad-8b2d60723180",
+		"name": "RequestMultiple",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test Request 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "1.example.com"
+			},
+			"response": []
+		},
+		{
+			"name": "Test Request 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "2.example.com"
+			},
+			"response": []
+		},
+		{
+			"name": "Test Request 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": "3.example.com"
+			},
+			"response": []
+		}
+	]
+}

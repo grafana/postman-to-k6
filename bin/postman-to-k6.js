@@ -20,6 +20,7 @@ program
   .option('-e, --environment <path>', 'JSON export of environment.')
   .option('-c, --csv <path>', 'CSV data file. Used to fill data variables.')
   .option('-j, --json <path>', 'JSON data file. Used to fill data variables.')
+  .option('-s, --separate', 'Generate a separate file for each request')
   .action(run)
   .parse(process.argv)
 
@@ -32,19 +33,20 @@ async function run (...args) {
   const input = args.shift()
 
   // Convert
-  let result
+  let main, requests
   try {
-    result = await convertFile(input, {
+    [ main, requests ] = await convertFile(input, {
       globals: options.global,
       environment: options.environment,
       csv: !!options.csv,
       json: !!options.json,
       iterations: options.iterations,
-      id: true
+      id: true,
+      separate: !!options.separate
     })
   } catch (e) {
     console.error(e.message)
-    console.log(e)
+    console.error(e)
     return
   }
 
@@ -59,14 +61,35 @@ async function run (...args) {
   } else if (options.json) {
     fs.copySync(options.json, `${dir}/data.json`)
   }
-  if (options.output) {
-    fs.writeFile(options.output, result, error => {
-      if (error) {
-        console.error('could not create output ' + options.output)
-        console.error(error)
-      }
-    })
-  } else {
-    console.log(result)
+  if (options.separate) {
+    const success = outputRequests(dir, requests)
+    if (!success) {
+      return
+    }
   }
+  if (options.output) {
+    try {
+      fs.writeFileSync(options.output, main)
+    } catch (e) {
+      console.error(`Could not create output ${options.output}`)
+      console.error(e)
+    }
+  } else {
+    console.log(main)
+  }
+}
+
+function outputRequests (dir, requests) {
+  fs.ensureDirSync(`${dir}/requests`)
+  for (const file of Object.keys(requests)) {
+    const logic = requests[file]
+    try {
+      fs.writeFileSync(`${dir}/requests/${file}`, logic)
+    } catch (e) {
+      console.error(`Could not create request file ${file}`)
+      console.error(e)
+      return false
+    }
+  }
+  return true
 }

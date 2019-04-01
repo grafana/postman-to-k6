@@ -37,6 +37,7 @@
         "cheerio": "^1.0.0-rc.2",
         "commander": "^2.19.0",
         "crypto-js": "^3.1.9-1",
+        "filenamify": "^3.0.0",
         "fs-extra": "^7.0.1",
         "lodash": "^4.17.11",
         "oauth-1.0a": "^2.2.5",
@@ -71,7 +72,8 @@
         "postinstall": "node scripts/bundle.js",
         "test-com": "cross-env NODE_PATH=lib:test ava test/com",
         "test-int": "cross-env NODE_PATH=lib:test ava test/int",
-        "test": "npm-run-all test-com test-int",
+        "test-unit": "cross-env NODE_PATH=lib:test ava test/unit",
+        "test": "npm-run-all test-unit test-com test-int",
         "test-hoc": "cross-env NODE_PATH=lib:test ava"
     }
 }
