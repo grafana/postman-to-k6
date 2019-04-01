@@ -20,7 +20,7 @@ Supported Features:
 
 **Install**:
 
-![npm](https://img.shields.io/npm/v/postman-to-k6.svg) ![npm](https://img.shields.io/npm/dw/postman-to-k6.svg)
+![npm](https://img.shields.io/npm/v/postman-to-k6.svg) ![npm](https://img.shields.io/npm/dw/postman-to-k6.svg) ![dockerhub](https://img.shields.io/docker/pulls/loadimpact/postman-to-k6.svg)
 
 Globally, and preferably using [nvm](https://github.com/creationix/nvm) (at least on Unix/Linux systems to avoid filesystem permission issues when using sudo):
 ```shell
@@ -33,6 +33,11 @@ npm install postman-to-k6
 ```
 
 Note that this will require you to run the converter with `node node_modules/postman-to-k6/bin/postman-to-k6.js ...`.
+
+Alternatively, you can install the tool from DockerHub:
+```shell
+docker pull loadimpact/postman-to-k6
+```
 
 **Convert**:
 
@@ -65,6 +70,15 @@ Or a data file in JSON format.
 
 ```shell
 postman-to-k6 collection.json --json data.json -o k6-script.js
+```
+
+Using the Docker image, you execute the tool as follows:
+```shell
+docker run -it -v "/path/to/postman/collection/:/postman/" loadimpact/postman-to-k6 /postman/MyCollection.postman_collection.json -o /postman/test.js
+```
+and then execute the k6 test using:
+```shell
+k6 run /path/to/postman/collection/test.js
 ```
 
 ## Examples
