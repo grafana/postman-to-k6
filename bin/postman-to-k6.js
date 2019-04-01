@@ -23,7 +23,7 @@ program
   .action(run)
   .parse(process.argv)
 
-function run (...args) {
+async function run (...args) {
   if (args.length <= 1) {
     console.error('Provide path to Postman collection')
     return
@@ -34,7 +34,7 @@ function run (...args) {
   // Convert
   let result
   try {
-    result = convertFile(input, {
+    result = await convertFile(input, {
       globals: options.global,
       environment: options.environment,
       csv: !!options.csv,
