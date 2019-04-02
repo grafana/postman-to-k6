@@ -46,9 +46,12 @@ async function run (...args) {
   const input = args.shift()
 
   // Convert
-  let main, requests
+  let main, requests, compat
   try {
-    [ main, requests ] = await convertFile(input, translateOptions(options))
+    ({ main, requests, compat } = await convertFile(
+      input,
+      translateOptions(options)
+    ))
   } catch (e) {
     console.error(e.message)
     console.log(e)
@@ -59,8 +62,10 @@ async function run (...args) {
   const dir = (options.output ? path.dirname(options.output) : '.')
   fs.ensureDirSync(`${dir}/libs`)
   fs.emptyDirSync(`${dir}/libs`)
-  fs.copySync(path.resolve(`${__dirname}/../vendor`), `${dir}/libs`)
   fs.copySync(path.resolve(`${__dirname}/../lib/shim`), `${dir}/libs/shim`)
+  if (compat) {
+    fs.writeFileSync(`${dir}/libs/compat.js`, compat)
+  }
   if (options.csv) {
     fs.copySync(options.csv, `${dir}/data.csv`)
   } else if (options.json) {
