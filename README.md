@@ -14,7 +14,7 @@ Supported Features:
 - Global variables exposed by Postman: `globals` `environment` `data`
   `iteration`.
 - `xml2Json` conversion.
-- File formats v2 and v2.1.
+- All [Postman Schema](https://schema.getpostman.com/) versions.
 
 ## Usage
 
@@ -87,7 +87,6 @@ A collection of Postman examples are located under `example`.
 - Deprecated `xmlToJson` method.
 - Request IDs are changed. Postman doesn't provide them in the export so we
   have to generate new ones.
-- File format v1.
 
 ## Other similar tools
 
