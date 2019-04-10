@@ -72,6 +72,12 @@ Or a data file in JSON format.
 postman-to-k6 collection.json --json data.json -o k6-script.js
 ```
 
+For easier rearrangement of logic you can split requests into separate files:
+
+```shell
+postman-to-k6 collection.json -s -o k6-script.js
+```
+
 Using the Docker image, you execute the tool as follows:
 ```shell
 docker run -it -v "/path/to/postman/collection/:/postman/" loadimpact/postman-to-k6 /postman/MyCollection.postman_collection.json -o /postman/test.js
