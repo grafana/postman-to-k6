@@ -1,5 +1,6 @@
 import test from 'ava'
 import mockRequire from 'mock-require'
+import { Auth } from 'generate/separate/sym'
 let map
 
 function designate (name, container, generators, suffix = '') {
@@ -74,6 +75,17 @@ test('3 locations', t => {
     exercise: {},
     cleanup: {}
   })
+})
+
+test('auth', t => {
+  const auth = Symbol('auth')
+  const tree = {
+    auth,
+    items: [],
+    locations: []
+  }
+  const result = map(tree)
+  t.deepEqual(result, { [Auth]: auth })
 })
 
 test('nested item', t => {
