@@ -31,12 +31,6 @@ test.serial('suffix', t => {
   t.is(designate('apple', {}, {}, '.js'), 'apple.js')
 })
 
-test.serial('shrink', t => {
-  filenamify.returnsArg(0)
-  deconflict.returnsArg(0)
-  t.is(designate('apple orange pear', {}, {}), 'appleorangepear')
-})
-
 test.serial('encode', t => {
   filenamify.returns('About!Company')
   deconflict.returnsArg(0)
