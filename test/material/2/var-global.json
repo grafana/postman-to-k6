@@ -14,7 +14,7 @@
 					"mode": "raw",
 					"raw": ""
 				},
-				"url": "{{first}}.{{third}}"
+				"url": "http://{{first}}.{{third}}"
 			},
 			"response": []
 		}
