@@ -42,7 +42,7 @@
         "oauth-1.0a": "^2.2.5",
         "papaparse": "^4.6.3",
         "pkginfo": "^0.4.1",
-        "postman-collection": "^3.4.3",
+        "postman-collection": "^3.5.0",
         "postman-collection-transformer": "^3.0.0",
         "prettier": "^1.16.4",
         "strip-json-comments": "^2.0.1",
