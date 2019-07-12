@@ -4,18 +4,6 @@ const path = require('path')
 function outputRequests (dir, requests) {
   const address = [ dir, 'requests' ]
   location(requests, address)
-
-  for (const file of Object.keys(requests)) {
-    const logic = requests[file]
-    try {
-      fs.writeFileSync(`${dir}/requests/${file}`, logic)
-    } catch (e) {
-      console.error(`Could not create request file ${file}`)
-      console.error(e)
-      return false
-    }
-  }
-  return true
 }
 
 function location (node, address) {
