@@ -2,6 +2,7 @@
 
 const convertFile = require('../lib/convert/file')
 const fs = require('fs-extra')
+const outputRequests = require('./requests')
 const path = require('path')
 const program = require('commander')
 const pkginfo = require('pkginfo')
@@ -32,6 +33,7 @@ program
   .option('--oauth1-nonce <value>', 'OAuth1 nonce.')
   .option('--oauth1-version <value>', 'OAuth1 version.')
   .option('--oauth1-realm <value>', 'OAuth1 realm.')
+  .option('-s, --separate', 'Generate a separate file for each request.')
   .action(run)
   .parse(process.argv)
 
@@ -44,9 +46,9 @@ async function run (...args) {
   const input = args.shift()
 
   // Convert
-  let result
+  let main, requests
   try {
-    result = await convertFile(input, translateOptions(options))
+    [ main, requests ] = await convertFile(input, translateOptions(options))
   } catch (e) {
     console.error(e.message)
     console.log(e)
@@ -64,15 +66,24 @@ async function run (...args) {
   } else if (options.json) {
     fs.copySync(options.json, `${dir}/data.json`)
   }
+  if (options.separate) {
+    try {
+      outputRequests(dir, requests)
+    } catch (error) {
+      console.error('could not create request files')
+      console.error(error)
+      return
+    }
+  }
   if (options.output) {
-    fs.writeFile(options.output, result, error => {
-      if (error) {
-        console.error('could not create output ' + options.output)
-        console.error(error)
-      }
-    })
+    try {
+      fs.writeFileSync(options.output, main)
+    } catch (error) {
+      console.error('could not create output ' + options.output)
+      console.error(error)
+    }
   } else {
-    console.log(result)
+    console.log(main)
   }
 }
 
@@ -84,7 +95,8 @@ function translateOptions (options) {
     json: !!options.json,
     iterations: options.iterations,
     id: true,
-    oauth1: translateOauth1Options(options)
+    oauth1: translateOauth1Options(options),
+    separate: !!options.separate
   }
 }
 
