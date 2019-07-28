@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "068355d1-ef5d-446c-9cf3-97823da6a196",
+		"name": "GitHub GraphQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Query",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "186b3734-3fe3-4495-b4c9-44b0245dbe3c",
+						"exec": [
+							"console.log(pm.response.text())"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{GITHUB_TOKEN}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "{\n  viewer {\n    name\n     repositories(last: {{numberOfRepos}}) {\n       nodes {\n         name\n       }\n     }\n   }\n}\n",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "https://api.github.com/graphql",
+					"protocol": "https",
+					"host": [
+						"api",
+						"github",
+						"com"
+					],
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "b414bfbd-b39b-460a-bbe4-3e768b3784a0",
+			"key": "numberOfRepos",
+			"value": "3",
+			"type": "string"
+		},
+		{
+			"id": "9dff4a0c-28c0-44ff-aebf-1439fd9298a5",
+			"key": "GITHUB_TOKEN",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
