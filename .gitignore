@@ -1,3 +1,5 @@
+bin/libs
+bin/*.json
 npm-debug.log
 package-lock.json
 .bundle
