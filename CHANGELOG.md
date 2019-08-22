@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Dockerfile and installation instructions on how to use Docker image from DockerHub.
 - Support for injecting OAuth1 credentials when converting a collection.
 - Support for splitting requests into separate JS files for easier rearrangement of logic post-conversion.
+- Support for graphql body mode.
 
 ### Fixed
 - Resolution of variables in request bodies.
