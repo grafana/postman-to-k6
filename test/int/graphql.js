@@ -8,7 +8,7 @@ function render (body) {
 }
 
 test('body simple', async t => {
-  const [ main ] = await convertFile(
+  const { main } = await convertFile(
     'test/material/2.1/graphql-body-simple.json'
   )
   const query = '' +
@@ -41,7 +41,7 @@ export default function() {
 })
 
 test('body var', async t => {
-  const [ main ] = await convertFile(
+  const { main } = await convertFile(
     'test/material/2.1/graphql-body-var.json'
   )
   const query = '' +
