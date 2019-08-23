@@ -1,0 +1,41 @@
+{
+	"info": {
+		"_postman_id": "a3033a78-1a2e-4036-9621-11bc4fdc3ad6",
+		"name": "GraphQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Test Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query UserName($id: UserId) {\n    user(id: $id) {\n        name\n    }\n}",
+						"variables": "{\n\t\"id\": \"{{userId}}\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://graphql.example.com",
+					"protocol": "http",
+					"host": [
+						"graphql",
+						"example",
+						"com"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"id": "c910e57e-8c50-4ce0-aa13-6ab64f448421",
+			"key": "userId",
+			"value": "5",
+			"type": "string"
+		}
+	]
+}
