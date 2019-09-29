@@ -31,8 +31,10 @@ function define (logic) {
 test.before(t => {
   mockRequire('k6', 'stub/k6')
   mockRequire('k6/http', 'stub/http')
-  mockRequire('../../../lib/ajv.js', 'ajv')
-  mockRequire('../../../lib/chai.js', 'chai')
+  mockRequire('../../../lib/compat.js', {
+    ajv: require('ajv'),
+    chai: require('chai')
+  })
   k6 = require('k6')
   http = require('k6/http')
   require('shim/core')

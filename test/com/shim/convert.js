@@ -9,7 +9,9 @@ const Reset = Symbol.for('reset')
 test.before(t => {
   mockRequire('k6', 'stub/k6')
   mockRequire('k6/http', 'stub/http')
-  mockRequire('../../../lib/xml2js.js', 'xml2js')
+  mockRequire('../../../lib/compat.js', {
+    xml2js: require('xml2js')
+  })
   k6 = require('k6')
   http = require('k6/http')
   require('shim/core')

@@ -14,9 +14,7 @@ test.before(t => {
   global.require = require // Simluate k6 global require
   mockRequire('k6', 'stub/k6')
   mockRequire('k6/http', 'stub/http')
-  mockRequire('../../../lib/lodash.js', lodash)
-  mockRequire('../../../lib/cheerio.js', cheerio)
-  mockRequire('../../../lib/crypto-js.js', cryptoJs)
+  mockRequire('../../../lib/compat.js', { lodash, cheerio, cryptoJs })
   k6 = require('k6')
   http = require('k6/http')
   require('shim/core')
