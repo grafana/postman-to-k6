@@ -5,6 +5,7 @@ const browserify = require('browserify')
 
 const dir = 'vendor'
 const modules = [
+  'ajv',
   'aws4',
   'chai',
   'cheerio',
@@ -12,6 +13,7 @@ const modules = [
   'lodash',
   'oauth-1.0a',
   'papaparse',
+  'spo-gpo/polyfill',
   'urijs',
   'xml2js'
 ]
@@ -19,7 +21,8 @@ const modules = [
 fs.ensureDirSync(dir)
 fs.emptyDirSync(dir)
 for (const module of modules) {
-  const path = `${dir}/${module}.js`
+  const name = module.split('/')[0]
+  const path = `${dir}/${name}.js`
   browserify({ standalone: module })
     .require(module)
     .bundle()
