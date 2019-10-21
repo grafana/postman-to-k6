@@ -1,0 +1,36 @@
+{
+	"info": {
+		"_postman_id": "345d8fe9-e89c-43b3-8d14-f585ab9c4f41",
+		"name": "File Upload",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "TestFileUpload",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "theultimatequestion.txt"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://deepthought.test",
+					"protocol": "http",
+					"host": [
+						"deepthought",
+						"test"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

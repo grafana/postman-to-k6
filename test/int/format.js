@@ -23,7 +23,9 @@ export default function() {
         name: "Test Request 2",
         method: "POST",
         address: "http://2.example.com",
-        data: { search: "puppies" },
+        data: {
+          search: "puppies"
+        },
         auth(config, Var) {
           const address = new URI(config.address);
           address.username("user456");
@@ -90,7 +92,9 @@ export default function() {
         name: "Test Request 2",
         method: "POST",
         address: "http://2.example.com",
-        data: { search: "puppies" },
+        data: {
+          search: "puppies"
+        },
         auth(config, Var) {
           const address = new URI(config.address);
           address.username("user456");
@@ -157,7 +161,9 @@ export default function() {
         name: "Test Request 2",
         method: "POST",
         address: "http://2.example.com",
-        data: { search: "puppies" },
+        data: {
+          search: "puppies"
+        },
         auth(config, Var) {
           const address = new URI(config.address);
           address.username("user456");
