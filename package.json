@@ -1,7 +1,7 @@
 {
     "name": "postman-to-k6",
     "description": "Convert a Postman collection to k6 JavaScript",
-    "version": "0.3.0",
+    "version": "0.3.1",
     "license": "Apache-2.0",
     "keywords": [
         "k6",

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1] - 2019-10-28
+### Fixed
+- Polyfill for Object.setPrototypeOf method when a conversion uses any dependency requiring it.
+
 ## [0.3.0] - 2019-08-23
 ### Added
 - Support GraphQL variables.
@@ -45,7 +49,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
 - Installation and usage instructions to recommend [nvm](https://github.com/creationix/nvm) to avoid filesystem permission issues when installing the tool globally with `npm install -g ...`
 
-[Unreleased]: https://github.com/loadimpact/postman-to-k6/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/loadimpact/postman-to-k6/compare/v0.3.1...HEAD
+[0.3.1]: https://github.com/loadimpact/postman-to-k6/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/loadimpact/postman-to-k6/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/loadimpact/postman-to-k6/compare/v0.1.2...v0.2.0
 [0.1.2]: https://github.com/loadimpact/postman-to-k6/compare/v0.1.1...v0.1.2
