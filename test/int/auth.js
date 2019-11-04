@@ -183,7 +183,7 @@ export default function() {
         sessionToken: "session"
       };
       const signed = aws4.sign(options, credential);
-      const [path, query] = signed.path.split("?");
+      const [path, query = ""] = signed.path.split("?");
       config.address = new URI()
         .protocol(address.protocol())
         .hostname(signed.hostname)
