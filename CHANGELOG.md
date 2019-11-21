@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.0] - 2019-11-21
+### Added
+- Support for file uploads.
+
+### Fixed
+- Support empty query string in requests using AWSv4 signature authentication
+
 ## [0.3.1] - 2019-10-28
 ### Fixed
 - Polyfill for Object.setPrototypeOf method when a conversion uses any dependency requiring it.
@@ -49,7 +56,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Updated
 - Installation and usage instructions to recommend [nvm](https://github.com/creationix/nvm) to avoid filesystem permission issues when installing the tool globally with `npm install -g ...`
 
-[Unreleased]: https://github.com/loadimpact/postman-to-k6/compare/v0.3.1...HEAD
+[Unreleased]: https://github.com/loadimpact/postman-to-k6/compare/v0.4.0...HEAD
+[0.3.1]: https://github.com/loadimpact/postman-to-k6/compare/v0.3.1...v0.4.0
 [0.3.1]: https://github.com/loadimpact/postman-to-k6/compare/v0.3.0...v0.3.1
 [0.3.0]: https://github.com/loadimpact/postman-to-k6/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/loadimpact/postman-to-k6/compare/v0.1.2...v0.2.0
