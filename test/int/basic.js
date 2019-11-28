@@ -25,7 +25,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com"
+    address: "http://example.com/"
   });
 }
 `)
@@ -48,7 +48,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "POST",
-    address: "http://example.com",
+    address: "http://example.com/",
     data: "line1\\nline2\\nline3\\n"
   });
 }
@@ -72,7 +72,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "POST",
-    address: "http://example.com",
+    address: "http://example.com/",
     data: {
       first: "one",
       second: "two",
@@ -133,7 +133,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "POST",
-    address: "http://example.com",
+    address: "http://example.com/",
     data: {
       first: "one",
       second: "two",
@@ -164,7 +164,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com"
+    address: "http://example.com/"
   });
 }
 `)
@@ -189,7 +189,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com"
+    address: "http://example.com/"
   });
 }
 `)

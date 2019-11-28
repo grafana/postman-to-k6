@@ -20,7 +20,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com"
+    address: "http://example.com/"
   });
 }
 `)
@@ -44,7 +44,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     auth(config, Var) {
       const address = new URI(config.address);
       address.username("user123");
@@ -74,7 +74,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     auth(config, Var) {
       config.headers.Authorization = "Bearer secrettoken";
     }
@@ -101,7 +101,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     auth(config, Var) {
       const address = new URI(config.address);
       address.username("user123");
@@ -132,7 +132,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     auth(config, Var) {
       const address = new URI(config.address);
       address.username("user123");
@@ -165,7 +165,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     auth(config, Var) {
       const address = new URI(config.address);
       const options = {
@@ -216,7 +216,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     auth(config, Var) {
       const options = {
         consumer: {
@@ -270,7 +270,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     auth(config, Var) {
       const options = {
         consumer: {
@@ -324,7 +324,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     auth(config, Var) {
       const options = {
         consumer: {
@@ -375,7 +375,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "POST",
-    address: "http://example.com",
+    address: "http://example.com/",
     auth(config, Var) {
       const options = {
         consumer: {
@@ -430,7 +430,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     data: "line1\\nline2\\nline3\\n",
     auth(config, Var) {
       const options = {
@@ -487,7 +487,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     auth(config, Var) {
       config.headers.Authorization = "Bearer token";
     }
@@ -514,7 +514,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     auth(config, Var) {
       const address = new URI(config.address);
       address.addQuery("access_token", "token");
@@ -542,7 +542,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     auth(config, Var) {
       config.headers.Authorization = "Bearer token";
     }
@@ -570,7 +570,7 @@ export default function() {
     postman[Request]({
       name: "TestRequest",
       method: "GET",
-      address: "http://example.com",
+      address: "http://example.com/",
       auth(config, Var) {
         config.headers.Authorization = "Bearer token";
       }
@@ -602,7 +602,7 @@ export default function() {
           postman[Request]({
             name: "TestRequest",
             method: "GET",
-            address: "http://example.com",
+            address: "http://example.com/",
             auth(config, Var) {
               config.headers.Authorization = "Bearer token";
             }

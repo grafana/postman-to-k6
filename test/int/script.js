@@ -18,7 +18,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     pre() {
       pm.variables.set("test", "a");
       pm.variables.set("test2", "b");
@@ -53,7 +53,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com"
+    address: "http://example.com/"
   });
 
   postman[Pre].pop();
@@ -87,7 +87,7 @@ export default function() {
     postman[Request]({
       name: "TestRequest",
       method: "GET",
-      address: "http://example.com"
+      address: "http://example.com/"
     });
 
     postman[Pre].pop();
@@ -130,7 +130,7 @@ export default function() {
         postman[Request]({
           name: "TestRequest",
           method: "GET",
-          address: "http://example.com"
+          address: "http://example.com/"
         });
 
         postman[Pre].pop();
@@ -162,7 +162,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com",
+    address: "http://example.com/",
     post(response) {
       pm.variables.set("test", "a");
       pm.variables.set("test", "b");
@@ -197,7 +197,7 @@ export default function() {
   postman[Request]({
     name: "TestRequest",
     method: "GET",
-    address: "http://example.com"
+    address: "http://example.com/"
   });
 
   postman[Post].pop();
@@ -231,7 +231,7 @@ export default function() {
     postman[Request]({
       name: "TestRequest",
       method: "GET",
-      address: "http://example.com"
+      address: "http://example.com/"
     });
 
     postman[Post].pop();
@@ -274,7 +274,7 @@ export default function() {
         postman[Request]({
           name: "TestRequest",
           method: "GET",
-          address: "http://example.com"
+          address: "http://example.com/"
         });
 
         postman[Post].pop();

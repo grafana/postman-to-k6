@@ -22,7 +22,7 @@ export default function() {
       postman[Request]({
         name: "Test Request 2",
         method: "POST",
-        address: "http://2.example.com",
+        address: "http://2.example.com/",
         data: {
           search: "puppies"
         },
@@ -41,7 +41,7 @@ export default function() {
     postman[Request]({
       name: "Test Request 3",
       method: "DELETE",
-      address: "http://3.example.com?type=cockroach&id=roach7",
+      address: "http://3.example.com/?type=cockroach&id=roach7",
       pre() {
         // Prepare for request
       },
@@ -54,7 +54,7 @@ export default function() {
   postman[Request]({
     name: "Test Request 1",
     method: "GET",
-    address: "http://1.example.com?search=kittens",
+    address: "http://1.example.com/?search=kittens",
     headers: {
       Session: "abc123"
     },
@@ -91,7 +91,7 @@ export default function() {
       postman[Request]({
         name: "Test Request 2",
         method: "POST",
-        address: "http://2.example.com",
+        address: "http://2.example.com/",
         data: {
           search: "puppies"
         },
@@ -110,7 +110,7 @@ export default function() {
     postman[Request]({
       name: "Test Request 3",
       method: "DELETE",
-      address: "http://3.example.com?type=cockroach&id=roach7",
+      address: "http://3.example.com/?type=cockroach&id=roach7",
       pre() {
         // Prepare for request
       },
@@ -123,7 +123,7 @@ export default function() {
   postman[Request]({
     name: "Test Request 1",
     method: "GET",
-    address: "http://1.example.com?search=kittens",
+    address: "http://1.example.com/?search=kittens",
     headers: {
       Session: "abc123"
     },
@@ -160,7 +160,7 @@ export default function() {
       postman[Request]({
         name: "Test Request 2",
         method: "POST",
-        address: "http://2.example.com",
+        address: "http://2.example.com/",
         data: {
           search: "puppies"
         },
@@ -179,7 +179,7 @@ export default function() {
     postman[Request]({
       name: "Test Request 3",
       method: "DELETE",
-      address: "http://3.example.com?type=cockroach&id=roach7",
+      address: "http://3.example.com/?type=cockroach&id=roach7",
       pre() {
         // Prepare for request
       },
@@ -192,7 +192,7 @@ export default function() {
   postman[Request]({
     name: "Test Request 1",
     method: "GET",
-    address: "http://1.example.com?search=kittens",
+    address: "http://1.example.com/?search=kittens",
     headers: {
       Session: "abc123"
     },
