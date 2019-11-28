@@ -5,7 +5,7 @@ import mockRequire from 'mock-require'
 import uuidv4 from 'uuid/v4'
 let k6, http
 
-const undef = void 0
+const undef = void 0 /* eslint-disable-line no-void */
 
 const Reset = Symbol.for('reset')
 const Initial = Symbol.for('initial')

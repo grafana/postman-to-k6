@@ -31,7 +31,7 @@ test.serial('responseCookies', t => {
     secure: false,
     value: 'Aqua'
   }
-  http.request.returns({ cookies: { Theme: [ cookie ] } })
+  http.request.returns({ cookies: { Theme: [cookie] } })
   postman[Request]({
     post () {
       t.is(responseCookies.length, 1)
@@ -44,7 +44,7 @@ test.serial('responseCookies', t => {
 })
 
 test.serial('cookie.hostOnly', t => {
-  http.request.returns({ cookies: { Theme: [ {} ] } })
+  http.request.returns({ cookies: { Theme: [{}] } })
   postman[Request]({
     post () {
       t.throws(() => {
@@ -56,7 +56,7 @@ test.serial('cookie.hostOnly', t => {
 })
 
 test.serial('cookie.session', t => {
-  http.request.returns({ cookies: { Theme: [ {} ] } })
+  http.request.returns({ cookies: { Theme: [{}] } })
   postman[Request]({
     post () {
       t.throws(() => {
@@ -68,7 +68,7 @@ test.serial('cookie.session', t => {
 })
 
 test.serial('cookie.storeId', t => {
-  http.request.returns({ cookies: { Theme: [ {} ] } })
+  http.request.returns({ cookies: { Theme: [{}] } })
   postman[Request]({
     post () {
       t.throws(() => {
@@ -88,7 +88,7 @@ test.serial('postman.getResponseCookie', t => {
     secure: false,
     value: 'Aqua'
   }
-  http.request.returns({ cookies: { Theme: [ cookie ] } })
+  http.request.returns({ cookies: { Theme: [cookie] } })
   postman[Request]({
     post () {
       const responseCookie = postman.getResponseCookie('Theme')
@@ -110,7 +110,7 @@ test.serial('pm.cookies.get clear', t => {
 
 test.serial('pm.cookies.get set', t => {
   const cookie = { name: 'Theme', value: 'Aqua' }
-  http.request.returns({ cookies: { Theme: [ cookie ] } })
+  http.request.returns({ cookies: { Theme: [cookie] } })
   postman[Request]({
     post () {
       t.is(pm.cookies.get('Theme'), 'Aqua')
@@ -127,7 +127,7 @@ test.serial('pm.cookies.has clear', t => {
 })
 
 test.serial('pm.cookies.has set', t => {
-  http.request.returns({ cookies: { Theme: [ { name: 'Theme' } ] } })
+  http.request.returns({ cookies: { Theme: [{ name: 'Theme' }] } })
   postman[Request]({
     post () {
       t.true(pm.cookies.has('Theme'))
@@ -136,10 +136,12 @@ test.serial('pm.cookies.has set', t => {
 })
 
 test.serial('pm.cookies.toObject', t => {
-  http.request.returns({ cookies: {
-    Theme: [ { name: 'Theme', value: 'Aqua' } ],
-    Session: [ { name: 'Session', value: 'abc123' } ]
-  } })
+  http.request.returns({
+    cookies: {
+      Theme: [{ name: 'Theme', value: 'Aqua' }],
+      Session: [{ name: 'Session', value: 'abc123' }]
+    }
+  })
   postman[Request]({
     post () {
       t.deepEqual(pm.cookies.toObject(), {

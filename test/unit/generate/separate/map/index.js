@@ -23,7 +23,7 @@ test('empty', t => {
 
 test('1 item', t => {
   const tree = {
-    items: [ { name: 'apple' } ],
+    items: [{ name: 'apple' }],
     locations: []
   }
   const result = map(tree)
@@ -52,7 +52,7 @@ test('3 items', t => {
 test('1 location', t => {
   const tree = {
     items: [],
-    locations: [ { name: 'setup', items: [], locations: [] } ]
+    locations: [{ name: 'setup', items: [], locations: [] }]
   }
   const result = map(tree)
   t.deepEqual(result, {
@@ -94,7 +94,7 @@ test('nested item', t => {
     locations: [
       {
         name: 'exercise',
-        items: [ { name: 'home' } ],
+        items: [{ name: 'home' }],
         locations: []
       }
     ]
@@ -114,7 +114,7 @@ test('nested location', t => {
       {
         name: 'exercise',
         items: [],
-        locations: [ { name: 'public', items: [], locations: [] } ]
+        locations: [{ name: 'public', items: [], locations: [] }]
       }
     ]
   }
