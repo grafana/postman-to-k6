@@ -174,6 +174,7 @@ export default function() {
         hostname: address.hostname(),
         port: address.port(),
         path: address.path() + address.search(),
+        body: config.data,
         region: "region",
         service: "service"
       };
