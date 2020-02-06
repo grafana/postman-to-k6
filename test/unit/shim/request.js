@@ -35,3 +35,19 @@ test.serial('interpolate raw body', t => {
   const body = http.request.firstCall.args[2]
   t.is(body, 'fir redwood rosewood')
 })
+
+test.serial('should pass on tags to the http request', t => {
+  const testName = 'request tagged with a name'
+  postman[Request]({
+    method: 'GET',
+    address: 'http://example.com',
+    data: 'testing',
+    tags: { name: testName }
+  });
+  const params = http.request.firstCall.args[3];
+
+  t.is(
+    params.tags.name,
+    testName,
+  );
+});
