@@ -21,6 +21,17 @@
     "engines": {
         "node": ">= 0.10.0"
     },
+    "scripts": {
+        "bundle": "node scripts/bundle.js",
+        "lint-js": "standard --verbose | snazzy",
+        "lint": "npm-run-all lint-js",
+        "postinstall": "node scripts/bundle.js",
+        "test": "npm-run-all test-unit test-com test-int",
+        "test-com": "cross-env NODE_PATH=lib:test ava test/com",
+        "test-hoc": "cross-env NODE_PATH=lib:test ava",
+        "test-int": "cross-env NODE_PATH=lib:test ava test/int",
+        "test-unit": "cross-env NODE_PATH=lib:test ava test/unit"
+    },
     "preferGlobal": "true",
     "directories": {
         "bin": "bin",
@@ -64,16 +75,5 @@
         "sinon": "^7.2.7",
         "snazzy": "^8.0.0",
         "standard": "^12.0.1"
-    },
-    "scripts": {
-        "bundle": "node scripts/bundle.js",
-        "lint-js": "standard --verbose | snazzy",
-        "lint": "npm-run-all lint-js",
-        "postinstall": "node scripts/bundle.js",
-        "test": "npm-run-all test-unit test-com test-int",
-        "test-com": "cross-env NODE_PATH=lib:test ava test/com",
-        "test-hoc": "cross-env NODE_PATH=lib:test ava",
-        "test-int": "cross-env NODE_PATH=lib:test ava test/int",
-        "test-unit": "cross-env NODE_PATH=lib:test ava test/unit"
     }
 }
