@@ -3,7 +3,7 @@
   ![postman-to-k6-cover](./assets/postman-to-k6-cover.png)
 
   # Postman-to-k6
-  Converts a [Postman collection](https://www.getpostman.com/docs/collections) to [k6 script](https://docs.k6.io/docs).
+  Converts a [Postman collection](https://www.getpostman.com/docs/collections) to a [k6 script](https://docs.k6.io/docs).
   
  ![CircleCI branch](https://img.shields.io/circleci/project/github/loadimpact/postman-to-k6/master.svg)
  ![npm](https://img.shields.io/npm/v/postman-to-k6.svg) ![npm](https://img.shields.io/npm/dw/postman-to-k6.svg)
@@ -11,8 +11,31 @@
   
 </div>
 
+<br/><br/>
 
-Supported Features:
+## Content
+
+- [Features](#features)
+- [Installation](#installation)
+  - [Local Installation (recommended)](#local-installation-recommended)
+  - [Global Installation](#global-installation)
+  - [Docker](#docker)
+- [Usage](#usage)
+- [Options](#options)
+  - [Iterations](#iterations)
+  - [Environment Variables](#environment-variables)
+  - [Global Variables](#global-variables)
+  - [CSV Data File](#csv-data-file)
+  - [JSON Data File](#json-data-file)
+  - [Separate](#separate)
+- [Docker Usage](#docker-usage)
+- [Examples](#examples)
+- [Unsupported Features](#unsupported-features)
+- [Other similar tools](#other-similar-tools)
+- [Credits](#credits)
+
+
+## Features
 
 - Prerequest scripts.
 - Test scripts.
@@ -27,93 +50,178 @@ Supported Features:
 - `xml2Json` conversion.
 - All [Postman Schema](https://schema.getpostman.com/) versions.
 
+## Installation
+
+
+### Local Installation (recommended)
+
+While possible to install globally, we recommend that you, if possible, add the converter to the `node_modules` of your test project using:
+
+```shell
+$ npm install -D postman-to-k6
+
+# or using yarn...
+
+$ yarn add postman-to-k6
+```
+
+Note that this will require you to run the converter with `npx postman-to-k6 your-postman-file` or, if you are using an older versions of npm, `./node_modules/.bin/postman-to-k6 your-postman-file`.
+
+### Global Installation
+
+```shell
+$ npm install -g postman-to-k6
+```
+
+### Docker
+
+The tool is also available for usage in Docker. To download an image with  the tool from DockerHub:
+
+```shell
+$ docker pull loadimpact/postman-to-k6
+
+```
+
 ## Usage
 
-**Install**:
 
-
-
-Globally, and preferably using [nvm](https://github.com/creationix/nvm) (at least on Unix/Linux systems to avoid filesystem permission issues when using sudo):
-```shell
-npm install -g postman-to-k6
-```
-
-Locally, into `./node_modules`:
-```shell
-npm install postman-to-k6
-```
-
-Note that this will require you to run the converter with `node node_modules/postman-to-k6/bin/postman-to-k6.js ...`.
-
-Alternatively, you can install the tool from DockerHub:
-```shell
-docker pull loadimpact/postman-to-k6
-```
-
-**Convert**:
-
-Pass a collection export to convert.
+To convert an exported collection to a k6 script:
 
 ```shell
-postman-to-k6 collection.json -o k6-script.js
-k6 run k6-script.js
+$ postman-to-k6 collection.json -o k6-script.js
 ```
 
-The default script runs 1 iteration. Increase if desired.
+Then run the script in k6, as usual, using:
 
 ```shell
-postman-to-k6 collection.json -i 25 -o k6-script.js
+$ k6 run k6-script.js
 ```
 
-Provide environment and global variable exports separately.
+## Options
+
+### Iterations
+
+Configures how many times the script will be executed before completion.
+
+| Flag | Verbose        | Default |
+| ---- | -------------- | ------: |
+| `-i` | `--iterations` |       1 |
+
+Example:
 
 ```shell
-postman-to-k6 collection.json -g globals.json -e environment.json -o k6-script.js
+$ postman-to-k6 collection.json --iterations 25 -o k6-script.js
 ```
 
-You can also pass a data file in CSV format.
+### Environment Variables
+
+Provide environment variables from a JSON file.
+
+| Flag | Verbose         | Default    |
+| ---- | --------------- | ---------- |
+| `-e` | `--environment` | N/A        |
+
+Example:
 
 ```shell
-postman-to-k6 collection.json --csv data.csv -o k6-script.js
+$ postman-to-k6 collection.json --environment environment.json -o k6-script.js
 ```
 
-Or a data file in JSON format.
+
+### Global Variables
+
+
+Provide global variables from a JSON file.
+
+| Flag | Verbose         | Default    |
+| ---- | --------------- | ---------- |
+| `-g` | `--global`      | N/A        |
 
 ```shell
-postman-to-k6 collection.json --json data.json -o k6-script.js
+$ postman-to-k6 collection.json --global globals.json -o k6-script.js
 ```
 
-For easier rearrangement of logic you can split requests into separate files:
+
+### CSV Data File
+
+Provide a data file in the CSV format.
+
+| Flag | Verbose         | Default    |
+| ---- | --------------- | ---------- |
+| `-c` | `--csv`         | N/A        |
+
+```shell
+$ postman-to-k6 collection.json --csv data.csv -o k6-script.js
+```
+
+### JSON Data File
+
+
+Pass in a data file in the JSON format.
+
+| Flag | Verbose         | Default    |
+| ---- | --------------- | ---------- |
+| `-j` | `--json`        | N/A        |
+
+```shell
+$ postman-to-k6 collection.json --json data.json -o k6-script.js
+```
+
+### Separate
+
+Split requests into separate files, for easier rearrangement of the logic.
+
+| Flag | Verbose         | Default    |
+| ---- | --------------- | ---------- |
+| `-s` | `--separate`    | false      |
+
+```shell
+$ postman-to-k6 collection.json --separate -o k6-script.js
+```
 
 ```shell
 postman-to-k6 collection.json -s -o k6-script.js
 ```
 
+## Docker Usage
+
 Using the Docker image, you execute the tool as follows:
 ```shell
-docker run -it -v "/path/to/postman/collection/:/postman/" loadimpact/postman-to-k6 /postman/MyCollection.postman_collection.json -o /postman/test.js
+$ docker run -it \
+    -v "/path/to/postman/collection/:/postman/" \
+    loadimpact/postman-to-k6 \
+    /postman/my-collection.json \
+    -o /postman/test.js
 ```
+
 and then execute the k6 test using:
 ```shell
-k6 run /path/to/postman/collection/test.js
+$ k6 run /path/to/postman/collection/test.js
 ```
 
 ## Examples
 
 A collection of Postman examples are located under `example`.
+To run one of the examples, just run it as you would any other command:
 
-    $ postman-to-k6 example/v2/echo.json -o k6-script.js
+```shell
+$ postman-to-k6 example/v2/echo.json -o k6-script.js
+```
 
 ## Unsupported Features
 
-- Sending requests from scripts: `pm.sendRequest`
-- Controlling request execution order: `postman.setNextRequest`
-- Cookie properties: `hostOnly` `session` `storeId`
-- Textual response message: `responseCode.name` `responseCode.detail`
-  `pm.response.reason` `pm.response.to.have.status(reason)`
-  `pm.response.to.not.have.status(reason)`
-- Properties returning Postman classes: `pm.request.url` `pm.request.headers`
-  `pm.response.headers`
+- Sending requests from scripts using `pm.sendRequest`.
+- Controlling request execution order using `postman.setNextRequest`.
+- Cookie properties, like `hostOnly`, `session`, and `storeId`.
+- Textual response messages:
+    - `responseCode.name`
+    - `responseCode.detail`
+    - `pm.response.reason`
+    - `pm.response.to.have.status(reason)`
+    - `pm.response.to.not.have.status(reason)`
+- Properties returning Postman classes: 
+    - `pm.request.url` `pm.request.headers`
+    - `pm.response.headers`
 - The Hawk authentication method.
 - Deprecated `xmlToJson` method.
 - Request IDs are changed. Postman doesn't provide them in the export so we
