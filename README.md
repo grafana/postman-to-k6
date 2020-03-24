@@ -1,5 +1,7 @@
 <div align="center">
 
+  ![postman-to-k6-cover](./assets/postman-to-k6-cover.png)
+
   # Postman-to-k6
   Converts a [Postman collection](https://www.getpostman.com/docs/collections) to [k6 script](https://docs.k6.io/docs).
   
