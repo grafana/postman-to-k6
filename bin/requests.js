@@ -2,7 +2,7 @@ const fs = require('fs-extra')
 const path = require('path')
 
 function outputRequests (dir, requests) {
-  const address = [ dir, 'requests' ]
+  const address = [dir, 'requests']
   location(requests, address)
 }
 
@@ -10,7 +10,7 @@ function location (node, address) {
   const target = path.join(...address)
   fs.ensureDirSync(target)
   for (const name of Object.keys(node)) {
-    const downstreamAddress = [ ...address ]
+    const downstreamAddress = [...address]
     downstreamAddress.push(name)
     entry(node[name], downstreamAddress)
   }

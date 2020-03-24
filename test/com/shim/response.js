@@ -61,10 +61,12 @@ test.serial('responseCode.name', t => {
 })
 
 test.serial('responseHeaders', t => {
-  http.request.returns({ headers: {
-    Server: 'MasterControlProgram',
-    Allow: 'GET, POST, HEAD'
-  } })
+  http.request.returns({
+    headers: {
+      Server: 'MasterControlProgram',
+      Allow: 'GET, POST, HEAD'
+    }
+  })
   postman[Request]({
     post () {
       t.deepEqual(responseHeaders, {
@@ -150,7 +152,7 @@ test.serial('pm.response.text string', t => {
 })
 
 test.serial('pm.response.text binary', t => {
-  http.request.returns({ body: [ 0x01, 0x02, 0x03 ] })
+  http.request.returns({ body: [0x01, 0x02, 0x03] })
   postman[Request]({
     post () {
       t.is(pm.response.text(), null)

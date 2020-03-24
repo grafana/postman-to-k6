@@ -48,7 +48,7 @@ async function run (...args) {
   // Convert
   let main, requests
   try {
-    [ main, requests ] = await convertFile(input, translateOptions(options))
+    [main, requests] = await convertFile(input, translateOptions(options))
   } catch (e) {
     console.error(e.message)
     console.log(e)

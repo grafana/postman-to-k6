@@ -11,12 +11,12 @@ test('map', t => {
     locations: [
       {
         name: 'setup',
-        items: [ { name: 'login' } ],
+        items: [{ name: 'login' }],
         locations: []
       },
       {
         name: 'exercise',
-        items: [ { name: 'public' } ],
+        items: [{ name: 'public' }],
         locations: [
           { name: 'public.js', items: [], locations: [] }
         ]

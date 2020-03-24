@@ -4,7 +4,7 @@ import test from 'ava'
 import mockRequire from 'mock-require'
 let k6, http
 
-const undef = void 0
+const undef = void 0 /* eslint-disable-line no-void */
 const Reset = Symbol.for('reset')
 const Initial = Symbol.for('initial')
 const Iteration = Symbol.for('iteration')
@@ -77,7 +77,7 @@ test.serial('data read clear', t => {
 })
 
 test.serial('data read set', t => {
-  postman[Initial]({ data: [ { test: 'a' } ] })
+  postman[Initial]({ data: [{ test: 'a' }] })
   postman[Iteration]()
   t.is(data.test, 'a')
 })
@@ -297,13 +297,13 @@ test.serial('pm.iterationData unavailable', t => {
 })
 
 test.serial('pm.iterationData.get clear', t => {
-  postman[Initial]({ data: [ {} ] })
+  postman[Initial]({ data: [{}] })
   postman[Iteration]()
   t.is(pm.iterationData.get('test'), undef)
 })
 
 test.serial('pm.iterationData.get set', t => {
-  postman[Initial]({ data: [ { test: 'a' } ] })
+  postman[Initial]({ data: [{ test: 'a' }] })
   postman[Iteration]()
   t.is(pm.iterationData.get('test'), 'a')
 })
@@ -325,7 +325,7 @@ test.serial('pm.iterationData.get iterated', t => {
 })
 
 test.serial('pm.iterationData.toObject', t => {
-  postman[Initial]({ data: [ { test: 'a', test2: 'b' } ] })
+  postman[Initial]({ data: [{ test: 'a', test2: 'b' }] })
   postman[Iteration]()
   const values = pm.iterationData.toObject()
   t.is(typeof values, 'object')
@@ -366,7 +366,7 @@ test.serial('pm.variables.get data', t => {
     global: { test: 'a' },
     collection: { test: 'b' },
     environment: { test: 'c' },
-    data: [ { test: 'd' } ]
+    data: [{ test: 'd' }]
   })
   postman[Iteration]()
   t.is(pm.variables.get('test'), 'd')
@@ -390,7 +390,7 @@ test.serial('pm.variables.get local', t => {
     global: { test: 'a' },
     collection: { test: 'b' },
     environment: { test: 'c' },
-    data: [ { test: 'd' } ]
+    data: [{ test: 'd' }]
   })
   postman[Iteration]()
   postman[Request]({
