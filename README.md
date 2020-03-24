@@ -1,6 +1,14 @@
-# postman-to-k6 ![CircleCI branch](https://img.shields.io/circleci/project/github/loadimpact/postman-to-k6/master.svg)
+<div align="center">
 
-Convert a [Postman collection](https://www.getpostman.com/docs/collections) to [k6 script](https://docs.k6.io/docs).
+  # Postman-to-k6
+  Converts a [Postman collection](https://www.getpostman.com/docs/collections) to [k6 script](https://docs.k6.io/docs).
+  
+ ![CircleCI branch](https://img.shields.io/circleci/project/github/loadimpact/postman-to-k6/master.svg)
+ ![npm](https://img.shields.io/npm/v/postman-to-k6.svg) ![npm](https://img.shields.io/npm/dw/postman-to-k6.svg)
+ ![dockerhub](https://img.shields.io/docker/pulls/loadimpact/postman-to-k6.svg) 
+  
+</div>
+
 
 Supported Features:
 
@@ -21,7 +29,7 @@ Supported Features:
 
 **Install**:
 
-![npm](https://img.shields.io/npm/v/postman-to-k6.svg) ![npm](https://img.shields.io/npm/dw/postman-to-k6.svg) ![dockerhub](https://img.shields.io/docker/pulls/loadimpact/postman-to-k6.svg)
+
 
 Globally, and preferably using [nvm](https://github.com/creationix/nvm) (at least on Unix/Linux systems to avoid filesystem permission issues when using sudo):
 ```shell
