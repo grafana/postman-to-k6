@@ -7,9 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.5.0] - 2020-03-24
-- Upgrade dependency versions
-- Add support for tags
-- Add body in aws4 auth calls
+### Added
+- Support for tags
+- Body in aws4 auth calls
+
+### Fixed
+- Dependency versions
 
 ## [0.4.0] - 2019-11-21
 ### Added
