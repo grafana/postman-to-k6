@@ -9,13 +9,13 @@
 			"name": "TestRequest",
 			"request": {
 				"auth": {
-                    "type": "apikey",
-                    "apikey": {
-                        "value": "secretApiKey",
+					"type": "apikey",
+					"apikey": {
                         "key": "Authorization",
+                        "value": "secretApiKey",
                         "in": "header"
-                    }
-                },
+					}
+				},
 				"method": "GET",
 				"header": [],
 				"body": {

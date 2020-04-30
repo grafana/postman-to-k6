@@ -635,7 +635,7 @@ export default function() {
     method: "GET",
     address: "http://example.com/",
     auth(config, Var) {
-      config.headers.Authorization = "secretApiKey";
+      config.headers.Authorization = \`secretApiKey\`;
     }
   });
 }
