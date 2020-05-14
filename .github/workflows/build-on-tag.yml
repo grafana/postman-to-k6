@@ -1,0 +1,52 @@
+name: Build on tag
+
+on:
+  push:
+    tags:
+      - v*
+jobs:
+  build-on-tag:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Format
+        run: yarn format
+
+      - name: Lint
+        run: yarn lint
+
+      - name: Test
+        run: yarn test
+
+      - name: Bundle
+        run: yarn bundle
+
+      - name: Publish to NPM
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npm publish
+
+      - name: Build docker image
+        run: |
+          echo '${{ secrets.DOCKERHUB_PASSWORD }}' | \
+          docker login \
+            --username ${{ secrets.DOCKERHUB_USERNAME }} \
+            --password-stdin
+          export tag=${GITHUB_REF/refs\/tags\/v/}
+          docker build . -t postman-to-k6:$tag
+          docker tag \
+            postman-to-k6:$tag \
+            postman-to-k6:latest
+          docker push postman-to-k6:$tag
+          docker push postman-to-k6:latest
