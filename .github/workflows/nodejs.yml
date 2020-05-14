@@ -5,7 +5,7 @@ name: Build on push
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-    
+
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
@@ -21,12 +21,15 @@ jobs:
 
       - name: Install dependencies
         run: yarn install
-        
+
+      - name: Format
+        run: yarn format
+
       - name: Lint
         run: yarn lint
-      
+
       - name: Test
         run: yarn test
-      
+
       - name: Bundle
         run: yarn bundle
