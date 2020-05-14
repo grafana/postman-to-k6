@@ -45,9 +45,9 @@ jobs:
             --username ${{ secrets.DOCKERHUB_USERNAME }} \
             --password-stdin
           export tag=${GITHUB_REF/refs\/tags\/v/}
-          docker build . -t postman-to-k6:$tag
+          docker build . -t loadimpact/postman-to-k6:$tag
           docker tag \
-            postman-to-k6:$tag \
-            postman-to-k6:latest
-          docker push postman-to-k6:$tag
-          docker push postman-to-k6:latest
+            loadimpact/postman-to-k6:$tag \
+            loadimpact/postman-to-k6:latest
+          docker push loadimpact/postman-to-k6:$tag
+          docker push loadimpact/postman-to-k6:latest
