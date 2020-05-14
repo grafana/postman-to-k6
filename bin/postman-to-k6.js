@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
-const convertFile = require('../lib/convert/file')
-const fs = require('fs-extra')
-const outputRequests = require('./requests')
-const path = require('path')
-const program = require('commander')
-const pkginfo = require('pkginfo')
+const convertFile = require('../lib/convert/file');
+const fs = require('fs-extra');
+const outputRequests = require('./requests');
+const path = require('path');
+const program = require('commander');
+const pkginfo = require('pkginfo');
 
-pkginfo(module, 'version')
-const version = module.exports.version
-delete module.exports.version
+pkginfo(module, 'version');
+const version = module.exports.version;
+delete module.exports.version;
 
 program
   .version(version)
@@ -35,55 +35,55 @@ program
   .option('--oauth1-realm <value>', 'OAuth1 realm.')
   .option('-s, --separate', 'Generate a separate file for each request.')
   .action(run)
-  .parse(process.argv)
+  .parse(process.argv);
 
 async function run (...args) {
   if (args.length <= 1) {
-    console.error('Provide path to Postman collection')
-    return
+    console.error('Provide path to Postman collection');
+    return;
   }
-  const options = args.pop()
-  const input = args.shift()
+  const options = args.pop();
+  const input = args.shift();
 
   // Convert
-  let main, requests
+  let main, requests;
   try {
-    [main, requests] = await convertFile(input, translateOptions(options))
+    [main, requests] = await convertFile(input, translateOptions(options));
   } catch (e) {
-    console.error(e.message)
-    console.log(e)
-    return
+    console.error(e.message);
+    console.log(e);
+    return;
   }
 
   // Output
-  const dir = (options.output ? path.dirname(options.output) : '.')
-  fs.ensureDirSync(`${dir}/libs`)
-  fs.emptyDirSync(`${dir}/libs`)
-  fs.copySync(path.resolve(`${__dirname}/../vendor`), `${dir}/libs`)
-  fs.copySync(path.resolve(`${__dirname}/../lib/shim`), `${dir}/libs/shim`)
+  const dir = (options.output ? path.dirname(options.output) : '.');
+  fs.ensureDirSync(`${dir}/libs`);
+  fs.emptyDirSync(`${dir}/libs`);
+  fs.copySync(path.resolve(`${__dirname}/../vendor`), `${dir}/libs`);
+  fs.copySync(path.resolve(`${__dirname}/../lib/shim`), `${dir}/libs/shim`);
   if (options.csv) {
-    fs.copySync(options.csv, `${dir}/data.csv`)
+    fs.copySync(options.csv, `${dir}/data.csv`);
   } else if (options.json) {
-    fs.copySync(options.json, `${dir}/data.json`)
+    fs.copySync(options.json, `${dir}/data.json`);
   }
   if (options.separate) {
     try {
-      outputRequests(dir, requests)
+      outputRequests(dir, requests);
     } catch (error) {
-      console.error('could not create request files')
-      console.error(error)
-      return
+      console.error('could not create request files');
+      console.error(error);
+      return;
     }
   }
   if (options.output) {
     try {
-      fs.writeFileSync(options.output, main)
+      fs.writeFileSync(options.output, main);
     } catch (error) {
-      console.error('could not create output ' + options.output)
-      console.error(error)
+      console.error('could not create output ' + options.output);
+      console.error(error);
     }
   } else {
-    console.log(main)
+    console.log(main);
   }
 }
 
@@ -97,7 +97,7 @@ function translateOptions (options) {
     id: true,
     oauth1: translateOauth1Options(options),
     separate: !!options.separate
-  }
+  };
 }
 
 function translateOauth1Options (options) {
@@ -111,5 +111,5 @@ function translateOauth1Options (options) {
     nonce: options.oauth1Nonce,
     version: options.oauth1Version,
     realm: options.oauth1Realm
-  }
+  };
 }

@@ -1,0 +1,11 @@
+{
+  "extends": ["prettier"],
+  "ignorePatterns": ["node_modules", "vendor", "libs"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8
+  },
+  "rules": {
+    "semi": "error"
+  }
+}
