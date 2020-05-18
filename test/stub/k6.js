@@ -1,12 +1,12 @@
-import sinon from 'sinon'
+import sinon from 'sinon';
 
-const Reset = Symbol.for('reset')
+const Reset = Symbol.for('reset');
 
 const k6 = {
   check: sinon.stub(),
-  [Reset] () {
-    this.check.reset()
-  }
-}
+  [Reset]() {
+    this.check.reset();
+  },
+};
 
-module.exports = k6
+module.exports = k6;
