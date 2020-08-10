@@ -26,12 +26,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/digest-auth",
+                            "raw": "https://postman-echo.com/digest-auth",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -108,12 +107,11 @@
                             }
                         },
                         "url": {
-                            "raw": "https://echo.getpostman.com/digest-auth",
+                            "raw": "https://postman-echo.com/digest-auth",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -154,12 +152,11 @@
                                     }
                                 },
                                 "url": {
-                                    "raw": "https://echo.getpostman.com/digest-auth",
+                                    "raw": "https://postman-echo.com/digest-auth",
                                     "protocol": "https",
                                     "auth": {},
                                     "host": [
-                                        "echo",
-                                        "getpostman",
+                                        "postman-echo",
                                         "com"
                                     ],
                                     "path": [
@@ -293,12 +290,11 @@
                             }
                         },
                         "url": {
-                            "raw": "https://echo.getpostman.com/basic-auth",
+                            "raw": "https://postman-echo.com/basic-auth",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -334,12 +330,11 @@
                                     }
                                 },
                                 "url": {
-                                    "raw": "https://echo.getpostman.com/basic-auth",
+                                    "raw": "https://postman-echo.com/basic-auth",
                                     "protocol": "https",
                                     "auth": {},
                                     "host": [
-                                        "echo",
-                                        "getpostman",
+                                        "postman-echo",
                                         "com"
                                     ],
                                     "path": [
@@ -442,12 +437,11 @@
                                     }
                                 },
                                 "url": {
-                                    "raw": "https://echo.getpostman.com/basic-auth",
+                                    "raw": "https://postman-echo.com/basic-auth",
                                     "protocol": "https",
                                     "auth": {},
                                     "host": [
-                                        "echo",
-                                        "getpostman",
+                                        "postman-echo",
                                         "com"
                                     ],
                                     "path": [
@@ -565,12 +559,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/oauth1",
+                            "raw": "https://postman-echo.com/oauth1",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -646,12 +639,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/cookies/set?foo1=bar1&foo2=bar2",
+                            "raw": "https://postman-echo.com/cookies/set?foo1=bar1&foo2=bar2",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -683,12 +675,11 @@
                             "name": "Cookies",
                             "originalRequest": {
                                 "url": {
-                                    "raw": "https://echo.getpostman.com/cookies/set?foo1=bar1&foo2=bar2",
+                                    "raw": "https://postman-echo.com/cookies/set?foo1=bar1&foo2=bar2",
                                     "protocol": "https",
                                     "auth": {},
                                     "host": [
-                                        "echo",
-                                        "getpostman",
+                                        "postman-echo",
                                         "com"
                                     ],
                                     "path": [
@@ -811,12 +802,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/cookies",
+                            "raw": "https://postman-echo.com/cookies",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -837,12 +827,11 @@
                             "name": "Cookies",
                             "originalRequest": {
                                 "url": {
-                                    "raw": "https://echo.getpostman.com/cookies",
+                                    "raw": "https://postman-echo.com/cookies",
                                     "protocol": "https",
                                     "auth": {},
                                     "host": [
-                                        "echo",
-                                        "getpostman",
+                                        "postman-echo",
                                         "com"
                                     ],
                                     "path": [
@@ -954,12 +943,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/cookies/delete?foo1&foo2",
+                            "raw": "https://postman-echo.com/cookies/delete?foo1&foo2",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -991,12 +979,11 @@
                             "name": "Cookies Response",
                             "originalRequest": {
                                 "url": {
-                                    "raw": "https://echo.getpostman.com/cookies/delete?foo1&foo2",
+                                    "raw": "https://postman-echo.com/cookies/delete?foo1&foo2",
                                     "protocol": "https",
                                     "auth": {},
                                     "host": [
-                                        "echo",
-                                        "getpostman",
+                                        "postman-echo",
                                         "com"
                                     ],
                                     "path": [
@@ -1126,12 +1113,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/headers",
+                            "raw": "https://postman-echo.com/headers",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1163,12 +1149,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/response-headers?Content-Type=text/html&Server=apibin",
+                            "raw": "https://postman-echo.com/response-headers?Content-Type=text/html&Server=apibin",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1248,12 +1233,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/get?test=123",
+                            "raw": "https://postman-echo.com/get?test=123",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1322,12 +1306,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/post",
+                            "raw": "https://postman-echo.com/post",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1365,12 +1348,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/put",
+                            "raw": "https://postman-echo.com/put",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1402,12 +1384,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/patch",
+                            "raw": "https://postman-echo.com/patch",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1439,12 +1420,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/delete",
+                            "raw": "https://postman-echo.com/delete",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1483,12 +1463,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/status/200",
+                            "raw": "https://postman-echo.com/status/200",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1528,12 +1507,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/stream/10",
+                            "raw": "https://postman-echo.com/stream/10",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1566,12 +1544,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/delay/3",
+                            "raw": "https://postman-echo.com/delay/3",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1611,12 +1588,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/encoding/utf8",
+                            "raw": "https://postman-echo.com/encoding/utf8",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1649,12 +1625,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/gzip",
+                            "raw": "https://postman-echo.com/gzip",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1717,12 +1692,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/deflate",
+                            "raw": "https://postman-echo.com/deflate",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1761,12 +1735,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/oauth2/authtoken?client_id=abc123&response_type=code",
+                            "raw": "https://postman-echo.com/oauth2/authtoken?client_id=abc123&response_type=code",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -1829,12 +1802,11 @@
                             "name": "401",
                             "originalRequest": {
                                 "url": {
-                                    "raw": "https://echo.getpostman.com/oauth2/authtoken?client_id=abc123&response_type=code",
+                                    "raw": "https://postman-echo.com/oauth2/authtoken?client_id=abc123&response_type=code",
                                     "protocol": "https",
                                     "auth": {},
                                     "host": [
-                                        "echo",
-                                        "getpostman",
+                                        "postman-echo",
                                         "com"
                                     ],
                                     "path": [
@@ -1988,12 +1960,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/oauth2/token",
+                            "raw": "https://postman-echo.com/oauth2/token",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -2046,12 +2017,11 @@
                             "name": "401",
                             "originalRequest": {
                                 "url": {
-                                    "raw": "https://echo.getpostman.com/oauth2/token",
+                                    "raw": "https://postman-echo.com/oauth2/token",
                                     "protocol": "https",
                                     "auth": {},
                                     "host": [
-                                        "echo",
-                                        "getpostman",
+                                        "postman-echo",
                                         "com"
                                     ],
                                     "path": [
@@ -2177,12 +2147,11 @@
                             "name": "200",
                             "originalRequest": {
                                 "url": {
-                                    "raw": "https://echo.getpostman.com/oauth2/token",
+                                    "raw": "https://postman-echo.com/oauth2/token",
                                     "protocol": "https",
                                     "auth": {},
                                     "host": [
-                                        "echo",
-                                        "getpostman",
+                                        "postman-echo",
                                         "com"
                                     ],
                                     "path": [
@@ -2326,12 +2295,11 @@
                     ],
                     "request": {
                         "url": {
-                            "raw": "https://echo.getpostman.com/oauth2/user/info",
+                            "raw": "https://postman-echo.com/oauth2/user/info",
                             "protocol": "https",
                             "auth": {},
                             "host": [
-                                "echo",
-                                "getpostman",
+                                "postman-echo",
                                 "com"
                             ],
                             "path": [
@@ -2391,12 +2359,11 @@
                             "name": "401",
                             "originalRequest": {
                                 "url": {
-                                    "raw": "https://echo.getpostman.com/oauth2/user/info",
+                                    "raw": "https://postman-echo.com/oauth2/user/info",
                                     "protocol": "https",
                                     "auth": {},
                                     "host": [
-                                        "echo",
-                                        "getpostman",
+                                        "postman-echo",
                                         "com"
                                     ],
                                     "path": [
@@ -2523,12 +2490,11 @@
                             "name": "200",
                             "originalRequest": {
                                 "url": {
-                                    "raw": "https://echo.getpostman.com/oauth2/user/info",
+                                    "raw": "https://postman-echo.com/oauth2/user/info",
                                     "protocol": "https",
                                     "auth": {},
                                     "host": [
-                                        "echo",
-                                        "getpostman",
+                                        "postman-echo",
                                         "com"
                                     ],
                                     "path": [
