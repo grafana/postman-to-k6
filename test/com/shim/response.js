@@ -25,7 +25,7 @@ test.afterEach.always(t => {
 test.serial('responseBody', t => {
   http.request.returns({ body: 'Response body' });
   postman[Request]({
-    post () {
+    post() {
       t.is(responseBody, 'Response body');
     }
   });
@@ -34,7 +34,7 @@ test.serial('responseBody', t => {
 test.serial('responseCode.code', t => {
   http.request.returns({ status: 418 });
   postman[Request]({
-    post () {
+    post() {
       t.is(responseCode.code, 418);
     }
   });
@@ -42,7 +42,7 @@ test.serial('responseCode.code', t => {
 
 test.serial('responseCode.detail', t => {
   postman[Request]({
-    post () {
+    post() {
       t.throws(() => {
         responseCode.detail; /* eslint-disable-line no-unused-expressions */
       });
@@ -52,7 +52,7 @@ test.serial('responseCode.detail', t => {
 
 test.serial('responseCode.name', t => {
   postman[Request]({
-    post () {
+    post() {
       t.throws(() => {
         responseCode.name; /* eslint-disable-line no-unused-expressions */
       });
@@ -68,7 +68,7 @@ test.serial('responseHeaders', t => {
     }
   });
   postman[Request]({
-    post () {
+    post() {
       t.deepEqual(responseHeaders, {
         Server: 'MasterControlProgram',
         Allow: 'GET, POST, HEAD'
@@ -80,7 +80,7 @@ test.serial('responseHeaders', t => {
 test.serial('responseTime', t => {
   http.request.returns({ timings: { duration: 556 } });
   postman[Request]({
-    post () {
+    post() {
       t.is(responseTime, 556);
     }
   });
@@ -89,7 +89,7 @@ test.serial('responseTime', t => {
 test.serial('postman.getResponseHeader', t => {
   http.request.returns({ headers: { Server: 'MasterControlProgram' } });
   postman[Request]({
-    post () {
+    post() {
       t.is(postman.getResponseHeader('server'), 'MasterControlProgram');
     }
   });
@@ -98,7 +98,7 @@ test.serial('postman.getResponseHeader', t => {
 test.serial('pm.response.code', t => {
   http.request.returns({ status: 418 });
   postman[Request]({
-    post () {
+    post() {
       t.is(pm.response.code, 418);
     }
   });
@@ -106,7 +106,7 @@ test.serial('pm.response.code', t => {
 
 test.serial('pm.response.headers', t => {
   postman[Request]({
-    post () {
+    post() {
       t.throws(() => {
         pm.response.headers; /* eslint-disable-line no-unused-expressions */
       });
@@ -117,7 +117,7 @@ test.serial('pm.response.headers', t => {
 test.serial('pm.response.json', t => {
   http.request.returns({ body: '{ "test": "a", "test2": "b" }' });
   postman[Request]({
-    post () {
+    post() {
       t.deepEqual(pm.response.json(), { test: 'a', test2: 'b' });
     }
   });
@@ -125,7 +125,7 @@ test.serial('pm.response.json', t => {
 
 test.serial('pm.response.reason', t => {
   postman[Request]({
-    post () {
+    post() {
       t.throws(() => {
         pm.response.reason();
       });
@@ -136,7 +136,7 @@ test.serial('pm.response.reason', t => {
 test.serial('pm.response.responseTime', t => {
   http.request.returns({ timings: { duration: 556 } });
   postman[Request]({
-    post () {
+    post() {
       t.is(pm.response.responseTime, 556);
     }
   });
@@ -145,7 +145,7 @@ test.serial('pm.response.responseTime', t => {
 test.serial('pm.response.text string', t => {
   http.request.returns({ body: 'Response body' });
   postman[Request]({
-    post () {
+    post() {
       t.is(pm.response.text(), 'Response body');
     }
   });
@@ -154,7 +154,7 @@ test.serial('pm.response.text string', t => {
 test.serial('pm.response.text binary', t => {
   http.request.returns({ body: [0x01, 0x02, 0x03] });
   postman[Request]({
-    post () {
+    post() {
       t.is(pm.response.text(), null);
     }
   });

@@ -3,7 +3,7 @@ import mockRequire from 'mock-require';
 import { Auth } from 'generate/separate/sym';
 let map;
 
-function designate (name, container, generators, suffix = '') {
+function designate(name, container, generators, suffix = '') {
   return name + suffix;
 }
 

@@ -36,10 +36,10 @@ test.serial('1', t => {
     name: 'Home Page',
     method: 'GET',
     address: 'http://example.com',
-    pre () {
+    pre() {
       t.pass();
     },
-    post () {
+    post() {
       t.pass();
     }
   });
@@ -53,19 +53,19 @@ test.serial('3', t => {
     name: 'Home Page',
     method: 'GET',
     address: 'http://1.example.com',
-    pre () { t.fail(); }
+    pre() { t.fail(); }
   });
   postman[Define]({
     name: 'Home Page',
     method: 'GET',
     address: 'http://2.example.com',
-    pre () { t.fail(); }
+    pre() { t.fail(); }
   });
   postman[Define]({
     name: 'Home Page',
     method: 'GET',
     address: 'http://3.example.com',
-    pre () { t.pass(); }
+    pre() { t.pass(); }
   });
   postman[Request]('Home Page', 3);
 });

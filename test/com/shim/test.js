@@ -8,21 +8,21 @@ let k6, http;
 const Reset = Symbol.for('reset');
 const Request = Symbol.for('request');
 
-function expectFail (t) {
+function expectFail(t) {
   k6.check.callsFake((response, tests) => {
     t.false(tests.test(response));
   });
 }
 
-function expectPass (t) {
+function expectPass(t) {
   k6.check.callsFake((response, tests) => {
     t.true(tests.test(response));
   });
 }
 
-function define (logic) {
+function define(logic) {
   postman[Request]({
-    post () {
+    post() {
       pm.test('test', logic);
     }
   });
@@ -48,7 +48,7 @@ test.afterEach.always(t => {
 
 test.serial('tests', t => {
   postman[Request]({
-    post () {
+    post() {
       Object.assign(tests, {
         first: true,
         second: false,

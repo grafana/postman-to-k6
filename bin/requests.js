@@ -1,12 +1,12 @@
 const fs = require('fs-extra');
 const path = require('path');
 
-function outputRequests (dir, requests) {
+function outputRequests(dir, requests) {
   const address = [dir, 'requests'];
   location(requests, address);
 }
 
-function location (node, address) {
+function location(node, address) {
   const target = path.join(...address);
   fs.ensureDirSync(target);
   for (const name of Object.keys(node)) {
@@ -16,7 +16,7 @@ function location (node, address) {
   }
 }
 
-function entry (node, address) {
+function entry(node, address) {
   switch (typeof node) {
     case 'string':
       item(node, address);
@@ -29,7 +29,7 @@ function entry (node, address) {
   }
 }
 
-function item (text, address) {
+function item(text, address) {
   const target = path.join(...address);
   fs.writeFileSync(target, text);
 }

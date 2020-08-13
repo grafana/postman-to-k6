@@ -36,7 +36,7 @@ test.serial('require standard', t => {
 
 test.serial('require prerequest', t => {
   postman[Request]({
-    pre () {
+    pre() {
       t.throws(() => {
         global.require('console');
       });
@@ -46,7 +46,7 @@ test.serial('require prerequest', t => {
 
 test.serial('require postrequest', t => {
   postman[Request]({
-    post () {
+    post() {
       t.throws(() => {
         global.require('console');
       });
@@ -64,7 +64,7 @@ test.serial('require released', t => {
 test.serial('lodash', t => {
   require('shim/lodash');
   postman[Request]({
-    pre () {
+    pre() {
       t.is(global.require('lodash'), lodash);
     }
   });
@@ -73,7 +73,7 @@ test.serial('lodash', t => {
 test.serial('cheerio', t => {
   require('shim/cheerio');
   postman[Request]({
-    pre () {
+    pre() {
       t.is(global.require('cheerio'), cheerio);
     }
   });
@@ -82,7 +82,7 @@ test.serial('cheerio', t => {
 test.serial('crypto-js', t => {
   require('shim/crypto-js');
   postman[Request]({
-    pre () {
+    pre() {
       t.is(global.require('crypto-js'), cryptoJs);
     }
   });

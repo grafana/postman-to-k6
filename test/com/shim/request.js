@@ -27,7 +27,7 @@ test.afterEach.always(t => {
 
 test.serial('pre', t => {
   postman[Request]({
-    pre () {
+    pre() {
       t.pass();
     }
   });
@@ -35,7 +35,7 @@ test.serial('pre', t => {
 
 test.serial('post', t => {
   postman[Request]({
-    post () {
+    post() {
       t.pass();
     }
   });
@@ -45,10 +45,10 @@ test.serial('request', t => {
   t.plan(4);
   t.is(request, undef);
   postman[Request]({
-    pre () {
+    pre() {
       t.is(typeof request, 'object');
     },
-    post () {
+    post() {
       t.is(typeof request, 'object');
     }
   });
@@ -63,7 +63,7 @@ test.serial('request.data', t => {
   };
   postman[Request]({
     data,
-    pre () {
+    pre() {
       t.deepEqual(request.data, data);
     }
   });
@@ -77,7 +77,7 @@ test.serial('request.headers', t => {
   };
   postman[Request]({
     headers,
-    pre () {
+    pre() {
       t.deepEqual(request.headers, headers);
     }
   });
@@ -87,7 +87,7 @@ test.serial('request.id', t => {
   const id = uuidv4();
   postman[Request]({
     id,
-    pre () {
+    pre() {
       t.is(request.id, id);
     }
   });
@@ -96,7 +96,7 @@ test.serial('request.id', t => {
 test.serial('request.method', t => {
   postman[Request]({
     method: 'get',
-    pre () {
+    pre() {
       t.is(request.method, 'GET');
     }
   });
@@ -105,7 +105,7 @@ test.serial('request.method', t => {
 test.serial('request.name', t => {
   postman[Request]({
     name: 'Test Request',
-    pre () {
+    pre() {
       t.is(request.name, 'Test Request');
     }
   });
@@ -114,7 +114,7 @@ test.serial('request.name', t => {
 test.serial('request.url', t => {
   postman[Request]({
     address: 'http://example.com',
-    pre () {
+    pre() {
       t.is(request.url, 'http://example.com');
     }
   });
@@ -122,7 +122,7 @@ test.serial('request.url', t => {
 
 test.serial('pm.request.headers', t => {
   postman[Request]({
-    pre () {
+    pre() {
       t.throws(() => {
         pm.request.headers; /* eslint-disable-line no-unused-expressions */
       });
@@ -133,7 +133,7 @@ test.serial('pm.request.headers', t => {
 test.serial('pm.request.url', t => {
   postman[Request]({
     address: 'http://example.com',
-    pre () {
+    pre() {
       t.throws(() => {
         pm.request.url; /* eslint-disable-line no-unused-expressions */
       });

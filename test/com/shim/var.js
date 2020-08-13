@@ -394,7 +394,7 @@ test.serial('pm.variables.get local', t => {
   });
   postman[Iteration]();
   postman[Request]({
-    pre () {
+    pre() {
       pm.variables.set('test', 'e');
       t.is(pm.variables.get('test'), 'e');
     }
@@ -409,7 +409,7 @@ test.serial('pm.variables.set scoped', t => {
 
 test.serial('pm.variables.set clear', t => {
   postman[Request]({
-    pre () {
+    pre() {
       t.is(pm.variables.get('test'), undef);
       pm.variables.set('test', 'a');
       t.is(pm.variables.get('test'), 'a');
@@ -419,7 +419,7 @@ test.serial('pm.variables.set clear', t => {
 
 test.serial('pm.variables.set set', t => {
   postman[Request]({
-    pre () {
+    pre() {
       pm.variables.set('test', 'a');
       t.is(pm.variables.get('test'), 'a');
       pm.variables.set('test', 'b');

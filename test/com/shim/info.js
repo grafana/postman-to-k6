@@ -31,7 +31,7 @@ test.serial('iteration', t => {
 
 test.serial('pm.info.eventName pre', t => {
   postman[Request]({
-    pre () {
+    pre() {
       t.is(pm.info.eventName, 'prerequest');
     }
   });
@@ -39,7 +39,7 @@ test.serial('pm.info.eventName pre', t => {
 
 test.serial('pm.info.eventName post', t => {
   postman[Request]({
-    post () {
+    post() {
       t.is(pm.info.eventName, 'test');
     }
   });
@@ -66,7 +66,7 @@ test.serial('pm.info.requestId', t => {
   const id = uuidv4();
   postman[Request]({
     id,
-    pre () {
+    pre() {
       t.is(pm.info.requestId, id);
     }
   });
@@ -75,7 +75,7 @@ test.serial('pm.info.requestId', t => {
 test.serial('pm.info.requestName', t => {
   postman[Request]({
     name: 'Test Request',
-    pre () {
+    pre() {
       t.is(pm.info.requestName, 'Test Request');
     }
   });
