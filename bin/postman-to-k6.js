@@ -21,6 +21,8 @@ program
   .option('-e, --environment <path>', 'JSON export of environment.')
   .option('-c, --csv <path>', 'CSV data file. Used to fill data variables.')
   .option('-j, --json <path>', 'JSON data file. Used to fill data variables.')
+  .option('--skip-pre', 'Skips pre-request scripts')
+  .option('--skip-post', 'Skips post-request scripts')
   .option('--oauth1-consumer-key <value>', 'OAuth1 consumer key.')
   .option('--oauth1-consumer-secret <value>', 'OAuth1 consumer secret.')
   .option('--oauth1-access-token <value>', 'OAuth1 access token.')
@@ -37,7 +39,7 @@ program
   .action(run)
   .parse(process.argv);
 
-async function run (...args) {
+async function run(...args) {
   if (args.length <= 1) {
     console.error('Provide path to Postman collection');
     return;
@@ -51,12 +53,11 @@ async function run (...args) {
     [main, requests] = await convertFile(input, translateOptions(options));
   } catch (e) {
     console.error(e.message);
-    console.log(e);
     return;
   }
 
   // Output
-  const dir = (options.output ? path.dirname(options.output) : '.');
+  const dir = options.output ? path.dirname(options.output) : '.';
   fs.ensureDirSync(`${dir}/libs`);
   fs.emptyDirSync(`${dir}/libs`);
   fs.copySync(path.resolve(`${__dirname}/../vendor`), `${dir}/libs`);
@@ -87,7 +88,7 @@ async function run (...args) {
   }
 }
 
-function translateOptions (options) {
+function translateOptions(options) {
   return {
     globals: options.global,
     environment: options.environment,
@@ -96,11 +97,15 @@ function translateOptions (options) {
     iterations: options.iterations,
     id: true,
     oauth1: translateOauth1Options(options),
-    separate: !!options.separate
+    separate: !!options.separate,
+    skip: {
+      pre: options.skipPre,
+      post: options.skipPost,
+    },
   };
 }
 
-function translateOauth1Options (options) {
+function translateOauth1Options(options) {
   return {
     consumerKey: options.oauth1ConsumerKey,
     consumerSecret: options.oauth1ConsumerSecret,
@@ -110,6 +115,6 @@ function translateOauth1Options (options) {
     timestamp: options.oauth1Timestamp,
     nonce: options.oauth1Nonce,
     version: options.oauth1Version,
-    realm: options.oauth1Realm
+    realm: options.oauth1Realm,
   };
 }
