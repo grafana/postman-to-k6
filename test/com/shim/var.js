@@ -428,6 +428,33 @@ test.serial('pm.variables.set set', t => {
   });
 });
 
+test.serial('pm.collectionVariables.set scoped', t => {
+  t.throws(() => {
+    pm.collectionVariables.set('test', 'a');
+  });
+});
+
+test.serial('pm.collectionVariables.set clear', t => {
+  postman[Request]({
+    pre() {
+      t.is(pm.collectionVariables.get('test'), undef);
+      pm.collectionVariables.set('test', 'a');
+      t.is(pm.collectionVariables.get('test'), 'a');
+    }
+  });
+});
+
+test.serial('pm.collectionVariables.set set', t => {
+  postman[Request]({
+    pre() {
+      pm.collectionVariables.set('test', 'a');
+      t.is(pm.collectionVariables.get('test'), 'a');
+      pm.collectionVariables.set('test', 'b');
+      t.is(pm.collectionVariables.get('test'), 'b');
+    }
+  });
+});
+
 test.serial('pm[Var] simple', t => {
   postman[Initial]({ global: { test: 'a' } });
   t.is(pm[Var]('test'), 'a');
