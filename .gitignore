@@ -33,3 +33,4 @@ bower_components/*
 /libpeerconnection.log
 
 testem.log
+.idea
