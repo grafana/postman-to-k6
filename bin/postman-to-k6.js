@@ -21,6 +21,7 @@ program
   .option('-e, --environment <path>', 'JSON export of environment.')
   .option('-c, --csv <path>', 'CSV data file. Used to fill data variables.')
   .option('-j, --json <path>', 'JSON data file. Used to fill data variables.')
+  .option('--k6-params <path>', 'K6 params config file. Used to fill set the K6 params used during HTTP requests.')
   .option('--skip-pre', 'Skips pre-request scripts')
   .option('--skip-post', 'Skips post-request scripts')
   .option('--oauth1-consumer-key <value>', 'OAuth1 consumer key.')
@@ -94,6 +95,7 @@ function translateOptions(options) {
     environment: options.environment,
     csv: !!options.csv,
     json: !!options.json,
+    k6Params: options.k6Params,
     iterations: options.iterations,
     id: true,
     oauth1: translateOauth1Options(options),
