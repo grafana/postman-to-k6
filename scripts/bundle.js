@@ -10,7 +10,6 @@ const modules = [
   'chai',
   'cheerio',
   'crypto-js',
-  'faker',
   'lodash',
   'oauth-1.0a',
   'papaparse',
