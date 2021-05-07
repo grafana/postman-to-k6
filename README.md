@@ -161,6 +161,18 @@ Pass in a data file in the JSON format.
 $ postman-to-k6 collection.json --json data.json -o k6-script.js
 ```
 
+### K6 Param Options File
+
+Pass [K6 parameter options](https://k6.io/docs/javascript-api/k6-http/params) as a file in JSON format.
+
+| Flag | Verbose       | Default |
+| ---- | ------------- | ------- |
+|      | `--k6-params` | N/A     |
+
+```shell
+$ postman-to-k6 collection.json --k6-params k6-params.json -o k6-script.js
+```
+
 ### Separate
 
 Split requests into separate files, for easier rearrangement of the logic.
