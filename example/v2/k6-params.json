@@ -1,0 +1,6 @@
+{
+  "maxRedirects": 6,
+  "headers": {
+    "Content-Type": "application/json"
+  }
+}
