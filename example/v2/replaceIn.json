@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "00ff76ea-1b0e-4ad7-910a-3eb13a7bfa8e",
+		"name": "replaceIn",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Post with collectionVariable set with replaceIn",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.collectionVariables.set(\"email\", pm.variables.replaceIn(\"{{$randomEmail}}\"));",
+							"pm.collectionVariables.set(\"name\", pm.variables.replaceIn(\"{{$randomFirstName}}\"));",
+							"pm.collectionVariables.set(\"phone_number\", pm.variables.replaceIn(\"{{$randomPhoneNumber}}\"));",
+							"pm.collectionVariables.set(\"id\", pm.variables.replaceIn(\"{{$guid}}\"));"
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"const resp = pm.response.json();",
+							"",
+							"pm.test(\"Check response consistency\", function () {",
+							"    pm.expect(resp.json.email).to.be.equal(pm.collectionVariables.get(\"email\"));",
+							"    pm.expect(resp.json.name).to.be.equal(pm.collectionVariables.get(\"name\"));",
+							"    pm.expect(resp.json.phone_number).to.be.equal(pm.collectionVariables.get(\"phone_number\"));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"{{email}}\",\n    \"name\": \"{{name}}\",\n    \"phone_number\": \"{{phone_number}}\",\n    \"id\" : \"{{id}}\"\n}"
+				},
+				"url": {
+					"raw": "httpbin.org/post",
+					"host": [
+						"httpbin",
+						"org"
+					],
+					"path": [
+						"post"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "email",
+			"value": ""
+		},
+		{
+			"key": "name",
+			"value": ""
+		},
+		{
+			"key": "phone_number",
+			"value": ""
+		},
+		{
+			"key": "id",
+			"value": ""
+		}
+	]
+}
