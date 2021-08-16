@@ -14,6 +14,7 @@
 /.jsbeautifyrc
 /.jsdoc-config.json
 /ava.config.js
+/tmp
 /build
 /doc
 /example
