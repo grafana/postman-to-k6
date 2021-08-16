@@ -1,8 +1,7 @@
 {
-    "name": "postman-to-k6",
-    "description": "Convert a Postman collection to k6 JavaScript",
+    "name": "@apideck/postman-to-k6",
     "version": "1.5.0",
-    "license": "Apache-2.0",
+    "description": "Convert a Postman collection to k6 JavaScript",
     "keywords": [
         "k6",
         "postman",
@@ -12,22 +11,42 @@
         "server-load",
         "performance"
     ],
-    "homepage": "https://github.com/loadimpact/postman-to-k6",
-    "bugs": "https://github.com/loadimpact/postman-to-k6/issues",
+    "homepage": "https://github.com/apideck-libraries/postman-to-k6",
+    "bugs": {
+        "url": "https://github.com/apideck-libraries/postman-to-k6/issues"
+    },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/loadimpact/postman-to-k6.git"
+        "url": "git+https://github.com/apideck-libraries/postman-to-k6.git"
     },
-    "engines": {
-        "node": ">= 0.10.0"
+    "license": "Apache-2.0",
+    "author": "",
+    "main": "bin/postman-to-k6.js",
+    "bin": {
+        "postman-to-k6": "bin/postman-to-k6.js"
     },
-    "preferGlobal": "true",
     "directories": {
         "bin": "bin",
         "lib": "lib"
     },
-    "bin": {
-        "postman-to-k6": "bin/postman-to-k6.js"
+    "scripts": {
+        "bundle": "node scripts/bundle.js",
+        "lint:fix": "yarn lint --fix",
+        "lint": "eslint .",
+        "format": "prettier -c ./lib/**/*.js ./test/**/*.js",
+        "format:fix": "yarn format --write",
+        "postinstall": "node scripts/bundle.js",
+        "test": "npm-run-all test-unit test-com test-int",
+        "test-com": "cross-env NODE_PATH=lib:test ava test/com",
+        "test-hoc": "cross-env NODE_PATH=lib:test ava",
+        "test-int": "cross-env NODE_PATH=lib:test ava test/int",
+        "test-unit": "cross-env NODE_PATH=lib:test ava test/unit"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "yarn lint && yarn test",
+            "pre-push": "yarn test"
+        }
     },
     "dependencies": {
         "ajv": "^6.10.0",
@@ -68,23 +87,12 @@
         "snazzy": "^8.0.0",
         "standard": "^14.3.1"
     },
-    "scripts": {
-        "bundle": "node scripts/bundle.js",
-        "lint:fix": "yarn lint --fix",
-        "lint": "eslint .",
-        "format": "prettier -c ./lib/**/*.js ./test/**/*.js",
-        "format:fix": "yarn format --write",
-        "postinstall": "node scripts/bundle.js",
-        "test": "npm-run-all test-unit test-com test-int",
-        "test-com": "cross-env NODE_PATH=lib:test ava test/com",
-        "test-hoc": "cross-env NODE_PATH=lib:test ava",
-        "test-int": "cross-env NODE_PATH=lib:test ava test/int",
-        "test-unit": "cross-env NODE_PATH=lib:test ava test/unit"
+    "engines": {
+        "node": ">= 0.10.0"
     },
-    "husky": {
-        "hooks": {
-            "pre-commit": "yarn lint && yarn test",
-            "pre-push": "yarn test"
-        }
+    "preferGlobal": "true",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org"
     }
 }
