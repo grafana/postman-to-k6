@@ -37,10 +37,10 @@
         "format:fix": "yarn format --write",
         "postinstall": "node scripts/bundle.js",
         "test": "npm-run-all test-unit test-com test-int",
-        "test-com": "cross-env NODE_PATH=lib:test ava test/com",
+        "test-com": "cross-env NODE_PATH=lib:test ava test/com/**/*.js",
         "test-hoc": "cross-env NODE_PATH=lib:test ava",
-        "test-int": "cross-env NODE_PATH=lib:test ava test/int",
-        "test-unit": "cross-env NODE_PATH=lib:test ava test/unit"
+        "test-int": "cross-env NODE_PATH=lib:test ava test/int/*.js",
+        "test-unit": "cross-env NODE_PATH=lib:test ava test/unit/**/*.js"
     },
     "husky": {
         "hooks": {
@@ -79,7 +79,7 @@
         "@babel/preset-env": "^7.15.0",
         "@babel/register": "^7.15.3",
         "@babel/runtime": "^7.15.3",
-        "ava": "^1.4.1",
+        "ava": "^2.4.0",
         "cross-env": "^6.0.3",
         "mock-require": "^3.0.3",
         "npm-run-all": "^4.1.5",
