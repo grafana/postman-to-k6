@@ -60,7 +60,7 @@
         "eslint-config-prettier": "^6.11.0",
         "fs-extra": "^8.1.0",
         "husky": "^4.2.5",
-        "lodash": "^4.17.11",
+        "lodash": "^4.17.21",
         "oauth-1.0a": "^2.2.5",
         "papaparse": "^5.1.0",
         "pkginfo": "^0.4.1",
@@ -69,7 +69,7 @@
         "prettier": "^1.19.1",
         "spo-gpo": "^1.0.0",
         "strip-json-comments": "^3.0.1",
-        "urijs": "^1.19.2",
+        "urijs": "^1.19.7",
         "uuid": "^3.3.2",
         "verror": "^1.10.0",
         "xml2js": "^0.4.22"
