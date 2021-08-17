@@ -167,7 +167,13 @@
 						"key": "Session",
 						"value": "abc123",
 						"type": "text"
-					}
+					},
+                    {
+                        "key": "Content-Type",
+                        "value": "application/xml",
+                        "type": "text",
+                        "disabled": true
+                    }
 				],
 				"body": {
 					"mode": "raw",

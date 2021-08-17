@@ -4,6 +4,11 @@ on:
   push:
     branches:
       - master
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   build-on-push:
     runs-on: ubuntu-latest

@@ -38,16 +38,16 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: npm publish
 
-      - name: Build docker image
-        run: |
-          echo '${{ secrets.DOCKERHUB_PASSWORD }}' | \
-          docker login \
-            --username ${{ secrets.DOCKERHUB_USERNAME }} \
-            --password-stdin
-          export tag=${GITHUB_REF/refs\/tags\/v/}
-          docker build . -t loadimpact/postman-to-k6:$tag
-          docker tag \
-            loadimpact/postman-to-k6:$tag \
-            loadimpact/postman-to-k6:latest
-          docker push loadimpact/postman-to-k6:$tag
-          docker push loadimpact/postman-to-k6:latest
+#      - name: Build docker image
+#        run: |
+#          echo '${{ secrets.DOCKERHUB_PASSWORD }}' | \
+#          docker login \
+#            --username ${{ secrets.DOCKERHUB_USERNAME }} \
+#            --password-stdin
+#          export tag=${GITHUB_REF/refs\/tags\/v/}
+#          docker build . -t loadimpact/postman-to-k6:$tag
+#          docker tag \
+#            loadimpact/postman-to-k6:$tag \
+#            loadimpact/postman-to-k6:latest
+#          docker push loadimpact/postman-to-k6:$tag
+#          docker push loadimpact/postman-to-k6:latest

@@ -35,6 +35,19 @@ test.serial('$randomInt', t => {
   t.true(value >= 0 && value <= 1000);
 });
 
+test.serial('$randomPhoneNumber', t => {
+  const value = pm[Var]('$randomPhoneNumber');
+  t.true(value.length === 12);
+});
+
+test.serial('$isoTimestamp', t => {
+  const value = pm[Var]('$isoTimestamp');
+  const regex = new RegExp('^(-?(?:[1-9][0-9]*)?[0-9]{4})' + // match year
+    '-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])' + // match month and day
+    'T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\\.[0-9]+)?(Z)?$'); // match time
+  t.true(regex.test(value));
+});
+
 test.serial('$timestamp', t => {
   const value = pm[Var]('$timestamp');
   t.is(typeof value, 'number');
