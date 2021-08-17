@@ -79,7 +79,7 @@
         "@babel/preset-env": "^7.7.4",
         "@babel/register": "^7.7.4",
         "@babel/runtime": "^7.7.4",
-        "ava": "^1.2.1",
+        "ava": "^1.4.1",
         "cross-env": "^6.0.3",
         "mock-require": "^3.0.3",
         "npm-run-all": "^4.1.5",
