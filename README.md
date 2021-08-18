@@ -71,7 +71,7 @@ Note that this will require you to run the converter with `npx @apideck/postman-
 ### Global Installation
 
 ```shell
-$ npm install -g postman-to-k6
+$ npm install -g @apideck/postman-to-k6
 ```
 
 ## Usage
@@ -204,24 +204,6 @@ Skips any post-request scripts during conversion
 
 ```shell
 $ postman-to-k6 collection.json --skip-pre -o k6-script.js
-```
-
-## Docker Usage
-
-Using the Docker image, you execute the tool as follows:
-
-```shell
-$ docker run -it \
-    -v "/path/to/postman/collection/:/postman/" \
-    loadimpact/postman-to-k6 \
-    /postman/my-collection.json \
-    -o /postman/test.js
-```
-
-and then execute the k6 test using:
-
-```shell
-$ k6 run /path/to/postman/collection/test.js
 ```
 
 ## Examples
