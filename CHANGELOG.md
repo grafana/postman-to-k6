@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/apideck-libraries/postman-to-k6/compare/v1.6.0...HEAD)
 
+## [1.6.1] - 2020-08-18
+
 ### Fixed
 
 - Fixes a bug that when using the --skip-pre/--skip-post options was passed, the converter did not remove the pre-request/post-request scripts at the collection or folder level. (grafana#105)
