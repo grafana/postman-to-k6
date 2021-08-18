@@ -11,7 +11,7 @@
         "server-load",
         "performance"
     ],
-    "homepage": "https://github.com/apideck-libraries/postman-to-k6",
+    "homepage": "https://github.com/apideck-libraries/postman-to-k6#readme",
     "bugs": {
         "url": "https://github.com/apideck-libraries/postman-to-k6/issues"
     },
