@@ -46,7 +46,7 @@ Converts a [Postman collection](https://www.getpostman.com/docs/collections) to 
 - File uploads.
 - `postman.*` interface ([exceptions below](#unsupported-features)).
 - `pm.*` interface ([exceptions below](#unsupported-features)).
-- Support for [Postman Dynamic Variables](https://learning.postman.com/docs/writing-scripts/script-references/variables-list/) & ReplaceIn function.
+- Support for Postman [Dynamic Variables](https://learning.postman.com/docs/writing-scripts/script-references/variables-list/) & [ReplaceIn](https://learning.postman.com/docs/writing-scripts/script-references/postman-sandbox-api-reference/#using-variables-in-scripts) function.
 - Global variables exposed by Postman: `globals` `environment` `data`
   `iteration`.
 - `xml2Json` conversion.
