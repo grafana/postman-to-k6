@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/apideck-libraries/postman-to-k6/compare/v1.6.0...HEAD)
 
+### Fixed
+
+- Fixes a bug that when using the --skip-pre/--skip-post options was passed, the converter did not remove the pre-request/post-request scripts at the collection or folder level. (grafana#105)
+
 ### Changed
 
 - Updated readme to remove the docker hub reference to prevent confusion with the original package, since this fork does not build dockers.
