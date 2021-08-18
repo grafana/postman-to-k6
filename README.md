@@ -1,3 +1,6 @@
+> This is a fork of the original [postman-to-k6](https://github.com/grafana/postman-to-k6) repo, which contains new features & fixes.
+
+
 <div align="center">
 
 ![postman-to-k6-cover](./assets/postman-to-k6-cover.png)
@@ -6,9 +9,8 @@
 
 Converts a [Postman collection](https://www.getpostman.com/docs/collections) to a [k6 script](https://docs.k6.io/docs).
 
-![CircleCI branch](https://img.shields.io/circleci/project/github/loadimpact/postman-to-k6/master.svg)
-![npm](https://img.shields.io/npm/v/postman-to-k6.svg) ![npm](https://img.shields.io/npm/dw/postman-to-k6.svg)
-![dockerhub](https://img.shields.io/docker/pulls/loadimpact/postman-to-k6.svg)
+![Github badge](https://github.com/apideck-libraries/postman-to-k6/actions/workflows/build-on-tag.yml/badge.svg)
+![npm](https://img.shields.io/npm/v/@apideck/postman-to-k6.svg) ![npm](https://img.shields.io/npm/dw/@apideck/postman-to-k6.svg)
 
 </div>
 
@@ -45,6 +47,7 @@ Converts a [Postman collection](https://www.getpostman.com/docs/collections) to 
 - File uploads.
 - `postman.*` interface ([exceptions below](#unsupported-features)).
 - `pm.*` interface ([exceptions below](#unsupported-features)).
+- Support for [Postman Dynamic Variables](https://learning.postman.com/docs/writing-scripts/script-references/variables-list/) & ReplaceIn function.
 - Global variables exposed by Postman: `globals` `environment` `data`
   `iteration`.
 - `xml2Json` conversion.
@@ -256,7 +259,7 @@ $ postman-to-k6 example/v2/echo.json -o k6-script.js
   - `pm.response.headers`
 - The Hawk authentication method.
 - Deprecated `xmlToJson` method.
-- Request IDs are changed. Postman doesn't provide them in the export so we
+- Request IDs are changed. Postman doesn't provide them in the export so we 
   have to generate new ones.
 
 ## Other similar tools

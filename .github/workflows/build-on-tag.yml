@@ -1,4 +1,4 @@
-name: Build on tag
+name: Build release
 
 on:
   push:
@@ -33,10 +33,10 @@ jobs:
       - name: Bundle
         run: yarn bundle
 
-      - name: Publish to NPM
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish
+#      - name: Publish to NPM
+#        env:
+#          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+#        run: npm publish
 
 #      - name: Build docker image
 #        run: |

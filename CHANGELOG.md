@@ -7,12 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.5.1] - 2020-08-16
+## [1.6.0] - 2020-08-18
 
 ### Added
 
-- Bug fix for unwanted conversion of Postman query variables (#106 / #104)
+- Extend support for Postman random functions/dynamic variables (grafana#92)
+- Exclude disabled headers when converting requests (grafana#103)
+- Implement postman replaceIn function
+- Extended tests for url encode
+- Extended tests for encoding of space characters
+- Extended test to include checks for randomPhoneNumber & isoTimestamp
 
+### Security
+
+- Bumped dependencies for ajv, browserify, eslint, lodash, postman-collection, postman-collection-transformer, strip-json-comments, urijs
+- Bumped dev dependencies for ava
+
+## [1.5.1] - 2020-08-16
+
+### Fixed
+
+- Bug fix for unwanted conversion of Postman query variables (#106 / #104)
 
 ## [1.1.0] - 202-05-22
 
