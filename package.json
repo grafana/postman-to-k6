@@ -1,6 +1,6 @@
 {
-    "name": "@apideck/postman-to-k6",
-    "version": "1.5.1",
+    "name": "postman-to-k6",
+    "version": "1.5.0",
     "description": "Convert a Postman collection to k6 JavaScript",
     "keywords": [
         "k6",
