@@ -59,28 +59,19 @@ Converts a [Postman collection](https://www.getpostman.com/docs/collections) to 
 While possible to install globally, we recommend that you, if possible, add the converter to the `node_modules` of your test project using:
 
 ```shell
-$ npm install -D postman-to-k6
+$ npm install -D @apideck/postman-to-k6
 
 # or using yarn...
 
-$ yarn add postman-to-k6
+$ yarn add @apideck/postman-to-k6
 ```
 
-Note that this will require you to run the converter with `npx postman-to-k6 your-postman-file` or, if you are using an older versions of npm, `./node_modules/.bin/postman-to-k6 your-postman-file`.
+Note that this will require you to run the converter with `npx @apideck/postman-to-k6 your-postman-file` or, if you are using an older versions of npm, `./node_modules/.bin/postman-to-k6 your-postman-file`.
 
 ### Global Installation
 
 ```shell
 $ npm install -g postman-to-k6
-```
-
-### Docker
-
-The tool is also available for usage in Docker. To download an image with the tool from DockerHub:
-
-```shell
-$ docker pull loadimpact/postman-to-k6
-
 ```
 
 ## Usage
