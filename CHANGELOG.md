@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Updated readme to remove the docker hub reference to prevent confusion with the original package, since this fork does not build dockers.
+
 ## [1.6.0] - 2020-08-18
 
 ### Added
