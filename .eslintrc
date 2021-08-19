@@ -6,7 +6,7 @@
     "ecmaVersion": 8
   },
   "rules": {
-    "semi": "error",
+    "semi": [2, "always"],
     "space-before-function-paren": ["error", "never"]
   }
 }

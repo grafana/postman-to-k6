@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased](https://github.com/apideck-libraries/postman-to-k6/compare/v1.6.0...HEAD)
 
+### Changed
+
+- Updated readme
+- Migrated the "integration" tests to use Ava snapshots instead of the hardcoded comparison for easier maintenance
+
 ## [1.6.1] - 2020-08-18
 
 ### Fixed
