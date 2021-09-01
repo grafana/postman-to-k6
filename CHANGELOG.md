@@ -5,11 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased](https://github.com/apideck-libraries/postman-to-k6/compare/v1.6.1...HEAD)
+## [Unreleased](https://github.com/apideck-libraries/postman-to-k6/compare/v1.7.0...HEAD)
+
+## [1.7.0] - 2020-09-01
 
 ### Added
 
-- Added option to generate a K6 summary through the handleSummary() callback.
+- Added option to generate a K6 JSON summary through the handleSummary() callback.
 
 ### Changed
 
