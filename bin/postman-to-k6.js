@@ -19,9 +19,10 @@ program
   .option('-i, --iterations <count>', 'Number of iterations.')
   .option('-g, --global <path>', 'JSON export of global variables.')
   .option('-e, --environment <path>', 'JSON export of environment.')
+  .option('--cli-options-file <path>', 'postman-to-k6 CLI options file. Useful for CI/CD integrations.')
   .option('-c, --csv <path>', 'CSV data file. Used to fill data variables.')
   .option('-j, --json <path>', 'JSON data file. Used to fill data variables.')
-  .option('--k6-params <path>', 'K6 param options config file. Used to set the K6 params used during HTTP requests.')
+  .option('--k6-params <path>', 'K6 param options config file. Sets K6 params used during HTTP requests.')
   .option('--skip-pre', 'Skips pre-request scripts')
   .option('--skip-post', 'Skips post-request scripts')
   .option('--oauth1-consumer-key <value>', 'OAuth1 consumer key.')
@@ -45,8 +46,25 @@ async function run(...args) {
     console.error('Provide path to Postman collection');
     return;
   }
-  const options = args.pop();
+  let options = args.pop();
   const input = args.shift();
+
+  let cliOptions = {};
+  if (options.cliOptionsFile) {
+    try {
+      const cliOptionsFilePath = path.resolve(options.cliOptionsFile);
+      cliOptions = JSON.parse(await fs.readFile(cliOptionsFilePath, 'utf8'));
+    } catch (err) {
+      console.error(
+        '\x1b[31m',
+        `postman-to-k6 CLI options error - no such file or directory "${options.cliOptionsFile}"`
+      );
+      process.exit(1);
+    }
+  }
+
+  // Merge CLI configuration file with CLI parameters
+  options = Object.assign({}, cliOptions, options);
 
   // Convert
   let main, requests;

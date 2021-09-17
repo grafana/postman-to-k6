@@ -213,6 +213,21 @@ Skips any post-request scripts during conversion
 $ postman-to-k6 collection.json --skip-pre -o k6-script.js
 ```
 
+### CLI options file
+
+Manage all the CLI options in a separate configuration file and pass them along to the postman-to-k6 command.
+To make the CLI usage easier, especially in CI/CD implementations.
+
+All the available CLI options can be used in the config file. By passing the CLI options as parameters, you can overwrite the defined CLI options defined in the file.
+
+| Flag | Verbose              | Default |
+| ---- | -------------------- | ------- |
+|      | `--cli-options-file` | false   |
+
+```shell
+$ postman-to-k6 collection.json --cli-options-file cli-config.json
+```
+
 ## Docker Usage
 
 Using the Docker image, you execute the tool as follows:

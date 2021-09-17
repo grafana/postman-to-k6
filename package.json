@@ -80,11 +80,5 @@
         "test-hoc": "cross-env NODE_PATH=lib:test ava",
         "test-int": "cross-env NODE_PATH=lib:test ava test/int",
         "test-unit": "cross-env NODE_PATH=lib:test ava test/unit"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "yarn lint && yarn test",
-            "pre-push": "yarn test"
-        }
     }
 }
