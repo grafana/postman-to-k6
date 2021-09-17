@@ -172,6 +172,26 @@ Pass [K6 parameter options](https://k6.io/docs/javascript-api/k6-http/params) as
 ```shell
 $ postman-to-k6 collection.json --k6-params k6-params.json -o k6-script.js
 ```
+### K6 Request tag
+
+Generate [K6 request name tags](https://k6.io/docs/using-k6/http-requests/#http-request-tags) based on available naming strategies:
+- none: no automatic generated tags | default
+- `request`: uses the request name as tag (example "Show all accounts")
+- `folder-request`: uses Postman folder name and the request name (example: "Accounts - Show all accounts")
+
+| Flag | Verbose             | Default |
+| ---- | ------------------- | ------- |
+|      | `--request-tagging` | N/A     |
+
+Example for `request` strategy
+```shell
+$ postman-to-k6 collection.json --request-tagging=request -o k6-script.js
+```
+
+Example for `folder-request` strategy
+```shell
+$ postman-to-k6 collection.json --request-tagging=folder-request -o k6-script.js
+```
 
 ### Separate
 
