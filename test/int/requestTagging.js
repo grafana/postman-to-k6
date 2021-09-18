@@ -3,17 +3,17 @@
 import test from 'ava';
 import convertFile from 'convert/file';
 
-test('request --request-tagging=request', async t => {
+test('request --k6-request-tagging=request', async t => {
   const options = {
-    requestTagging: 'request',
+    k6RequestTagging: 'request',
   };
   const [main] = await convertFile('test/material/2/request.json', options);
   t.snapshot(main);
 });
 
-test('request --request-tagging=folder-request', async t => {
+test('request --k6-request-tagging=folder-request', async t => {
   const options = {
-    requestTagging: 'folder-request',
+    k6RequestTagging: 'folder-request',
   };
   const [main] = await convertFile('test/material/2/request.json', options);
   t.snapshot(main);
@@ -21,15 +21,15 @@ test('request --request-tagging=folder-request', async t => {
 
 test('request no request-tagging', async t => {
   const options = {
-    requestTagging: '',
+    k6RequestTagging: '',
   };
   const [main] = await convertFile('test/material/2/request.json', options);
   t.snapshot(main);
 });
 
-test('folder request --request-tagging=request', async t => {
+test('folder request --k6-request-tagging=request', async t => {
   const options = {
-    requestTagging: 'request',
+    k6RequestTagging: 'request',
   };
   const [main] = await convertFile(
     'test/material/2/inherit-folder.json',
@@ -38,9 +38,9 @@ test('folder request --request-tagging=request', async t => {
   t.snapshot(main);
 });
 
-test('folder request --request-tagging=folder-request', async t => {
+test('folder request --k6-request-tagging=folder-request', async t => {
   const options = {
-    requestTagging: 'folder-request',
+    k6RequestTagging: 'folder-request',
   };
   const [main] = await convertFile(
     'test/material/2/inherit-folder.json',
@@ -51,7 +51,7 @@ test('folder request --request-tagging=folder-request', async t => {
 
 test('folder request no request-tagging', async t => {
   const options = {
-    requestTagging: '',
+    k6RequestTagging: '',
   };
   const [main] = await convertFile(
     'test/material/2/inherit-folder.json',
@@ -60,10 +60,10 @@ test('folder request no request-tagging', async t => {
   t.snapshot(main);
 });
 
-test('request separate --request-tagging=request', async t => {
+test('request separate --k6-request-tagging=request', async t => {
   const options = {
     separate: true,
-    requestTagging: 'request',
+    k6RequestTagging: 'request',
   };
   const [main, requests] = await convertFile(
     'test/material/2/request.json',
@@ -76,10 +76,10 @@ test('request separate --request-tagging=request', async t => {
   t.snapshot(requests);
 });
 
-test('request separate --request-tagging=folder-request', async t => {
+test('request separate --k6-request-tagging=folder-request', async t => {
   const options = {
     separate: true,
-    requestTagging: 'folder-request',
+    k6RequestTagging: 'folder-request',
   };
   const [main, requests] = await convertFile(
     'test/material/2/request.json',
@@ -95,7 +95,7 @@ test('request separate --request-tagging=folder-request', async t => {
 test('request separate no request-tagging', async t => {
   const options = {
     separate: true,
-    requestTagging: '',
+    k6RequestTagging: '',
   };
   const [main, requests] = await convertFile(
     'test/material/2/request.json',
@@ -108,10 +108,10 @@ test('request separate no request-tagging', async t => {
   t.snapshot(requests);
 });
 
-test('folder request separate --request-tagging=request', async t => {
+test('folder request separate --k6-request-tagging=request', async t => {
   const options = {
     separate: true,
-    requestTagging: 'request',
+    k6RequestTagging: 'request',
   };
   const [main, requests] = await convertFile(
     'test/material/2/inherit-folder.json',
@@ -124,10 +124,10 @@ test('folder request separate --request-tagging=request', async t => {
   t.snapshot(requests);
 });
 
-test('folder request separate --request-tagging=folder-request', async t => {
+test('folder request separate --k6-request-tagging=folder-request', async t => {
   const options = {
     separate: true,
-    requestTagging: 'folder-request',
+    k6RequestTagging: 'folder-request',
   };
   const [main, requests] = await convertFile(
     'test/material/2/inherit-folder.json',
@@ -143,7 +143,7 @@ test('folder request separate --request-tagging=folder-request', async t => {
 test('folder request separate no request-tagging', async t => {
   const options = {
     separate: true,
-    requestTagging: '',
+    k6RequestTagging: '',
   };
   const [main, requests] = await convertFile(
     'test/material/2/inherit-folder.json',

@@ -22,10 +22,11 @@ program
   .option('--cli-options-file <path>','postman-to-k6 CLI options file. Useful for CI/CD integrations.')
   .option('-c, --csv <path>', 'CSV data file. Used to fill data variables.')
   .option('-j, --json <path>', 'JSON data file. Used to fill data variables.')
-  .option('--k6-params <path>','K6 param options config file. Sets K6 params used during HTTP requests.')
+  .option('--k6-params <path>', 'K6 param options config file. Sets K6 params used during HTTP requests.')
+  .option('--k6-handle-summary-json <path>', 'Output the K6 handle summary as a JSON file.')
+  .option('--k6-request-tagging <value>', 'Apply K6 tags to the requests for reporting.')
   .option('--skip-pre', 'Skips pre-request scripts')
   .option('--skip-post', 'Skips post-request scripts')
-  .option('--request-tagging <value>', 'Apply K6 tags to the requests for reporting.')
   .option('--oauth1-consumer-key <value>', 'OAuth1 consumer key.')
   .option('--oauth1-consumer-secret <value>', 'OAuth1 consumer secret.')
   .option('--oauth1-access-token <value>', 'OAuth1 access token.')
@@ -39,7 +40,6 @@ program
   .option('--oauth1-version <value>', 'OAuth1 version.')
   .option('--oauth1-realm <value>', 'OAuth1 realm.')
   .option('-s, --separate', 'Generate a separate file for each request.')
-  .option('--k6-handle-summary-json <path>','Output the K6 handle summary as a JSON file.')
   .action(run)
   .parse(process.argv);
 
@@ -48,7 +48,6 @@ async function run(...args) {
     console.error('Provide path to Postman collection');
     return;
   }
-
   let options = args.pop();
   const input = args.shift();
 
@@ -117,11 +116,11 @@ function translateOptions(options) {
     csv: !!options.csv,
     json: !!options.json,
     k6Params: options.k6Params,
+    k6RequestTagging: options.k6RequestTagging,
     iterations: options.iterations,
     id: true,
     oauth1: translateOauth1Options(options),
     separate: !!options.separate,
-    requestTagging: options.requestTagging,
     skip: {
       pre: options.skipPre,
       post: options.skipPost,
