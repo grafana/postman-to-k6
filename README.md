@@ -9,8 +9,9 @@
 Converts a [Postman collection](https://www.getpostman.com/docs/collections) to a [k6 script](https://docs.k6.io/docs).
 
 ![Github badge](https://github.com/apideck-libraries/postman-to-k6/actions/workflows/build-on-tag.yml/badge.svg)
-![npm](https://img.shields.io/npm/v/@apideck/postman-to-k6.svg) ![npm](https://img.shields.io/npm/dw/@apideck/postman-to-k6.svg)
-
+<a href="https://www.npmjs.com/package/@apideck/postman-to-k6" alt="Latest Stable Version">![npm](https://img.shields.io/npm/v/@apideck/postman-to-k6.svg)</a>
+<a href="https://www.npmjs.com/package/@apideck/postman-to-k6" alt="Total Downloads">![npm](https://img.shields.io/npm/dw/@apideck/postman-to-k6.svg)</a>
+    
 </div>
 
 <br/><br/>
