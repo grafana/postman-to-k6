@@ -25,6 +25,7 @@ program
   .option('--k6-params <path>','K6 param options config file. Sets K6 params used during HTTP requests.')
   .option('--skip-pre', 'Skips pre-request scripts')
   .option('--skip-post', 'Skips post-request scripts')
+  .option('--request-tagging <value>', 'Apply K6 tags to the requests for reporting.')
   .option('--oauth1-consumer-key <value>', 'OAuth1 consumer key.')
   .option('--oauth1-consumer-secret <value>', 'OAuth1 consumer secret.')
   .option('--oauth1-access-token <value>', 'OAuth1 access token.')
@@ -120,6 +121,7 @@ function translateOptions(options) {
     id: true,
     oauth1: translateOauth1Options(options),
     separate: !!options.separate,
+    requestTagging: options.requestTagging,
     skip: {
       pre: options.skipPre,
       post: options.skipPost,

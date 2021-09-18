@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Added the option to generate K6 Request tags for reporting purpose.
 - Added option to use a file to pass all CLI options.
 
 ## [1.7.0] - 2020-09-01
