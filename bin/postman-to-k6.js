@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const convertFile = require('../lib/convert/file');
+const utils = require('../lib/convert/utils');
 const fs = require('fs-extra');
 const outputRequests = require('./requests');
 const path = require('path');
@@ -56,6 +57,7 @@ async function run(...args) {
     try {
       const cliOptionsFilePath = path.resolve(options.cliOptionsFile);
       cliOptions = JSON.parse(await fs.readFile(cliOptionsFilePath, 'utf8'));
+      cliOptions = utils.keysToCamel(cliOptions);
     } catch (err) {
       console.error(
         '\x1b[31m',

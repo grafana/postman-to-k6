@@ -262,6 +262,17 @@ All the available CLI options can be used in the config file. By passing the CLI
 $ postman-to-k6 collection.json --cli-options-file cli-config.json
 ```
 
+Example of JSON CLI config file
+
+```json
+{
+  "output": "k6-script.js",
+  "k6-params": "config/k6-params.json",
+  "environment": "config/envs/team.env.json",
+  "separate": true
+}
+```
+
 ## Examples
 
 A collection of Postman examples are located under `example`.
