@@ -184,7 +184,15 @@
 						{
 							"key": "search",
 							"value": "kittens"
-						}
+						},
+                        {
+                            "key": "postId",
+                            "value": "{{postId}}"
+						},
+                        {
+                            "key": "orderby",
+                            "value": "lastAction asc"
+                        }
 					]
 				}
 			},

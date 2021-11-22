@@ -200,7 +200,8 @@ export default function() {
   postman[Request]({
     name: "Test Request 1",
     method: "GET",
-    address: "http://1.example.com/?search=kittens",
+    address:
+      "http://1.example.com/?search=kittens&postId={{postId}}&orderby=lastAction%20asc",
     headers: {
       Session: "abc123"
     },
