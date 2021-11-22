@@ -23,6 +23,8 @@ Converts a [Postman collection](https://www.getpostman.com/docs/collections) to 
   - [Global Variables](#global-variables)
   - [CSV Data File](#csv-data-file)
   - [JSON Data File](#json-data-file)
+  - [K6 Param Options File](#k6-param-options-file)
+  - [K6 Request tag](#k6-request-tag)
   - [Separate](#separate)
 - [Docker Usage](#docker-usage)
 - [Examples](#examples)
@@ -167,6 +169,26 @@ Pass [K6 parameter options](https://k6.io/docs/javascript-api/k6-http/params) as
 ```shell
 $ postman-to-k6 collection.json --k6-params k6-params.json -o k6-script.js
 ```
+### K6 Request tag
+
+Generate [K6 request name tags](https://k6.io/docs/using-k6/http-requests/#http-request-tags) based on available naming strategies:
+- none: no automatic generated tags | default
+- `request`: uses the request name as tag (example "Show all accounts")
+- `folder-request`: uses Postman folder name and the request name (example: "Accounts - Show all accounts")
+
+| Flag | Verbose                | Default |
+| ---- | ---------------------- | ------- |
+|      | `--k6-request-tagging` | N/A     |
+
+Example for `request` strategy
+```shell
+$ postman-to-k6 collection.json --k6-request-tagging=request -o k6-script.js
+```
+
+Example for `folder-request` strategy
+```shell
+$ postman-to-k6 collection.json --k6-request-tagging=folder-request -o k6-script.js
+```
 
 ### Separate
 
@@ -181,7 +203,7 @@ $ postman-to-k6 collection.json --separate -o k6-script.js
 ```
 
 ```shell
-postman-to-k6 collection.json -s -o k6-script.js
+$ postman-to-k6 collection.json -s -o k6-script.js
 ```
 
 ### Skip Pre
@@ -251,8 +273,7 @@ $ postman-to-k6 example/v2/echo.json -o k6-script.js
   - `pm.response.headers`
 - The Hawk authentication method.
 - Deprecated `xmlToJson` method.
-- Request IDs are changed. Postman doesn't provide them in the export so we
-  have to generate new ones.
+- Request IDs are changed. Postman doesn't provide them in the export, so we have to generate new ones.
 
 ## Other similar tools
 
