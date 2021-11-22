@@ -37,6 +37,7 @@ program
   .option('--oauth1-version <value>', 'OAuth1 version.')
   .option('--oauth1-realm <value>', 'OAuth1 realm.')
   .option('-s, --separate', 'Generate a separate file for each request.')
+  .option('--k6-handle-summary-json <path>', 'Output the K6 handle summary as a JSON file.')
   .action(run)
   .parse(process.argv);
 
@@ -103,6 +104,9 @@ function translateOptions(options) {
     skip: {
       pre: options.skipPre,
       post: options.skipPost,
+    },
+    k6HandleSummary: {
+      json: options.k6HandleSummaryJson
     },
   };
 }
