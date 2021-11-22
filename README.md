@@ -1,18 +1,13 @@
-<div align="center">
 
-![postman-to-k6-cover](./assets/postman-to-k6-cover.png)
+> ### ⚠ ️ This project is no longer maintained in this repository. 
+> 
+> Development and maintenance have been stopped in this repository. 
+> 
+> A fork of this project is active and maintained at [apideck-libraries/postman-to-k6](https://github.com/apideck-libraries/postman-to-k6).
 
 # Postman-to-k6
 
 Converts a [Postman collection](https://www.getpostman.com/docs/collections) to a [k6 script](https://docs.k6.io/docs).
-
-![CircleCI branch](https://img.shields.io/circleci/project/github/loadimpact/postman-to-k6/master.svg)
-![npm](https://img.shields.io/npm/v/postman-to-k6.svg) ![npm](https://img.shields.io/npm/dw/postman-to-k6.svg)
-![dockerhub](https://img.shields.io/docker/pulls/loadimpact/postman-to-k6.svg)
-
-</div>
-
-<br/><br/>
 
 ## Content
 
