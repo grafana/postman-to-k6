@@ -1,0 +1,2 @@
+# Ignore prettier for
+lib/shim/faker.js
